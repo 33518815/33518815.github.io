@@ -3,54 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>공감 행정사 사무소 - 전문 권리구제 및 투명한 약정</title>
+    <title>공감탐정행정사사무소</title>
     <style>
-        body { font-family: 'Malgun Gothic', sans-serif; line-height: 1.7; margin: 0; background: #f8f9fa; color: #333; }
-        .header { background: #1a3026; color: white; text-align: center; padding: 50px 20px; border-bottom: 5px solid #d4af37; }
-        .container { max-width: 1100px; margin: 30px auto; padding: 20px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .card { background: white; padding: 25px; border-radius: 10px; border: 1px solid #ddd; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-        .card h3 { color: #1a3026; border-bottom: 2px solid #d4af37; padding-bottom: 10px; }
-        .refund-policy { background: #fffcf0; border: 2px solid #d4af37; padding: 25px; margin: 30px 0; border-radius: 10px; }
-        .refund-policy h2 { color: #856404; margin-top: 0; }
-        .footer { background: #2c3e50; color: white; padding: 40px 20px; text-align: center; margin-top: 50px; }
-        .btn-call { display: inline-block; background: #d4af37; color: #1a3026; padding: 15px 30px; text-decoration: none; font-weight: bold; border-radius: 5px; margin-top: 10px; }
-        .nav-link { display: block; text-align: center; margin-top: 30px; color: #1a3026; font-weight: bold; text-decoration: underline; }
+        :root { 
+            --primary: #1a3026; 
+            --accent: #d4af37;  
+            --bg: #f8f9fa; 
+            --white: #ffffff;
+        }
+        body { font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif; margin: 0; padding: 0; color: #333; background-color: var(--bg); word-break: keep-all; }
+        .top-bar { background: #0e1a14; color: #888; font-size: 11px; padding: 15px 0; text-align: center; line-height: 1.7; border-bottom: 1px solid #1a2520; }
+        .emergency { color: var(--accent); font-weight: bold; font-size: 13px; margin-top: 5px; display: block; }
+        header { background: var(--primary); color: var(--white); padding: 70px 20px; text-align: center; border-bottom: 5px solid var(--accent); }
+        .header-content { display: flex; align-items: center; justify-content: center; gap: 20px; }
+        .header-symbol { width: 50px; height: 50px; border: 2px solid var(--accent); display: flex; align-items: center; justify-content: center; font-size: 20px; color: var(--accent); font-weight: bold; box-shadow: 4px 4px 0px var(--accent); }
+        .header-text { text-align: left; }
+        header h1 { margin: 0; font-size: 2.5em; letter-spacing: 4px; font-weight: 700; }
+        header .eng-title { font-size: 0.85em; color: var(--accent); margin-top: 8px; letter-spacing: 1px; font-weight: 600; font-family: Arial, sans-serif; }
+        nav { background: #fff; position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 10px rgba(0,0,0,0.1); display: flex; justify-content: center; gap: 30px; padding: 20px 0; }
+        nav a { text-decoration: none; color: #333; font-size: 1em; font-weight: bold; }
+        .nav-highlight { color: #b22222 !important; border-bottom: 2px solid #b22222; }
+        .container { max-width: 1150px; margin: 0 auto; padding: 60px 20px; }
+        section { margin-bottom: 90px; scroll-margin-top: 120px; }
+        h2 { font-size: 1.9em; text-align: center; margin-bottom: 45px; color: var(--primary); }
+        h2::after { content: ''; display: block; width: 50px; height: 3px; background: var(--accent); margin: 15px auto; }
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 25px; }
+        .card { background: var(--white); padding: 40px; border: 1px solid #ddd; border-top: 4px solid var(--primary); transition: 0.4s; }
+        .card:hover { border-color: var(--accent); transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .card h3 { margin: 0 0 15px 0; color: var(--primary); font-size: 1.3em; }
+        .card p { font-size: 0.95em; color: #555; line-height: 1.8; }
+        .keyword-box { font-size: 0.82em; color: var(--primary); background: #f0f2f0; padding: 12px; margin-top: 15px; border-radius: 4px; border-left: 3px solid var(--accent); }
+        .contact-box { background: var(--primary); color: #fff; padding: 60px; border-radius: 4px; display: grid; grid-template-columns: 1fr 1.3fr; gap: 50px; align-items: center; }
+        .contact-text h3 { font-size: 2.1em; color: var(--accent); margin-bottom: 25px; }
+        .contact-text p { font-size: 1.15em; line-height: 2; opacity: 0.9; }
+        .form-area { background: #fff; padding: 35px; border-radius: 4px; }
+        input, select, textarea { width: 100%; padding: 14px; margin: 12px 0; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box; }
+        .btn { background: var(--primary); color: #fff; border: 1px solid var(--accent); padding: 18px; width: 100%; cursor: pointer; font-weight: bold; font-size: 1.1em; }
+        .policy-box { background: #ecefe2; padding: 45px; border-radius: 4px; font-size: 0.95em; line-height: 2.2; color: #2a3d33; }
+        .footer-info { background: #111; color: #999; padding: 60px 20px; text-align: center; border-top: 4px solid var(--accent); }
+        .info-line { font-size: 0.95em; line-height: 2.4; }
+        footer { text-align: center; padding: 30px; font-size: 0.85em; color: #777; background: #fff; border-top: 1px solid #eee; }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>공감 행정사 사무소</h1>
-        <p>신뢰를 바탕으로 한 투명한 행정 업무 대행</p>
-    </div>
-    <div class="container">
-        <h2>[주요 행정 업무 영역]</h2>
-        <div class="grid">
-            <div class="card"><h3>01. 행정심판 및 이의신청</h3>부당한 영업정지, 면허취소 등 행정처분에 대한 체계적인 권리구제.</div>
-            <div class="card"><h3>02. 인허가 및 등록 대행</h3>복잡한 법인 설립, 공장 등록, 비영리단체 인허가 업무 전 과정 지원.</div>
-            <div class="card"><h3>03. 내용증명 및 계약 분석</h3>논리적인 법률 근거를 바탕으로 한 내용증명 작성 및 계약 독소조항 검토.</div>
-            <div class="card"><h3>04. 출입국 및 외국인 행정</h3>비자 연장, 체류 자격 변경, 영주권 및 귀화 신청 대행.</div>
-            <div class="card"><h3>05. 국가유공자 등록 신청</h3>국가를 위해 헌신한 분들을 위한 보훈 심사 준비 및 등록 업무.</div>
-            <div class="card"><h3>06. 학교폭력 및 징계 구제</h3>공정한 절차 확인을 통한 학생의 방어권 보장 및 행정심판.</div>
+<div class="top-bar">
+    EN: Suite 401, Ujeong Esher, 39, Ujeongguk-ro, Jongno-gu, Seoul | JP: ソウル特別市鍾路区郵政局路39 401号<br>
+    CN: 首尔特别市邮政局路39号 401室 | VN: Phòng 401, 39, Ujeongguk-ro, Jongno-gu, Seoul
+    <span class="emergency">📞 24H EMERGENCY LINE: 010-8128-1079</span>
+</div>
+<header>
+    <div class="header-content">
+        <div class="header-symbol">▣</div>
+        <div class="header-text">
+            <h1>공감탐정행정사사무소</h1>
+            <div class="eng-title">GONGGAM Private Investigation & Administrative Office</div>
         </div>
+    </div>
+</header>
+<nav>
+    <a href="#about">사무소 소개</a>
+    <a href="#service">전담 업무</a>
+    <a href="#contact">상담 안내</a>
+    <a href="#policy">운영 정책</a>
+    <a href="https://33518815.github.io/empathy-office/" class="nav-highlight">🔍 탐정·사실조사 바로가기</a>
+</nav>
+<div class="container">
+    <section id="about">
+        <h2>사무소 소개</h2>
+        <p style="text-align: center; max-width: 900px; margin: 0 auto; line-height: 2.5; font-size: 1.15em; color: #333;">
+            진실을 찾는 예리한 통찰력과 행정의 전문성을 결합하여 의뢰인의 권익을 보호합니다.<br> 
+            본 사무소는 <strong>중앙 및 전국 행정심판위원회</strong> 대응 업무를 수행하며,<br> 
+            정밀한 사실 분석과 전략적 서면 작성을 통해 최상의 결과를 이끌어내고 있습니다.
+        </p>
+    </section>
 
-        <div class="refund-policy">
-            <h2>🛡️ 업무 계약 시 위약금 및 환불 규정 고지</h2>
-            <p>본 사무소는 의뢰인과의 계약 시 <strong>공정거래위원회 표준약관 및 행정사법</strong>에 의거하여 위약금과 환불 규정을 명확히 안내합니다.</p>
-            <ul>
-                <li><strong>투명한 약정:</strong> 계약 시 위약금 범위를 명시하여 의뢰인의 불안을 해소합니다.</li>
-                <li><strong>합리적 환불:</strong> 업무 진행 단계에 따른 공정한 환불 시스템을 운영합니다.</li>
-                <li><strong>정직한 보수:</strong> 과다한 수수료를 요구하지 않으며 모든 비용은 투명하게 공개합니다.</li>
-            </ul>
+    <section id="service">
+        <h2>전담 업무 영역</h2>
+        <div class="service-grid">
+            <div class="card">
+                <h3>행정심판 및 권익구제</h3>
+                <p>영업정지, 면허구제 등 부당한 행정처분에 대한 체계적인 구제 절차를 수행합니다.</p>
+                <div class="keyword-box">전국 행정심판위원회 대응, 이의신청, 보충서면 제출, 처분사전통지서 검토</div>
+            </div>
+            <div class="card">
+                <h3>민원행정 및 인허가</h3>
+                <p>법인 설립, 각종 인허가 서류 기획부터 행정기관 접수 전 과정을 대행합니다.</p>
+                <div class="keyword-box">의견제출서, 공장등록, 권리금계약서 작성 및 검토</div>
+            </div>
+            <div class="card">
+                <h3>전문화된 서류 작성</h3>
+                <p>법리적 근거를 바탕으로 의뢰인의 주장을 논리적으로 대변하는 서면을 지원합니다.</p>
+                <div class="keyword-box">내용증명, 진정서, 탄원서, 각종 행정 계약서 작성</div>
+            </div>
         </div>
-        <a href="https://33518815.github.io/empathy-office/" class="nav-link">🔍 탐정 업무(민사 증거수집) 상세 페이지로 이동</a>
+    </section>
+
+    <section id="contact">
+        <div class="contact-box">
+            <div class="contact-text">
+                <h3>상담 및 접수 안내</h3>
+                <p>전국 민원 및 행정심판 상담이 가능합니다.<br>
+                <strong>TEL. 010-8128-1079</strong><br>
+                <strong>FAX. 02-733-8816</strong><br>
+                이메일: 3351ben@daum.net</p>
+                <p style="font-size: 0.9em; margin-top: 35px; color: var(--accent);">* 모든 정보는 보안 유지됩니다.</p>
+            </div>
+            <div class="form-area">
+                <form action="mailto:3351ben@daum.net" method="post" enctype="text/plain">
+                    <input type="text" name="name" placeholder="의뢰인 성함" required>
+                    <input type="tel" name="phone" placeholder="연락처" required>
+                    <select name="type">
+                        <option value="행정심판">행정심판/이의신청</option>
+                        <option value="민원서류">내용증명/탄원서</option>
+                        <option value="사실조사">탐정 및 증거수집</option>
+                    </select>
+                    <textarea name="message" rows="4" placeholder="문의 사항을 기재해 주십시오."></textarea>
+                    <button type="submit" class="btn">상담 신청</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="policy">
+        <div class="policy-box">
+            <h3 style="color:var(--primary);">[운영 및 업무 수임 정책]</h3>
+            <div class="policy-item"><strong>1. 비용 산정 :</strong> 사안의 난이도에 따라 상호 협의 하에 산정됩니다.</div>
+            <div class="policy-item"><strong>2. 환불 규정 :</strong> 실질 실무 개시 후 해지 시 수임료의 30%를 실비 공제합니다.</div>
+            <div class="policy-item"><strong>3. 실제 계약 우선 :</strong> 상세 효력은 별도로 체결하는 <b>'실제 업무 수임 계약서'</b> 조항을 최우선 적용합니다.</div>
+        </div>
+    </section>
+</div>
+<div class="footer-info">
+    <strong>공감탐정행정사사무소 (GONGGAM Private Investigation & Administrative Office)</strong>
+    <div class="info-line">
+        📍 서울시 종로구 우정국로 39 우정에쉐르 401호 &nbsp; | &nbsp; 📞 010-8128-1079<br>
+        📧 3351ben@daum.net &nbsp; | &nbsp; 사업자등록 : 821-46-01200
     </div>
-    <div class="footer">
-        <p><strong>[24시 긴급상담 가능]</strong></p>
-        <p>대표번호 : 02-733-8815 | 이메일 : empathy8815@naver.com</p>
-        <p>사업자등록번호 : [여기에 번호를 쓰세요] | 신고번호 : [여기에 번호를 쓰세요]</p>
-        <p>주소 : 서울시 종로구 우정국로 39 우정에쉐르 401호</p>
-        <a href="tel:027338815" class="btn-call">지금 바로 전화 상담하기</a>
-    </div>
+</div>
+<footer>&copy; 2026 GONGGAM Private Investigation & Administrative Office. All Rights Reserved.</footer>
 </body>
 </html>
