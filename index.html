@@ -1,3 +1,11 @@
+선생님, 정말 죄송합니다. 제가 자꾸 마음만 앞서서 한꺼번에 하려다 보니 실수가 잦았습니다.
+
+말씀하신 대로 우선 하나씩, 가장 중요한 **[오늘의 홈페이지(행정사 중심)]**부터 완벽하게 완성해 보겠습니다.
+
+선생님이 말씀하신 6칸 유지, 카드 결제 안내, 전국 민원 등기 서류 문구를 모두 넣은 최종 코드입니다. 이 코드를 33518815.github.io 저장소의 index.html에 복사해서 넣어주세요.
+
+[오늘의 홈페이지] 33518815.github.io용 최종본
+HTML
 <!DOCTYPE html><html lang="ko"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,20 +33,20 @@
         header h1 { margin: 0; font-size: 2.5em; letter-spacing: 4px; font-weight: 700; }
         header .eng-title { font-size: 0.85em; color: var(--accent); margin-top: 8px; letter-spacing: 1px; font-weight: 600; font-family: Arial, sans-serif; }
 
-        /* 메뉴(nav) 부분 - 탐정 서비스 연결 추가 */
         nav { background: #fff; position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 10px rgba(0,0,0,0.1); display: flex; justify-content: center; gap: 30px; padding: 20px 0; flex-wrap: wrap; }
         nav a { text-decoration: none; color: #333; font-size: 1em; font-weight: bold; }
-        .nav-detective { color: #b22222 !important; border-bottom: 2px solid #b22222; }
+        .nav-link-sub { color: #b22222 !important; border-bottom: 2px solid #b22222; }
 
         .container { max-width: 1150px; margin: 0 auto; padding: 60px 20px; }
         section { margin-bottom: 90px; scroll-margin-top: 120px; }
         h2 { font-size: 1.9em; text-align: center; margin-bottom: 45px; color: var(--primary); }
         h2::after { content: ''; display: block; width: 50px; height: 3px; background: var(--accent); margin: 15px auto; }
 
-        .payment-banner { background: var(--white); border: 2px solid var(--accent); padding: 20px; text-align: center; border-radius: 8px; margin-bottom: 40px; font-weight: bold; color: var(--primary); }
+        .banner-box { background: var(--white); border: 2px solid var(--accent); padding: 20px; text-align: center; border-radius: 8px; margin-bottom: 40px; font-weight: bold; color: var(--primary); font-size: 1.1em; }
 
         .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 25px; }
         .card { background: var(--white); padding: 40px; border: 1px solid #ddd; border-top: 4px solid var(--primary); transition: 0.4s; }
+        .card:hover { border-color: var(--accent); transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
         .card h3 { margin: 0 0 15px 0; color: var(--primary); font-size: 1.3em; }
         .card p { font-size: 0.95em; color: #555; line-height: 1.8; }
         .keyword-box { font-size: 0.82em; color: var(--primary); background: #f0f2f0; padding: 12px; margin-top: 15px; border-radius: 4px; border-left: 3px solid var(--accent); }
@@ -57,27 +65,26 @@
             <h1>공감탐정행정사사무소</h1>
             <div class="eng-title">GONGGAM Private Investigation & Administrative Office</div>
         </div>
-    </div>
-</header>
+    </div></header>
 
 <nav>
     <a href="#about">사무소 소개</a>
     <a href="#service">전담 업무</a>
     <a href="#postal">전국 민원 접수</a>
     <a href="#policy">운영 정책</a>
-    <a href="https://33518815.github.io/empathy-office/" class="nav-detective">🔍 탐정 서비스 보기</a>
+    <a href="https://33518815.github.io/empathy-office/" class="nav-link-sub">🔍 탐정 서비스 보기</a>
 </nav>
 
 <div class="container">
-    <div class="payment-banner">
-        💳 의뢰인의 편의를 위하여 [카드 결제 시스템]을 완비하고 있습니다.
+    <div class="banner-box">
+        💳 본 사무소는 의뢰인의 편의를 위하여 모든 수임료 [카드 결제]가 가능합니다.
     </div>
 
     <section id="about">
         <h2>사무소 소개</h2>
         <p style="text-align: center; max-width: 900px; margin: 0 auto; line-height: 2.5; font-size: 1.15em; color: #333;">
             진실을 찾는 예리한 통찰력과 행정의 전문성을 결합하여 의뢰인의 권익을 보호합니다.<br> 
-            본 사무소는 <strong>중앙 및 전국 행정심판위원회</strong> 대응 업무를 수행하며,<br> 
+            본 사무소는 <strong>공정거래위원회 위약금 기준</strong>을 준수하며,<br> 
             정밀한 사실 분석과 전략적 서면 작성을 통해 최상의 결과를 이끌어내고 있습니다.
         </p>
     </section>
@@ -85,24 +92,48 @@
     <section id="service">
         <h2>전담 업무 영역</h2>
         <div class="service-grid">
-            <div class="card"><h3>위약금 및 계약 심사</h3><p>부당한 위약금 조항을 심사하고 공정거래위원회 기준에 따른 구제를 지원합니다.</p><div class="keyword-box">불공정 약관 분석, 위약금 가이드라인 준수</div></div>
-            <div class="card"><h3>행정심판 및 권익구제</h3><p>영업정지, 면허구제 등 부당한 행정처분에 대한 체계적인 구제 절차를 수행합니다.</p><div class="keyword-box">이의신청, 보충서면 제출, 전국 행정심판위원회 대응</div></div>
-            <div class="card"><h3>민원행정 및 인허가</h3><p>법인 설립, 각종 인허가 서류 기획부터 행정기관 접수 전 과정을 대행합니다.</p><div class="keyword-box">의견제출서, 공장등록, 권리금계약서 작성 및 검토</div></div>
-            <div class="card"><h3>전문화된 서류 작성</h3><p>법리적 근거를 바탕으로 의뢰인의 주장을 논리적으로 대변하는 서면을 지원합니다.</p><div class="keyword-box">내용증명, 진정서, 탄원서, 질의회신 작성</div></div>
-            <div class="card"><h3>사실조사 및 탐정업무</h3><p>PIA 기반의 사실 확인, 증거 수집 및 디지털 보안 솔루션을 제공합니다.</p><div class="keyword-box">증거 수집, 소재 파악, 도감청 탐색, 사실확인서 발급</div></div>
-            <div class="card"><h3>전문가 협력 시스템</h3><p>변호사, 법무사 등 전문 네트워크를 통해 복합적인 행정 문제를 해결합니다.</p><div class="keyword-box">법률 자문 연계, 기업 법무 행정 지원</div></div>
+            <div class="card">
+                <h3>위약금 및 계약 심사</h3>
+                <p>부당한 위약금 조항을 심사하고 공정거래위원회 표준약관에 따른 감액 및 구제를 지원합니다.</p>
+                <div class="keyword-box">불공정 약관 분석, 위약금 가이드라인 준수 심사</div>
+            </div>
+            <div class="card">
+                <h3>행정심판 및 권익구제</h3>
+                <p>영업정지, 면허구제 등 부당한 행정처분에 대한 체계적인 구제 절차를 수행합니다.</p>
+                <div class="keyword-box">전국 행정심판위원회 대응, 이의신청, 보충서면 제출</div>
+            </div>
+            <div class="card">
+                <h3>민원행정 및 인허가</h3>
+                <p>법인 설립, 각종 인허가 서류 기획부터 행정기관 접수 전 과정을 대행합니다.</p>
+                <div class="keyword-box">의견제출서, 공장등록, 권리금계약서 작성 및 검토</div>
+            </div>
+            <div class="card">
+                <h3>전문화된 서류 작성</h3>
+                <p>법리적 근거를 바탕으로 의뢰인의 주장을 논리적으로 대변하는 서면을 지원합니다.</p>
+                <div class="keyword-box">내용증명, 진정서, 탄원서, 질의회신 작성</div>
+            </div>
+            <div class="card">
+                <h3>사실조사 및 탐정업무</h3>
+                <p>PIA 기반의 과학적 사실 확인, 증거 수집 및 디지털 보안 솔루션을 제공합니다.</p>
+                <div class="keyword-box">증거 수집, 소재 파악, 도감청 탐색, 사실확인서 발급</div>
+            </div>
+            <div class="card">
+                <h3>전문가 협력 시스템</h3>
+                <p>변호사, 법무사 등 전문 인적 네트워크를 통해 종합적인 해결책을 제시합니다.</p>
+                <div class="keyword-box">법률 자문 연계, 복합 민원 처리, 기업 법무 행정 지원</div>
+            </div>
         </div>
     </section>
 
     <section id="postal">
         <div class="policy-box" style="border-left: 5px solid #b22222;">
             <h3 style="color:#b22222;">[전국 민원 대행 및 등기 우편 안내]</h3>
-            <p>본 사무소는 <strong>전국 비대면 민원 접수 시스템</strong>을 운영합니다. 아래 서류를 준비하여 송부해 주시기 바랍니다.</p>
+            <p>본 사무소는 <strong>전국 어디서나 비대면 민원 접수</strong>가 가능합니다. 아래 서류를 준비하여 송부해 주시기 바랍니다.</p>
             <div style="background:#fff; padding:25px; border-radius:4px; margin:20px 0; line-height:2;">
                 <strong>📬 준비 서류 및 접수 방법:</strong><br>
-                • <strong>필수 서류:</strong> 신분증 원본(운전면허증 또는 여권), 도장, 위임장<br>
-                • <strong>접수 방법:</strong> 위 서류를 동봉하여 <strong>등기 우편</strong>으로 아래 주소로 보내주세요.<br>
-                • <strong>주소:</strong> 서울시 종로구 우정국로 39 우정에쉐르 401호 공감탐정행정사사무소
+                1. <strong>필수 서류:</strong> 신분증 원본(운전면허증 또는 여권), 도장, 위임장<br>
+                2. <strong>접수 방법:</strong> 위 서류를 동봉하여 <strong>등기 우편</strong>으로 아래 주소로 보내주세요.<br>
+                3. <strong>주소:</strong> 서울시 종로구 우정국로 39 우정에쉐르 401호 공감탐정행정사사무소
             </div>
         </div>
     </section>
@@ -110,9 +141,9 @@
     <section id="policy">
         <div class="policy-box">
             <h3 style="color:var(--primary);">[운영 및 수임 정책]</h3>
-            <p>1. 모든 수임료는 사안의 난이도에 따라 협의 산정되며, <b>카드 결제</b>가 가능합니다.<br>
-            2. 실무 착수 후 해지 시 수임료의 30%를 실비로 공제합니다.<br>
-            3. 공정거래위원회의 위약금 준수 가이드라인을 엄격히 따릅니다.</p>
+            <p>1. 모든 보수는 사안의 난이도에 따라 협의 산정되며, <b>카드 결제</b>가 가능합니다.<br>
+            2. 실무(자료 검토, 서면 작성 등) 착수 후 해지 시 수임료의 30%를 실비로 공제합니다.<br>
+            3. 상세 내용은 의뢰인과 체결하는 실제 업무 수임 계약서 조항을 우선합니다.</p>
         </div>
     </section>
 </div>
