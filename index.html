@@ -17,13 +17,11 @@
         .card h3 { margin-top: 0; font-size: 1.1em; color: var(--primary); border-bottom: 1px solid #eee; padding-bottom: 8px; }
         .card p { font-size: 0.88em; line-height: 1.6; color: #555; }
 
-        /* 계약 규정 섹션 */
         .contract-box { background: #fff; border: 1px solid #eee; padding: 20px; margin-bottom: 30px; font-size: 0.85em; }
         
-        /* 하단 2분할 섹션 (우편안내 + 메일폼) */
-        .bottom-section { display: grid; grid-template-columns: 1fr 1.2fr; gap: 20px; align-items: start; }
-        .info-panel { background: #ecefe2; padding: 25px; border-left: 4px solid #b22222; height: 100%; box-sizing: border-box; }
-        .form-panel { background: #fff; border: 1px solid var(--primary); padding: 25px; height: 100%; box-sizing: border-box; }
+        .bottom-section { display: grid; grid-template-columns: 1fr 1.2fr; gap: 20px; align-items: stretch; }
+        .info-panel { background: #ecefe2; padding: 25px; border-left: 4px solid #b22222; }
+        .form-panel { background: #fff; border: 1px solid var(--primary); padding: 25px; }
         
         .info-panel h3, .form-panel h3 { margin-top: 0; font-size: 1.1em; color: var(--primary); margin-bottom: 15px; }
         .form-group { margin-bottom: 10px; text-align: left; }
@@ -31,18 +29,20 @@
         .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 2px; font-size: 0.85em; box-sizing: border-box; }
         .submit-btn { background: var(--primary); color: var(--accent); width: 100%; padding: 10px; border: none; font-weight: bold; cursor: pointer; margin-top: 5px; }
 
-        footer { background: #111; color: #777; padding: 40px 20px; text-align: center; font-size: 0.8em; }
+        footer { background: #111; color: #999; padding: 40px 20px; text-align: center; font-size: 0.85em; }
         .footer-logo { font-size: 1.6em; color: #fff; font-weight: 800; margin-bottom: 10px; display: block; }
-        .addr-grid { margin-top: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; border-top: 1px solid #222; padding-top: 20px; }
+        
+        /* 다국어 주소 그리드 정렬 */
+        .addr-grid { margin-top: 25px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 20px; border-top: 1px solid #333; padding-top: 20px; text-align: left; max-width: 800px; margin-left: auto; margin-right: auto; }
+        .addr-item { line-height: 1.4; color: #888; }
+        .lang-tag { color: var(--accent); font-weight: bold; font-size: 0.8em; margin-right: 5px; }
 
-        @media (max-width: 768px) { .bottom-section { grid-template-columns: 1fr; } }
+        @media (max-width: 768px) { .bottom-section { grid-template-columns: 1fr; } .addr-grid { grid-template-columns: 1fr; } }
     </style>
 </head><body>
 
 <header>
-    <div class="header-content">
-        <h1>공감탐정행정사사무소</h1>
-    </div>
+    <h1>공감탐정행정사사무소</h1>
 </header>
 
 <nav>
@@ -73,8 +73,8 @@
         <div class="info-panel">
             <h3>전국 민원 등기 접수</h3>
             <p style="font-size:0.9em; line-height:1.8;">
-                신분증 원본(운전면허증/여권), 도장, 위임장을 등기우편으로 보내주시면 전국 어디든 비대면으로 신속히 대행합니다.<br><br>
-                <strong>주소:</strong><br>서울 종로구 우정국로 39 우정에쉐르 401호
+                신분증 원본(운전면허증/여권), 도장, 위임장을 등기우편으로 보내주시면 전국 어디든 비대면으로 대행합니다.<br><br>
+                <strong>송부처 주소:</strong><br>서울 종로구 우정국로 39 우정에쉐르 401호
             </p>
         </div>
 
@@ -87,9 +87,9 @@
                     <label>상담 구분</label>
                     <select id="category" required>
                         <option value="">선택해주세요</option>
-                        <option value="행정심판/의견제출">행정심판 · 의견제출</option>
-                        <option value="탐정/사실조사">탐정업무 · 사실조사</option>
-                        <option value="출입국/비자">출입국 · 비자 · 공증</option>
+                        <option value="행정심판">행정심판 · 의견제출</option>
+                        <option value="탐정조사">탐정업무 · 사실조사</option>
+                        <option value="출입국">출입국 · 비자 · 공증</option>
                         <option value="기타">기타 일반 행정</option>
                     </select>
                 </div>
@@ -102,16 +102,19 @@
 
 <footer>
     <span class="footer-logo">공감탐정행정사사무소</span>
-    <div style="color:var(--accent); font-weight:bold; font-size:1.2em; margin-bottom:15px;">010-8128-1079</div>
-    <div>사업자: 821-46-01200 | 통신판매업신고 완료 | FAX: 02-733-8816</div>
+    <div style="color:var(--accent); font-weight:bold; font-size:1.3em; margin-bottom:15px;">010-8128-1079</div>
+    <div style="margin-bottom:5px;">사업자: 821-46-01200 | 통신판매업신고 완료</div>
+    <div>이메일: 3351ben@daum.net | FAX: 02-733-8816</div>
+
     <div class="addr-grid">
-        <div>[KR] 서울시 종로구 우정국로 39, 401호</div>
-        <div>[EN] #401, 39, Ujeongguk-ro, Seoul</div>
-        <div>[CN] 首尔特别市 钟路区 401호</div>
-        <div>[JP] ソウル特別市 鍾路区 401号</div>
-        <div>[VN] Quận Jongno, Seoul, 401</div>
-        <div>[TH] เขตจงโน โซล 401</div>
+        <div class="addr-item"><span class="lang-tag">KR</span>서울시 종로구 우정국로 39, 401호</div>
+        <div class="addr-item"><span class="lang-tag">EN</span>#401, 39, Ujeongguk-ro, Jongno-gu, Seoul</div>
+        <div class="addr-item"><span class="lang-tag">CN</span>首尔特别市 钟路区 牛亭局路 39, 401号</div>
+        <div class="addr-item"><span class="lang-tag">JP</span>ソウル特別市 鍾路区 牛亭局路 39, 401号</div>
+        <div class="addr-item"><span class="lang-tag">VN</span>Phòng 401, 39, Ujeongguk-ro, Jongno-gu, Seoul</div>
+        <div class="addr-item"><span class="lang-tag">TH</span>ห้อง 401, 39, Ujeongguk-ro, จงโน, โซล</div>
     </div>
+    <p style="margin-top:25px; opacity:0.3; font-size:0.8em;">&copy; 2026 GONGGAM Office. All Rights Reserved.</p>
 </footer>
 
 <script>
