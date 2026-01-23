@@ -5,57 +5,43 @@
     <style>
         :root { --primary: #1a3026; --accent: #d4af37; --bg: #f8f9fa; }
         body { font-family: 'Apple SD Gothic Neo', sans-serif; margin: 0; padding: 0; color: #333; background-color: var(--bg); word-break: keep-all; }
-        
         header { background: var(--primary); color: #fff; padding: 45px 20px; text-align: center; border-bottom: 4px solid var(--accent); }
         .header-content { display: flex; align-items: center; justify-content: center; gap: 15px; }
         .header-symbol { width: 45px; height: 45px; border: 2px solid var(--accent); display: flex; align-items: center; justify-content: center; font-size: 18px; color: var(--accent); font-weight: bold; box-shadow: 3px 3px 0px var(--accent); }
         header h1 { margin: 0; font-size: 1.9em; letter-spacing: 2px; }
-
         nav { background: #fff; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 5px rgba(0,0,0,0.1); display: flex; justify-content: center; gap: 35px; padding: 15px 0; font-size: 0.95em; }
         nav a { text-decoration: none; color: #333; font-weight: bold; }
-
         .container { max-width: 1000px; margin: 0 auto; padding: 30px 20px; }
         .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin-bottom: 30px; }
         .card { background: #fff; padding: 22px; border: 1px solid #ddd; border-top: 3px solid var(--primary); }
         .card h3 { margin-top: 0; font-size: 1.1em; color: var(--primary); border-bottom: 1px solid #eee; padding-bottom: 8px; }
         .card p { font-size: 0.88em; line-height: 1.6; color: #555; }
-
         .contract-box { background: #fff; border: 1px solid #eee; padding: 25px; margin-bottom: 30px; font-size: 0.88em; line-height: 1.7; }
-        
         .bottom-section { display: grid; grid-template-columns: 1fr 1.2fr; gap: 20px; align-items: stretch; }
         .business-card-panel { background: #fff; border: 1px solid #ccc; padding: 25px; position: relative; }
         .card-line { position: absolute; top: 0; left: 0; width: 6px; height: 100%; background: var(--primary); }
         .promo-text { font-size: 0.9em; color: var(--primary); font-weight: bold; margin-bottom: 15px; border-bottom: 1px solid var(--accent); padding-bottom: 10px; }
-
         .form-panel { background: #fff; border: 1px solid var(--primary); padding: 25px; }
         .form-group { margin-bottom: 10px; text-align: left; }
         .form-group label { display: block; font-size: 0.8em; font-weight: bold; margin-bottom: 4px; }
         .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 2px; font-size: 0.85em; box-sizing: border-box; }
         .submit-btn { background: var(--primary); color: var(--accent); width: 100%; padding: 12px; border: none; font-weight: bold; cursor: pointer; margin-top: 5px; }
         .mail-notice { font-size: 0.75em; color: #888; margin-top: 10px; text-align: center; line-height: 1.4; }
-
         footer { background: #111; color: #999; padding: 50px 20px; text-align: center; font-size: 0.85em; }
         .footer-logo { font-size: 2.2em; color: #fff; font-weight: 800; margin-bottom: 15px; display: block; }
-        
         .addr-grid { margin-top: 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px 25px; border-top: 1px solid #333; padding-top: 25px; text-align: left; max-width: 850px; margin-left: auto; margin-right: auto; }
         .addr-item { line-height: 1.5; color: #888; font-size: 0.9em; }
         .lang-tag { color: var(--accent); font-weight: bold; font-size: 0.8em; margin-right: 8px; }
-
         @media (max-width: 768px) { .bottom-section { grid-template-columns: 1fr; } .addr-grid { grid-template-columns: 1fr; } }
     </style>
 </head><body>
 
 <header>
-    <div class="header-content">
-        <div class="header-symbol">▣</div>
-        <h1>공감탐정행정사사무소</h1>
-    </div>
+    <div class="header-content"><div class="header-symbol">▣</div><h1>공감탐정행정사사무소</h1></div>
 </header>
 
 <nav>
-    <a href="#service">업무안내</a>
-    <a href="#contract">수임규정</a>
-    <a href="#bottom">상담/접수</a>
+    <a href="#service">업무안내</a><a href="#contract">수임규정</a><a href="#bottom">상담/접수</a>
 </nav>
 
 <div class="container">
@@ -83,12 +69,10 @@
             <div style="font-size:0.85em; line-height:1.8; color:#444;">
                 <strong>[전국 민원 등기 접수 안내]</strong><br>
                 신분증 원본, 도장, 위임장을 동봉하여 등기우편으로 보내주시면 전국 어디든 비대면으로 신속히 처리해 드립니다.<br><br>
-                <strong>송부처 주소:</strong><br>
-                서울특별시 종로구 우정국로 39 우정에쉐르 401호<br><br>
+                <strong>송부처 주소:</strong><br>서울특별시 종로구 우정국로 39 우정에쉐르 401호<br><br>
                 <span style="color:#b22222; font-weight:bold;">※ 개인정보보호 및 비밀유지를 엄격히 준수합니다.</span>
             </div>
         </div>
-
         <div class="form-panel">
             <h3 style="margin-top:0; font-size:1.1em; color:var(--primary); margin-bottom:15px;">종합 상담 신청</h3>
             <form onsubmit="sendEmail(event)">
@@ -106,9 +90,7 @@
                 </div>
                 <div class="form-group"><label>문의 내용</label><textarea id="message" rows="3"></textarea></div>
                 <button type="submit" class="submit-btn">상담 신청서 메일 보내기</button>
-                <div class="mail-notice">
-                    버튼이 작동하지 않을 경우 <strong>3351ben@daum.net</strong>으로<br>직접 메일 주시면 확인 후 연락드리겠습니다.
-                </div>
+                <div class="mail-notice">버튼이 작동하지 않을 경우 <strong>3351ben@daum.net</strong>으로<br>직접 메일 주시면 확인 후 연락드리겠습니다.</div>
             </form>
         </div>
     </div>
@@ -122,11 +104,11 @@
     <div>이메일: 3351ben@daum.net | FAX: 02-733-8816</div>
     <div class="addr-grid">
         <div class="addr-item"><span class="lang-tag">KR</span>서울시 종로구 우정국로 39, 401호</div>
-        <div class="addr-item"><span class="lang-tag">EN</span>#401, 39, Ujeongguk-ro, Jongno-gu, Seoul</div>
-        <div class="addr-item"><span class="lang-tag">CN</span>首尔特别市 钟路区 牛亭局路 39, 401호</div>
-        <div class="addr-item"><span class="lang-tag">JP</span>ソウル特別市 鍾路区 牛亭局路 39, 401号</div>
-        <div class="addr-item"><span class="lang-tag">VN</span>Phòng 401, 39, Ujeongguk-ro, Jongno-gu, Seoul</div>
-        <div class="addr-item"><span class="lang-tag">TH</span>ห้อง 401, 39, Ujeongguk-ro, จงโน, โซล</div>
+        <div class="addr-item"><span class="lang-tag">EN</span>#401, 39, Ujeongguk-ro, Seoul</div>
+        <div class="addr-item"><span class="lang-tag">CN</span>首尔特别市 钟路区 牛亭局路 39</div>
+        <div class="addr-item"><span class="lang-tag">JP</span>ソウル特別市 鍾路区 牛亭局路 39</div>
+        <div class="addr-item"><span class="lang-tag">VN</span>Phòng 401, 39, Ujeongguk-ro, Seoul</div>
+        <div class="addr-item"><span class="lang-tag">TH</span>ห้อง 401, 39, Ujeongguk-ro, โซล</div>
     </div>
 </footer>
 
@@ -138,6 +120,3 @@
         const c = document.getElementById('category').value;
         const m = document.getElementById('message').value;
         window.location.href = `mailto:3351ben@daum.net?subject=[상담문의] ${n}님&body=성함: ${n}%0D%0A연락처: ${t}%0D%0A구분: ${c}%0D%0A내용: ${m}`;
-    }
-</script>
-</body></html>
