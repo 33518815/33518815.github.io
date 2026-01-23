@@ -10,81 +10,58 @@
             --white: #ffffff;
         }
         body { font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif; margin: 0; padding: 0; color: #333; background-color: var(--bg); word-break: keep-all; }
-        
-        /* 상단 글로벌 바 */
         .top-bar { background: #0e1a14; color: #888; font-size: 11px; padding: 15px 0; text-align: center; line-height: 1.7; border-bottom: 1px solid #1a2520; }
         .emergency { color: var(--accent); font-weight: bold; font-size: 13px; margin-top: 5px; display: block; }
-
-        /* 헤더 섹션 */
         header { background: var(--primary); color: var(--white); padding: 70px 20px; text-align: center; border-bottom: 5px solid var(--accent); }
         .header-content { display: flex; align-items: center; justify-content: center; gap: 20px; }
-        .header-symbol { 
-            width: 50px; height: 50px; border: 2px solid var(--accent); 
-            display: flex; align-items: center; justify-content: center;
-            font-size: 20px; color: var(--accent); font-weight: bold;
-            box-shadow: 4px 4px 0px var(--accent);
-        }
+        .header-symbol { width: 50px; height: 50px; border: 2px solid var(--accent); display: flex; align-items: center; justify-content: center; font-size: 20px; color: var(--accent); font-weight: bold; box-shadow: 4px 4px 0px var(--accent); }
         .header-text { text-align: left; }
         header h1 { margin: 0; font-size: 2.5em; letter-spacing: 4px; font-weight: 700; }
         header .eng-title { font-size: 0.85em; color: var(--accent); margin-top: 8px; letter-spacing: 1px; font-weight: 600; font-family: Arial, sans-serif; }
-
         nav { background: #fff; position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 10px rgba(0,0,0,0.1); display: flex; justify-content: center; gap: 40px; padding: 20px 0; }
         nav a { text-decoration: none; color: #333; font-size: 1em; font-weight: bold; }
-        
-        /* 추가: 탐정 홈페이지 연결 링크 강조 스타일 */
-        .nav-link-sub { color: #b22222 !important; border-bottom: 2px solid #b22222; }
-
         .container { max-width: 1150px; margin: 0 auto; padding: 60px 20px; }
         section { margin-bottom: 90px; scroll-margin-top: 120px; }
         h2 { font-size: 1.9em; text-align: center; margin-bottom: 45px; color: var(--primary); }
         h2::after { content: ''; display: block; width: 50px; height: 3px; background: var(--accent); margin: 15px auto; }
-
-        /* 업무 영역 카드 그리드 */
         .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 25px; }
         .card { background: var(--white); padding: 40px; border: 1px solid #ddd; border-top: 4px solid var(--primary); transition: 0.4s; }
-        .card:hover { border-color: var(--accent); transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
         .card h3 { margin: 0 0 15px 0; color: var(--primary); font-size: 1.3em; }
         .card p { font-size: 0.95em; color: #555; line-height: 1.8; }
         .keyword-box { font-size: 0.82em; color: var(--primary); background: #f0f2f0; padding: 12px; margin-top: 15px; border-radius: 4px; border-left: 3px solid var(--accent); }
-
-        /* 상담 창구 */
         .contact-box { background: var(--primary); color: #fff; padding: 60px; border-radius: 4px; display: grid; grid-template-columns: 1fr 1.3fr; gap: 50px; align-items: center; }
-        .contact-text h3 { font-size: 2.1em; color: var(--accent); margin-bottom: 25px; }
-        .contact-text p { font-size: 1.15em; line-height: 2; opacity: 0.9; }
         .form-area { background: #fff; padding: 35px; border-radius: 4px; }
         input, select, textarea { width: 100%; padding: 14px; margin: 12px 0; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box; }
         .btn { background: var(--primary); color: #fff; border: 1px solid var(--accent); padding: 18px; width: 100%; cursor: pointer; font-weight: bold; font-size: 1.1em; }
-
-        /* 운영 정책 */
         .policy-box { background: #ecefe2; padding: 45px; border-radius: 4px; font-size: 0.95em; line-height: 2.2; color: #2a3d33; }
-        .download-btn { display: inline-block; margin-top: 20px; padding: 10px 20px; background: var(--primary); color: white; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 0.9em; border: 1px solid var(--accent); }
-
-        /* 하단 정보 바 */
         .footer-info { background: #111; color: #999; padding: 60px 20px; text-align: center; border-top: 4px solid var(--accent); }
-        .info-line { font-size: 0.95em; line-height: 2.4; }
-        .web-link { color: var(--accent); text-decoration: none; font-weight: bold; display: block; margin-top: 20px; }
         footer { text-align: center; padding: 30px; font-size: 0.85em; color: #777; background: #fff; border-top: 1px solid #eee; }
-    </style></head><body><div class="top-bar">
-    EN: Suite 401, Ujeong Esher, 39, Ujeongguk-ro, Jongno-gu, Seoul | JP: ソウル特別市鍾路区牛鼎局路39 ウジョン에쉘 401号<br>
-    CN: 首尔特别市邮政局路39号 邮政埃舍尔 401室 | VN: Phòng 401, Ujeong Esher, 39, Ujeongguk-ro, Jongno-gu, Seoul<br>
-    TH: ห้อง 401, อาคาร Ujeong Esher, 39, Ujeongguk-ro, จง노-กู, โซล
-    <span class="emergency">📞 24H EMERGENCY LINE: 010-8128-1079</span></div><header>
+    </style></head><body>
+<div class="top-bar">
+    EN: Suite 401, Ujeong Esher, 39, Ujeongguk-ro, Jongno-gu, Seoul | 📞 EMERGENCY: 010-8128-1079
+</div>
+<header>
     <div class="header-content">
-        <div class="header-symbol">▣</div> <div class="header-text">
+        <div class="header-symbol">▣</div>
+        <div class="header-text">
             <h1>공감탐정행정사사무소</h1>
-            <div class="eng-title">GONGGAM Private Investigation & Administrative Office</div> </div>
-    </div></header><nav>
+            <div class="eng-title">GONGGAM Private Investigation & Administrative Office</div>
+        </div>
+    </div>
+</header>
+<nav>
     <a href="#about">사무소 소개</a>
     <a href="#service">전담 업무</a>
+    <a href="#penalty">위약금 심사</a>
     <a href="#contact">상담 안내</a>
-    <a href="#policy">운영 정책</a>
-    <a href="https://33518815.github.io/empathy-office/" class="nav-link-sub">🔍 탐정 서비스 보기</a> </nav><div class="container">
+</nav>
+<div class="container">
     <section id="about">
         <h2>사무소 소개</h2>
         <p style="text-align: center; max-width: 900px; margin: 0 auto; line-height: 2.5; font-size: 1.15em; color: #333;">
-            진실을 찾는 예리한 통찰력과 행정의 전문성을 결합하여 의뢰인의 권익을 보호합니다.<br> 
-            본 사무소는 <strong>중앙 및 전국 행정심판위원회</strong> 대응 업무를 수행하며,<br> 
-            정밀한 사실 분석과 전략적 서면 작성을 통해 최상의 결과를 이끌어내고 있습니다.
+            공감탐정행정사는 <strong>공정거래위원회 표준약관 및 관련 법률</strong>을 준수합니다.<br> 
+            불공정한 계약으로 인한 의뢰인의 피해를 방지하고, 법리적 근거를 바탕으로 <br>
+            투명하고 정직한 행정 대행 서비스를 제공할 것을 약속드립니다.
         </p>
     </section>
 
@@ -92,46 +69,36 @@
         <h2>전담 업무 영역</h2>
         <div class="service-grid">
             <div class="card">
+                <h3>위약금 및 계약 심사</h3>
+                <p>각종 계약서상의 부당한 위약금 조항을 심사하고 공정거래 기준 준수 여부를 검토합니다.</p>
+                <div class="keyword-box">공정거래위원회 표준약관 대조, 불공정 약관 분석, 위약금 감액 상담</div>
+            </div>
+            <div class="card">
                 <h3>행정심판 및 권익구제</h3>
                 <p>영업정지, 면허구제 등 부당한 행정처분에 대한 체계적인 구제 절차를 수행합니다.</p>
-                <div class="keyword-box">
-                    전국 행정심판위원회 대응, 이의신청, 보충서면 제출, 처분사전통지서 검토 및 분석
-                </div>
+                <div class="keyword-box">전국 행정심판위원회 대응, 이의신청, 보충서면 제출, 처분사전통지서 분석</div>
             </div>
             <div class="card">
                 <h3>민원행정 및 인허가</h3>
                 <p>법인 설립, 각종 인허가 서류 기획부터 행정기관 접수 전 과정을 대행합니다.</p>
-                <div class="keyword-box">
-                    의견제출서, 의견서 작성, 공장등록, 권리금계약서 작성 및 검토
-                </div>
+                <div class="keyword-box">의견제출서, 의견서 작성, 공장등록, 권리금계약서 작성 및 검토</div>
             </div>
             <div class="card">
-                <h3>전문화된 서류 작성</h3>
-                <p>법리적 근거를 바탕으로 의뢰인의 주장을 논리적으로 대변하는 서면을 지원합니다.</p>
-                <div class="keyword-box">
-                    내용증명, 진정서, 탄원서, 질의회신, 각종 행정 계약서 작성
-                </div>
+                <h3>사실조사 및 증거수집</h3>
+                <p>PIA 기반의 과학적 사실 확인을 통해 행정 및 법률 절차에 필요한 증거를 확보합니다.</p>
+                <div class="keyword-box">증거 수집, 소재 파악, 도감청 탐색, 행정사실확인서 발급</div>
             </div>
-            <div class="card">
-                <h3>전국 민원행정대행</h3>
-                <p>전국 어디서나 등기 우편을 통해 신속하게 민원을 처리하는 접수 대행 시스템을 운영합니다.</p>
-                <div class="keyword-box">
-                    준비사항: 신분증(운전면허증/여권), 도장, 위임장
-                </div>
-            </div>
-            <div class="card">
-                <h3>사실조사 및 탐정업무</h3>
-                <p>PIA 기반의 과학적 사실 확인, 증거 수집 및 디지털 보안 솔루션을 제공합니다.</p>
-                <div class="keyword-box">
-                    증거 수집, 소재 파악, 도감청 탐색, 사실확인서 발급
-                </div>
-            </div>
-            <div class="card">
-                <h3>전문 자격사 협력 시스템</h3>
-                <p>변호사, 법무사 등 전문 인적 네트워크를 통해 종합적인 해결책을 제시합니다.</p>
-                <div class="keyword-box">
-                    법률 자문 연계, 복합 민원 처리, 기업 법무 행정 지원
-                </div>
+        </div>
+    </section>
+
+    <section id="penalty">
+        <div class="policy-box">
+            <h3 style="color:var(--primary); text-align:center;">[공정거래 및 위약금 준수 선언]</h3>
+            <p style="font-weight:bold; color:#b22222; text-align:center;">"본 사무소는 소비자 보호를 위해 공정거래위원회의 위약금 가이드라인을 엄격히 준수합니다."</p>
+            <div style="margin-top:20px;">
+                <strong>1. 계약의 투명성 :</strong> 모든 업무 수임 시 위약금 관련 조항을 상세히 설명하며, 과도한 위약금 청구를 금지합니다.<br>
+                <strong>2. 위약금 심사 제도 :</strong> 의뢰인이 체결한 기존 계약서의 위약금이 공정거래법상 적정한지 전문적으로 심사하여 권익을 보호합니다.<br>
+                <strong>3. 표준약관 적용 :</strong> 공정위 표준약관을 기준으로 계약 내용을 구성하여 불측의 손해를 방지합니다.
             </div>
         </div>
     </section>
@@ -139,59 +106,25 @@
     <section id="contact">
         <div class="contact-box">
             <div class="contact-text">
-                <h3>상담 및 접수 안내</h3>
-                <p>전국 민원 및 행정심판 상담이 가능합니다.<br>
-                <strong>TEL. 010-8128-1079</strong><br>
-                <strong>FAX. 02-733-8816</strong><br>
+                <h3>상담 및 접수</h3>
+                <p><strong>TEL. 010-8128-1079</strong><br>
+                FAX. 02-733-8816<br>
                 이메일: 3351ben@daum.net</p>
-                <p style="font-size: 0.9em; margin-top: 35px; color: var(--accent);">* 상담 및 수임 관련 개인정보는 철저히 보안 유지됩니다.</p>
             </div>
             <div class="form-area">
                 <form action="mailto:3351ben@daum.net" method="post" enctype="text/plain">
                     <input type="text" name="name" placeholder="의뢰인 성함" required>
                     <input type="tel" name="phone" placeholder="연락처" required>
-                    <select name="type">
-                        <option value="행정심판">행정심판/이의신청/의견제출</option>
-                        <option value="민원서류">내용증명/탄원서/진정서</option>
-                        <option value="사실조사">탐정 및 증거수집조사</option>
-                    </select>
-                    <textarea name="message" rows="4" placeholder="문의 사항을 기재해 주십시오."></textarea>
-                    <button type="submit" class="btn">상담 및 신청</button>
+                    <textarea name="message" rows="4" placeholder="위약금 심사 또는 상담 내용을 적어주세요."></textarea>
+                    <button type="submit" class="btn">상담 신청하기</button>
                 </form>
             </div>
         </div>
     </section>
-
-    <section id="policy">
-        <div class="policy-box">
-            <h3 style="color:var(--primary);">[운영 및 업무 수임 정책]</h3>
-            <div class="policy-item">
-                <strong>1. 비용 산정 :</strong> 모든 상담료 및 수임료는 사안의 난이도와 투입되는 행정 실무량을 고려하여 상호 협의 하에 산정됩니다.
-            </div>
-            <div class="policy-item">
-                <strong>2. 환불 규정 :</strong> 실질적인 실무(자료 검토, 보충서면/의견서 작성 등) 개시 후 해지 시에는 수임료의 30%를 착수 실비로 공제합니다.
-            </div>
-            <div class="policy-item">
-                <strong>3. 실제 계약 우선 :</strong> 상세 효력은 의뢰인과 별도로 체결하는 '실제 업무 수임 계약서' 조항을 최우선으로 적용합니다.
-            </div>
-            <a href="#" class="download-btn" onclick="downloadContract()">표준 수임 계약서 양식 확인</a>
-        </div>
-    </section></div><div class="footer-info">
-    <strong>공감탐정행정사사무소 (GONGGAM Private Investigation & Administrative Office)</strong>
-    <div class="info-line">
-        📍 서울시 종로구 우정국로 39 우정에쉐르 401호 &nbsp; | &nbsp; 📞 010-8128-1079 &nbsp; | &nbsp; 📠 FAX. 02-733-8816<br>
-        📧 3351ben@daum.net &nbsp; | &nbsp; 행정사업무신고 : 제14101088750호 &nbsp; | &nbsp; 사업자등록 : 821-46-01200<br>
-        <a href="https://33518815.github.io/" class="web-link">https://33518815.github.io/</a>
-    </div></div><footer>&copy; 2026 GONGGAM Private Investigation & Administrative Office. All Rights Reserved.</footer><script>function downloadContract() {
-    var content = "업무 수임 계약서 (표준)\n\n" +
-                  "제1조 (목적) 본 계약은 공감탐정행정사사무소와 의뢰인 간의 수임 업무 범위를 정함을 목적으로 한다.\n" +
-                  "제2조 (보수) 상담료 및 수임료는 난이도에 따른 합의 금액으로 한다.\n" +
-                  "제3조 (환불) 보충서면 작성 등 실질 업무 개시 후 해지 시 수임료의 30%를 공제한다.\n" +
-                  "제4조 (효력) 본 계약은 실제 날인된 계약서의 조항을 최우선한다.\n\n" +
-                  "공감탐정행정사사무소 귀하";
-    var blob = new Blob([content], { type: "text/plain;charset=utf-8" });
-    var link = document.createElement("a");
-    link.href = URL.createObjectURL(blob);
-    link.download = "공감탐정행정사_수임계약서_양식.txt";
-    link.click();
-}</script></body></html>
+</div>
+<div class="footer-info">
+    <strong>공감탐정행정사사무소 (GONGGAM Private Investigation & Administrative Office)</strong><br>
+    📍 서울시 종로구 우정국로 39 우정에쉐르 401호 | 📞 010-8128-1079
+</div>
+<footer>&copy; 2026 GONGGAM Private Investigation & Administrative Office.</footer>
+</body></html>
