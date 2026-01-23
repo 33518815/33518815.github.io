@@ -10,29 +10,31 @@
         .header-symbol { width: 50px; height: 50px; border: 2px solid var(--accent); display: flex; align-items: center; justify-content: center; font-size: 20px; color: var(--accent); font-weight: bold; box-shadow: 4px 4px 0px var(--accent); }
         header h1 { margin: 0; font-size: 2.3em; letter-spacing: 2px; }
         
-        nav { background: #fff; position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 10px rgba(0,0,0,0.1); display: flex; justify-content: center; gap: 25px; padding: 18px 0; }
-        nav a { text-decoration: none; color: #333; font-size: 0.95em; font-weight: bold; }
+        nav { background: #fff; position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 10px rgba(0,0,0,0.1); display: flex; justify-content: center; gap: 40px; padding: 18px 0; }
+        nav a { text-decoration: none; color: #333; font-size: 1em; font-weight: bold; }
 
         .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
         .top-notice { background: var(--white); border: 1px solid var(--accent); padding: 15px; text-align: center; border-radius: 5px; margin-bottom: 30px; font-weight: bold; color: var(--primary); }
 
         .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
-        .card { background: var(--white); padding: 30px; border: 1px solid #ddd; border-top: 3px solid var(--primary); position: relative; }
+        .card { background: var(--white); padding: 30px; border: 1px solid #ddd; border-top: 3px solid var(--primary); }
         .card h3 { margin-top: 0; color: var(--primary); font-size: 1.2em; border-bottom: 1px solid #eee; padding-bottom: 10px; }
         .keyword-box { font-size: 0.85em; color: #666; background: #f9f9f9; padding: 10px; margin-top: 15px; border-radius: 3px; line-height: 1.6; }
 
-        /* 계약서 스타일 박스 */
-        .contract-section { background: #fff; border: 1px solid #ccc; padding: 30px; margin-top: 40px; box-shadow: inset 0 0 50px rgba(0,0,0,0.02); }
+        .contract-section { background: #fff; border: 1px solid #ccc; padding: 30px; margin-top: 40px; }
         .contract-title { text-align: center; font-weight: bold; font-size: 1.2em; text-decoration: underline; margin-bottom: 20px; }
         .contract-row { margin-bottom: 15px; font-size: 0.95em; line-height: 1.7; }
 
-        /* 문의 메일 섹션 */
-        .contact-form-box { background: #1a3026; color: #fff; padding: 40px; border-radius: 8px; margin-top: 40px; text-align: center; }
-        .mail-btn { display: inline-block; background: var(--accent); color: #1a3026; padding: 15px 40px; text-decoration: none; font-weight: bold; border-radius: 5px; margin-top: 20px; }
+        .contact-form-container { background: #fff; border: 2px solid var(--primary); padding: 40px; border-radius: 8px; margin-top: 40px; }
+        .form-group { margin-bottom: 20px; text-align: left; }
+        .form-group label { display: block; font-weight: bold; margin-bottom: 8px; color: var(--primary); }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box; font-family: inherit; }
+        .submit-btn { background: var(--primary); color: var(--accent); width: 100%; padding: 15px; border: none; border-radius: 4px; font-size: 1.1em; font-weight: bold; cursor: pointer; }
 
-        footer { background: #111; color: #888; padding: 50px 20px; text-align: center; font-size: 0.85em; }
-        .footer-phone { font-size: 2em; color: #fff; text-decoration: none; display: block; margin: 10px 0; font-weight: 900; }
-        .addr-grid { margin-top: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; border-top: 1px solid #333; padding-top: 20px; }
+        footer { background: #111; color: #888; padding: 60px 20px; text-align: center; }
+        .footer-logo { font-size: 2.8em; color: #fff; font-weight: 900; margin-bottom: 20px; display: block; }
+        .footer-phone { font-size: 2em; color: var(--accent); text-decoration: none; font-weight: 700; margin-bottom: 20px; display: block; }
+        .addr-grid { margin-top: 30px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; border-top: 1px solid #333; padding-top: 30px; font-size: 0.85em; }
     </style>
 </head><body>
 
@@ -49,75 +51,98 @@
 <nav>
     <a href="#service">업무안내</a>
     <a href="#contract">수임규정</a>
-    <a href="#contact">메일문의</a>
-    <a href="https://33518815.github.io/empathy-office/" style="color:#b22222;">🔍 탐정서비스</a>
+    <a href="#contact">상담신청</a>
 </nav>
 
 <div class="container">
     <div class="top-notice">
-        📢 24시간 긴급상담 가능 | 근거리 방문 출장상담 지원 | 전국 민원행정 대행
+        🏛️ 권리관계 및 사실관계 증명을 위한 행정 전문가의 체계적인 조력을 지원합니다.
     </div>
 
     <section id="service" class="service-grid">
         <div class="card">
-            <h3>⚖️ 행정심판 및 권익구제</h3>
-            <p>영업정지, 면허취소 등 부당한 행정처분에 대해 각 분야 행정사 전문가들과 협업하여 최선의 구제 전략을 제시합니다.</p>
-            <div class="keyword-box">이의신청, 보충서면, 전국 행정심판위원회 대응</div>
+            <h3>⚖️ 행정심판 및 의견제출</h3>
+            <p>처분사전통지서에 대한 의견제출서 작성부터 보충서면 제출까지, 각 분야 행정사 전문가들이 협업하여 최선의 구제를 도모합니다.</p>
+            <div class="keyword-box">영업정지, 면허취소, 이의신청, 행정심판위원회 대응</div>
         </div>
         <div class="card">
-            <h3>🏢 기업 및 민원행정 대행</h3>
-            <p>법인설립, 공장등록, 인허가 등 복잡한 서류 기획부터 접수까지 전 과정을 대행합니다. 24시간 긴급 대응 시스템을 운영합니다.</p>
-            <div class="keyword-box">인허가 대행, 의견제출서, 권리금계약서 검토</div>
+            <h3>🏢 법인설립 및 인허가 대행</h3>
+            <p>법인설립, 공장등록 등 복잡한 인허가 서류의 기획부터 행정기관 최종 접수까지 전 과정을 전문적으로 수행합니다.</p>
+            <div class="keyword-box">인허가 대행, 권리금계약서 검토, 각종 서류 대행</div>
         </div>
         <div class="card">
-            <h3>📝 전문 서류 작성 지원</h3>
-            <p>내용증명, 진정서, 탄원서 등 행정적 근거를 바탕으로 의뢰인의 주장을 논리적으로 대변하는 서면을 작성합니다.</p>
-            <div class="keyword-box">철저한 비밀유지, 사실관계 정밀 분석 지원</div>
+            <h3>📝 행정 서면 및 사실조사</h3>
+            <p>내용증명, 진정서, 탄원서 등 논리적 서면 지원과 더불어 PIA 자격을 통한 사실관계 확인 업무를 수행합니다.</p>
+            <div class="keyword-box">철저한 비밀유지, 사실관계 존재 확인, 증거 수집 지원</div>
         </div>
         <div class="card">
-            <h3>🔍 사실조사 및 탐정업무</h3>
-            <p>PIA 자격 전문가의 가정사·기업조사, 증거 수집 및 도감청 탐색 보안 솔루션을 제공합니다. (방문 출장 상담 가능)</p>
-            <div class="keyword-box">소재 파악, 증거 수집, 도감청 탐색사 자격 보유</div>
+            <h3>🔍 가중처벌 방지 및 보안</h3>
+            <p>가정사·기업조사 및 도감청 탐색 등 프라이버시 보호 솔루션을 제공하며, 권리관계 보호를 위한 조사를 지원합니다.</p>
+            <div class="keyword-box">소재 파악, 증거 확보, 도감청 탐색사 자격 보유</div>
         </div>
         <div class="card">
             <h3>📬 전국 민원 등기 접수</h3>
-            <p>신분증 원본(운전면허증/여권), 도장, 위임장을 동봉하여 등기우편으로 보내주시면 전국 어디든 비대면 대행이 가능합니다.</p>
+            <p>신분증 원본(운전면허증/여권), 도장, 위임장을 등기우편으로 보내주시면 전국 어디든 비대면으로 신속히 대행합니다.</p>
             <div class="keyword-box">서울 종로구 우정국로 39 우정에쉐르 401호</div>
         </div>
         <div class="card">
-            <h3>✈️ 출입국 비자 및 인증</h3>
-            <p>국제결혼 비자(F6), 대사관 인증 및 공증 대행, 영주권(F5), 재외동포(F4), 인도적 체류(G1) 등 출입국 업무를 전문 지원합니다.</p>
-            <div class="keyword-box">외국인 등록, 비자 변경, 대사관 영사 확인 대행</div>
+            <h3>✈️ 출입국 비자 및 공증</h3>
+            <p>국제결혼(F6), 영주권(F5), 재외동포(F4), 인도적체류(G1) 등 출입국 비자 업무와 대사관 인증/공증을 대행합니다.</p>
+            <div class="keyword-box">비자 변경, 대사관 영사 확인, 외국인 등록 지원</div>
         </div>
     </section>
 
     <section id="contract" class="contract-section">
-        <div class="contract-title">업무수임 계약서 및 환불 규정 (일부)</div>
+        <div class="contract-title">업무수임 계약 및 환불 규정 안내</div>
         <div class="contract-row">
-            <strong>제0조 (수임료 및 상담비)</strong> 본 사무소의 모든 상담 및 업무 수행은 유료를 원칙으로 하며, 심층 상담 시 별도의 상담비가 발생할 수 있습니다. 
+            <strong>[업무 수행 및 환불 안내]</strong><br>
+            • 본 사무소는 성실한 업무 수행을 위해 유료 수임을 원칙으로 하며, 진행 과정에서 발생한 상담료 등은 수임료 정산 시 합리적으로 반영될 수 있습니다.<br>
+            • 의뢰인의 사정으로 인한 계약 해지 시 환불은 공정거래위원회 표준약관을 준수합니다.<br>
+            &nbsp;&nbsp;- 실무 착수 전 해지 시: 전액 환불 (단, 이미 수행된 상담 및 실비 등은 공제될 수 있음)<br>
+            &nbsp;&nbsp;- 실무 착수 후 해지 시: 진행도에 따라 수임료의 30%를 실비로 공제합니다.
         </div>
-        <div class="contract-row">
-            <strong>제0조 (환불 및 위약금 규정)</strong> 의뢰인의 사정으로 계약 해지 시 환불은 공정거래위원회 표준약관을 준수합니다.<br>
-            1. 실무 착수 전 해지 시: 수임료 전액 환불<br>
-            2. 실무 착수 후 해지 시: 업무 진행도에 따른 수임료의 30%를 실비로 공제합니다.
-        </div>
-        <div class="contract-row" style="color:#666; font-size:0.85em;">
-            * 본 규정은 표준 예시이며, 실제 업무의 난이도 및 개별 특약 사항에 따라 계약서 내용은 달라질 수 있습니다. 모든 업무는 개인정보보호법 및 비밀유지 의무를 엄격히 준수합니다.
+        <div class="contract-row" style="color:#666; font-size:0.85em; border-top: 1px solid #eee; padding-top:10px;">
+            * 모든 상담 내용은 비밀엄수를 원칙으로 하며 개인정보보호법에 따라 안전하게 관리됩니다.
         </div>
     </section>
 
-    <section id="contact" class="contact-form-box">
-        <h2>종합 상담 문의</h2>
-        <p>행정심판, 탐정업무, 비자 관련 등 문의 내용을 메일로 보내주세요.</p>
-        <p style="font-size:0.9em; color:#ccc;">(상담 영역을 기재해주시면 담당 전문가가 확인 후 연락드립니다)</p>
-        <a href="mailto:3351ben@daum.net?subject=[상담문의] 성함과 연락처를 기재해주세요&body=1. 상담영역(행정심판/탐정/비자/기타): %0D%0A2. 문의내용: " class="mail-btn">📧 이메일로 문의하기</a>
+    <section id="contact" class="contact-form-container">
+        <h2 style="text-align:center; color:var(--primary);">종합 상담 신청</h2>
+        <p style="text-align:center; margin-bottom:30px;">문의 내용을 입력하시면 담당 행정사가 확인 후 신속히 연락드립니다.</p>
+        
+        <form onsubmit="sendEmail(event)">
+            <div class="form-group">
+                <label>의뢰인 성함</label>
+                <input type="text" id="name" placeholder="성함을 입력하세요" required>
+            </div>
+            <div class="form-group">
+                <label>연락처</label>
+                <input type="tel" id="tel" placeholder="010-0000-0000" required>
+            </div>
+            <div class="form-group">
+                <label>상담 구분</label>
+                <select id="category" required>
+                    <option value="">영역을 선택해주세요</option>
+                    <option value="행정심판/의견제출">행정심판 · 의견제출 · 구제신청</option>
+                    <option value="탐정/사실조사">탐정업무 · 사실조사 · 증거수집</option>
+                    <option value="출입국/비자">출입국 · 비자 · 대사관 인증</option>
+                    <option value="기타 민원">기타 일반 행정 민원</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>상담 내용</label>
+                <textarea id="message" rows="5" placeholder="간략한 상담 내용을 적어주세요"></textarea>
+            </div>
+            <button type="submit" class="submit-btn">상담 신청서 메일 보내기</button>
+        </form>
     </section>
 </div>
 
 <footer>
-    <div style="font-weight:bold; color:#fff; font-size:1.1em;">공감탐정행정사사무소</div>
+    <span class="footer-logo">공감탐정행정사사무소</span>
     <a href="tel:01081281079" class="footer-phone">010-8128-1079</a>
-    <div>사업자번호: 821-46-01200 | 통신판매업신고 완료 | 카드결제 가능</div>
+    <div style="margin-bottom:10px;">사업자번호: 821-46-01200 | 통신판매업신고 완료</div>
+    <div>이메일: 3351ben@daum.net | FAX: 02-733-8816</div>
     
     <div class="addr-grid">
         <div>[KR] 서울시 종로구 우정국로 39, 401호</div>
@@ -127,7 +152,19 @@
         <div>[VN] Quận Jongno, Seoul, 401</div>
         <div>[TH] เขตจงโน โซล 401</div>
     </div>
-    <p style="margin-top:30px; opacity:0.5;">&copy; 2026 GONGGAM Office. All Rights Reserved.</p>
 </footer>
+
+<script>
+    function sendEmail(e) {
+        e.preventDefault();
+        const name = document.getElementById('name').value;
+        const tel = document.getElementById('tel').value;
+        const cat = document.getElementById('category').value;
+        const msg = document.getElementById('message').value;
+        
+        const mailtoLink = `mailto:3351ben@daum.net?subject=[상담신청] ${name}님 (${cat})&body=성함: ${name}%0D%0A연락처: ${tel}%0D%0A상담구분: ${cat}%0D%0A상세내용: ${msg}`;
+        window.location.href = mailtoLink;
+    }
+</script>
 
 </body></html>
