@@ -3,39 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>공감탐정행정사사무소 - 메인</title>
+    <title>공감탐정행정사사무소 | 메인</title>
     <style>
-        :root { --primary: #1a3026; --accent: #d4af37; }
-        body { margin:0; font-family: 'Apple SD Gothic Neo', sans-serif; background: #f4f4f4; color: #333; line-height: 1.6; }
-        nav { background: var(--primary); padding: 15px; text-align: center; border-bottom: 2px solid var(--accent); position: sticky; top: 0; z-index: 1000; }
-        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
-        .hero { background: var(--primary); color: white; padding: 100px 20px; text-align: center; border-bottom: 10px solid var(--accent); }
-        .hero h1 { font-size: 3em; margin-bottom: 10px; color: var(--accent); }
-        .tag-row { margin: 20px 0; }
-        .tag { background: rgba(212, 175, 55, 0.2); color: var(--accent); border: 1px solid var(--accent); padding: 8px 20px; border-radius: 50px; margin: 5px; display: inline-block; font-weight: bold; }
-        .intro { max-width: 900px; margin: 50px auto; padding: 40px; background: white; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; }
-        .call-btn { display: inline-block; background: var(--accent); color: var(--primary) !important; padding: 25px 50px; border-radius: 10px; text-decoration: none; font-size: 1.5em; font-weight: bold; margin-top: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+        :root { --primary-navy: #0d1b2a; --real-gold: #c5a059; --accent-red: #b22222; --bg-light: #fdfdfd; }
+        body { font-family: 'Noto Sans KR', sans-serif; margin: 0; padding: 0; background-color: var(--bg-light); color: #333; line-height: 1.6; word-break: keep-all; }
+        header { background: linear-gradient(135deg, var(--primary-navy) 0%, #1b263b 100%); color: #fff; padding: 60px 20px; text-align: center; border-bottom: 5px solid var(--real-gold); }
+        .office-title { font-weight: 900; font-size: 2.8rem; margin: 0; letter-spacing: -1px; }
+        .container { max-width: 1100px; margin: auto; padding: 40px 20px; }
+        
+        /* 서비스 그리드 디자인 */
+        .service-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-bottom: 40px; }
+        @media (max-width: 768px) { .service-grid { grid-template-columns: 1fr; } }
+        .service-card { background: #fff; border: 1px solid #e5e5e5; border-radius: 10px; padding: 25px; font-weight: 800; color: var(--primary-navy); text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+
+        /* 하단 고정 메뉴바 (연결의 핵심) */
+        .footer-nav { display: flex; justify-content: center; gap: 10px; padding: 25px; background: #111; position: sticky; bottom: 0; z-index: 1000; }
+        .footer-nav a { padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: 700; color: #fff; font-size: 1rem; background: #333; transition: 0.3s; border: 1px solid #444; }
+        .link-active { background: var(--real-gold) !important; color: #000 !important; border: 1px solid var(--real-gold) !important; }
+
+        /* 전화 연결 버튼 */
+        .call-fixed { position: fixed; bottom: 90px; right: 20px; background: var(--accent-red); color: white; padding: 15px 25px; border-radius: 30px; text-decoration: none; font-weight: 900; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 999; }
     </style>
 </head>
 <body>
-    <nav>
-        <a href="https://33518815.github.io/main.html" style="color: var(--accent);">🏠 공감탐정행정사사무소</a>
-        <a href="https://33518815.github.io/">⚖️ 행정심판 안내</a>
-        <a href="https://33518815.github.io/visa.html">📄 비자 안내</a>
-    </nav>
-    <div class="hero">
-        <h1>공감탐정행정사사무소</h1>
-        <p style="font-size: 1.2em;">고객의 마음을 공감하며, 탐정의 예리함으로 숨겨진 권리를 찾습니다.</p>
-        <div class="tag-row">
-            <span class="tag">🕒 전국 24시간 긴급상담</span>
-            <span class="tag">💳 카드 결제 지원</span>
-            <span class="tag">🤝 합리적 비용 협의 가능</span>
-        </div>
+
+<header>
+    <h1 class="office-title">공감탐정행정사사무소</h1>
+    <p style="color:var(--real-gold); font-size:1.2rem; margin-top:10px;">사실관계 확인 및 행정 권리구제 전문</p>
+</header>
+
+<div class="container">
+    <div style="background: #fdf8ef; border: 1px solid #c5a059; padding: 20px; border-radius: 10px; margin-bottom: 30px; text-align: center;">
+        <strong>안내:</strong> 본 사무소는 탐정의 사실조사와 행정사의 법률 지원을 결합하여 최적의 솔루션을 제공합니다.
     </div>
-    <div class="intro">
-        <h2>당신의 든든한 법률 파트너</h2>
-        <p>공감탐정행정사사무소는 행정심판, 비자 출입국 업무를 전문으로 하며<br>의뢰인의 복잡한 문제를 신속하고 정확하게 해결해 드립니다.</p>
-        <a href="tel:010-8128-1079" class="call-btn">📞 지금 바로 상담하기: 010-8128-1079</a>
+
+    <div class="service-grid">
+        <div class="service-card">🕵️‍♂️ 탐정업무 및 사실조사</div>
+        <div class="service-card">⚖️ 영업정지 및 행정처분 구제</div>
+        <div class="service-card">📄 행정심판 청구 서면 작성</div>
+        <div class="service-card">🏫 학교폭력 사안 사실조사</div>
+        <div class="service-card">🔍 채무자 주소 및 소재지 확인</div>
+        <div class="service-card">💻 디지털 보안 및 도감청 탐색</div>
+        <div class="service-card">🤝 상가 권리금 계약 사실확인</div>
+        <div class="service-card">🏗️ 토지보상 및 수용 사실조사</div>
     </div>
+</div>
+
+<div class="footer-nav">
+    <a href="https://33518815.github.io/main.html" class="link-active">🏠 사무소 홈</a>
+    <a href="https://33518815.github.io/empathy-office/index.html">⚖️ 행정심판</a>
+    <a href="https://33518815.github.io/visa.html">✈️ 비자·서류</a>
+</div>
+
+<a href="tel:010-8128-1079" class="call-fixed">📞 24시 전화상담 연결</a>
+
 </body>
 </html>
