@@ -2,26 +2,51 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>비자 안내 - 공감탐정행정사사무소</title>
+    <title>비자·출입국 안내 - 공감탐정행정사사무소</title>
     <style>
-        body { margin:0; font-family: sans-serif; background: #f8f9fa; }
-        nav { background: #1a3026; padding: 15px; text-align: center; border-bottom: 2px solid #d4af37; }
+        :root { --dark: #1a3026; --accent: #d4af37; }
+        body { margin:0; font-family: sans-serif; background: #f9f9f9; line-height: 1.6; }
+        nav { background: var(--dark); padding: 15px; text-align: center; border-bottom: 2px solid var(--accent); position: sticky; top: 0; z-index: 1000; }
         nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
-        .box { max-width: 500px; margin: 50px auto; background: white; padding: 40px; text-align: center; border-radius: 15px; border-top: 8px solid #d4af37; }
-        .call { display: block; background: #1a3026; color: white !important; padding: 20px; text-decoration: none; border-radius: 50px; font-weight: bold; margin-top: 20px; }
+        .header { background: #fff; padding: 50px 20px; text-align: center; border-bottom: 1px solid #ddd; }
+        .main-card { max-width: 800px; margin: 40px auto; background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); border-top: 10px solid var(--dark); }
+        .visa-list { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; text-align: left; margin: 30px 0; }
+        .visa-item { background: #f8f9fa; padding: 20px; border-radius: 10px; border-left: 4px solid var(--accent); }
+        .call-now { display: block; background: var(--dark); color: var(--accent) !important; padding: 25px; text-decoration: none; border-radius: 15px; font-size: 1.5em; font-weight: bold; margin-top: 30px; }
     </style>
 </head>
 <body>
     <nav>
         <a href="https://33518815.github.io/main.html">🏠 공감탐정행정사사무소</a>
         <a href="https://33518815.github.io/">⚖️ 행정심판 안내</a>
-        <a href="https://33518815.github.io/visa.html" style="color: #d4af37;">📄 비자 안내</a>
+        <a href="https://33518815.github.io/visa.html" style="color: var(--accent);">📄 비자 안내</a>
     </nav>
-    <div class="box">
-        <h1>📄 비자·출입국 상담</h1>
-        <p>전국 24시 상담 | 카드결제 | 비용협의</p>
-        <p>영주권, 귀화, 비자연장 전문 행정사</p>
-        <a href="tel:010-8128-1079" class="call">📞 전화 바로연결</a>
+    <div class="header">
+        <h1>📄 외국인 출입국·비자(VISA) 전문 상담</h1>
+        <p>복잡한 출입국 행정, 전문가와 함께하면 답이 보입니다.</p>
+    </div>
+    <div class="main-card">
+        <h3>주요 업무 안내</h3>
+        <div class="visa-list">
+            <div class="visa-item">
+                <h4>✅ 비자 변경 및 연장</h4>
+                <p>E-7, F-2, F-5(영주권) 등 자격 변경 전문</p>
+            </div>
+            <div class="visa-item">
+                <h4>✅ 결혼이민 및 가족초청</h4>
+                <p>F-6 및 부모님, 가족 초청 업무 대행</p>
+            </div>
+            <div class="visa-item">
+                <h4>✅ 사범조사 및 구제</h4>
+                <p>불법체류, 위반 사범조사 대응 및 보호해제</p>
+            </div>
+            <div class="visa-item">
+                <h4>✅ 국적 및 귀화</h4>
+                <p>대한민국 국적 취득 및 귀화 신청 절차 안내</p>
+            </div>
+        </div>
+        <p style="color: #666;">※ 전국 24시간 상담 가능 / 카드 결제 및 비용 협의 가능</p>
+        <a href="tel:010-8128-1079" class="call-now">📞 비자 상담 바로연결: 010-8128-1079</a>
     </div>
 </body>
 </html>
