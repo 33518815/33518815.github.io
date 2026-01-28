@@ -4,28 +4,47 @@
     <meta charset="UTF-8">
     <title>행정심판 안내 - 공감탐정행정사사무소</title>
     <style>
-        body { margin:0; font-family: sans-serif; background-color: #e8f5e9; }
-        nav { background: #1a3026; padding: 15px; text-align: center; border-bottom: 2px solid #d4af37; }
+        :root { --dark: #1a3026; --accent: #d4af37; --green: #2e7d32; }
+        body { margin:0; font-family: sans-serif; background-color: #e8f5e9; line-height: 1.7; }
+        nav { background: var(--dark); padding: 15px; text-align: center; border-bottom: 2px solid var(--accent); position: sticky; top: 0; z-index: 1000; }
         nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
-        .content { max-width: 600px; margin: 30px auto; background: white; padding: 30px; border-radius: 15px; border-top: 5px solid #2e7d32; }
-        input, textarea { width: 100%; padding: 10px; margin-top: 10px; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box; }
-        .btn { background: #2e7d32; color: white; border: none; padding: 15px; width: 100%; cursor: pointer; font-weight: bold; margin-top: 15px; }
+        .hero-banner { background: white; padding: 60px 20px; text-align: center; border-bottom: 5px solid var(--green); }
+        .container { max-width: 800px; margin: 40px auto; background: white; padding: 40px; border-radius: 20px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+        .form-section { background: #f1f8e9; padding: 30px; border-radius: 15px; margin-top: 30px; }
+        input, textarea { width: 100%; padding: 15px; margin-top: 10px; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box; }
+        .submit-btn { background: var(--green); color: white; border: none; padding: 20px; width: 100%; font-size: 1.2em; font-weight: bold; border-radius: 8px; cursor: pointer; margin-top: 20px; }
+        .item-box { border-left: 5px solid var(--green); padding-left: 20px; margin: 20px 0; }
     </style>
 </head>
 <body>
     <nav>
         <a href="https://33518815.github.io/main.html">🏠 공감탐정행정사사무소</a>
-        <a href="https://33518815.github.io/" style="color: #d4af37;">⚖️ 행정심판 안내</a>
+        <a href="https://33518815.github.io/" style="color: var(--accent);">⚖️ 행정심판 안내</a>
         <a href="https://33518815.github.io/visa.html">📄 비자 안내</a>
     </nav>
-    <div class="content">
-        <h2 style="text-align:center; color:#2e7d32;">⚖️ 행정심판 이메일 상담</h2>
-        <form action="https://formspree.io/f/mwpkvoov" method="POST">
-            <input type="text" name="name" placeholder="성함" required>
-            <input type="tel" name="phone" placeholder="연락처" required>
-            <textarea name="message" rows="5" placeholder="상담 내용" required></textarea>
-            <button type="submit" class="btn">상담 신청하기</button>
-        </form>
+    <div class="hero-banner">
+        <h1 style="color: var(--green); font-size: 2.5em;">⚖️ 행정심판 권리 구제 센터</h1>
+        <p style="font-size: 1.2em;">음주운전 면허취소 구제 · 영업정지 · 이행강제금 · 국가유공자</p>
+    </div>
+    <div class="container">
+        <h3>전문가의 도움이 필요한 행정 업무</h3>
+        <div class="item-box">
+            <h4>📍 음주운전 및 면허 구제</h4>
+            <p>단 한 번의 실수로 인한 생계형 운전자의 면허 취소, 행정심판을 통해 구제 가능성을 진단해 드립니다.</p>
+        </div>
+        <div class="item-box">
+            <h4>📍 영업정지 및 과징금</h4>
+            <p>청소년 주류 제공 등 억울한 영업정지 처분, 철저한 자료 준비로 대응합니다.</p>
+        </div>
+        <div class="form-section">
+            <h3 style="text-align: center; margin-top: 0;">✉️ 이메일 무료 상담 신청</h3>
+            <form action="https://formspree.io/f/mwpkvoov" method="POST">
+                <input type="text" name="name" placeholder="성함" required>
+                <input type="tel" name="phone" placeholder="연락처 (010-0000-0000)" required>
+                <textarea name="message" rows="5" placeholder="상담 받고자 하는 내용을 상세히 남겨주시면 검토 후 즉시 연락드립니다." required></textarea>
+                <button type="submit" class="submit-btn">상담 신청하기 (전국 24시)</button>
+            </form>
+        </div>
     </div>
 </body>
 </html>
