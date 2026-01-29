@@ -14,50 +14,49 @@
         .nav-links a { color: #fff; margin: 0 15px; text-decoration: none; font-weight: 700; font-size: 0.95rem; }
         .emergency-btn { background: var(--emergency); color: #fff !important; padding: 8px 18px; border-radius: 5px; font-weight: 900; text-decoration: none; }
 
-        /* 헤더 & 심볼마크 (G + 돋보기 손잡이 결합) */
+        /* 헤더 & 심볼마크 */
         header { background: linear-gradient(135deg, var(--deep-forest) 0%, var(--fresh-green) 100%); color: #fff; padding: 40px 20px; border-bottom: 5px solid var(--accent-gold); display: flex; align-items: center; justify-content: center; gap: 20px; }
         .symbol-wrap { position: relative; width: 60px; height: 60px; border: 4px solid var(--accent-gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.1); }
-        .symbol-wrap::after { content: ''; position: absolute; bottom: -12px; right: 10px; width: 6px; height: 20px; background: var(--accent-gold); transform: rotate(0deg); border-radius: 3px; } /* 수직 손잡이 (소문자 g 느낌) */
-        .symbol-text { font-size: 32px; font-weight: 900; color: var(--accent-gold); line-height: 1; margin-bottom: 2px; }
+        .symbol-wrap::after { content: ''; position: absolute; bottom: -12px; right: 10px; width: 6px; height: 20px; background: var(--accent-gold); border-radius: 3px; } 
+        .symbol-text { font-size: 32px; font-weight: 900; color: var(--accent-gold); line-height: 1; }
         
         header h1 { margin: 0; font-size: 2.2rem; letter-spacing: -1px; }
         header p { margin: 5px 0 0 0; font-size: 1rem; opacity: 0.9; }
 
         .container { max-width: 1100px; margin: auto; padding: 40px 20px; }
 
-        /* 서비스 카드 12종 (설명 2줄 요약) */
+        /* 서비스 카드 12종 */
         .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; margin-bottom: 50px; }
         .service-card { background: #fff; padding: 22px; border-radius: 12px; border: 1px solid #eee; border-left: 8px solid var(--fresh-green); transition: 0.3s; box-shadow: 0 4px 10px rgba(0,0,0,0.04); }
-        .service-card:hover { transform: translateY(-5px); border-color: var(--fresh-green); }
         .service-card h3 { color: var(--deep-forest); margin: 0 0 12px 0; font-size: 1.15rem; font-weight: 900; }
-        .service-card p { font-size: 0.9rem; margin: 0; color: #555; line-height: 1.6; height: 2.8em; overflow: hidden; }
+        .service-card p { font-size: 0.9rem; margin: 0; color: #555; line-height: 1.6; height: 3.2em; overflow: hidden; }
 
-        /* 상담 영역 보강 */
-        .bottom-wrap { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 30px; margin-bottom: 40px; align-items: stretch; }
+        /* 간단상담요청 폼 */
+        .bottom-wrap { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 30px; margin-bottom: 40px; }
         @media (max-width: 850px) { .bottom-wrap { grid-template-columns: 1fr; } }
-        .form-area { background: #f9fbf2; padding: 35px; border-radius: 20px; border: 2px solid var(--fresh-green); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-        .form-area h4 { margin-top: 0; font-size: 1.3rem; margin-bottom: 20px; color: var(--deep-forest); }
-        .form-area input, .form-area select, .form-area textarea { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; margin-bottom: 15px; font-size: 1rem; box-sizing: border-box; }
-        .btn-submit { background: var(--fresh-green); color: #fff; width: 100%; padding: 18px; border: none; border-radius: 8px; font-weight: 900; cursor: pointer; font-size: 1.1rem; transition: 0.2s; }
-        .btn-submit:hover { background: var(--deep-forest); }
+        .form-area { background: #f9fbf2; padding: 30px; border-radius: 20px; border: 2px solid var(--fresh-green); }
+        .form-error-notice { display: block; background: #fff; border: 1px dashed var(--emergency); color: var(--emergency); padding: 10px; border-radius: 8px; font-size: 0.85rem; font-weight: 700; text-align: center; margin-bottom: 20px; }
+        .form-area input, .form-area select, .form-area textarea { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; margin-bottom: 12px; font-size: 0.95rem; box-sizing: border-box; }
+        .btn-submit { background: var(--fresh-green); color: #fff; width: 100%; padding: 16px; border: none; border-radius: 8px; font-weight: 900; cursor: pointer; font-size: 1.1rem; }
 
-        .ad-box { background: #fffdf5; padding: 35px; border-radius: 20px; border: 1px solid #f0e6c3; display: flex; flex-direction: column; justify-content: center; }
+        .ad-box { background: #fffdf5; padding: 30px; border-radius: 20px; border: 1px solid #f0e6c3; display: flex; flex-direction: column; justify-content: center; }
         .ad-box h4 { margin: 0 0 15px 0; color: #856404; font-size: 1.2rem; font-weight: 900; }
-        .ad-box p { font-size: 1rem; margin-bottom: 20px; color: #444; line-height: 1.8; }
 
-        /* 서비스 및 환불 안내 (요청대로 4줄 구성) */
+        /* 서비스 및 환불 안내 */
         .policy-box { background: #fff; border: 1px solid #ddd; padding: 30px; border-radius: 15px; margin-bottom: 40px; border-top: 6px solid var(--fresh-green); }
         .policy-text { font-size: 0.95rem; color: #444; line-height: 1.9; }
         .hl { color: var(--emergency); font-weight: 700; }
 
-        /* 최하단 안내 섹션 */
+        /* 최하단 정보 섹션 */
         .bottom-info-bg { background: #1a2414; color: #eee; padding: 50px 20px; }
         .info-inner { max-width: 1100px; margin: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
         @media (max-width: 768px) { .info-inner { grid-template-columns: 1fr; } }
-        .info-inner h4 { color: var(--fresh-green); margin-top: 0; font-size: 1.2rem; border-left: 4px solid var(--accent-gold); padding-left: 15px; margin-bottom: 20px; }
         .info-list { list-style: none; padding: 0; font-size: 0.95rem; line-height: 2; opacity: 0.9; }
 
-        footer { background: #111; color: #777; padding: 40px 20px; text-align: center; border-top: 1px solid #222; }
+        /* 푸터 & 다국어 주소 */
+        footer { background: #111; color: #888; padding: 50px 20px; border-top: 1px solid #222; }
+        .addr-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; text-align: left; max-width: 1100px; margin: 30px auto; border-top: 1px solid #333; padding-top: 30px; font-size: 0.85rem; line-height: 1.6; }
+        .addr-item b { color: var(--fresh-green); display: block; margin-bottom: 5px; }
         .bank-box { background: #222; padding: 20px; border-radius: 10px; display: inline-block; margin: 20px 0; border: 1px solid #333; text-align: left; }
     </style>
 </head>
@@ -73,9 +72,7 @@
 </nav>
 
 <header>
-    <div class="symbol-wrap">
-        <span class="symbol-text">G</span>
-    </div>
+    <div class="symbol-wrap"><span class="symbol-text">G</span></div>
     <div>
         <h1>공감탐정행정사사무소</h1>
         <p>전국 행정처분 구제 및 실무 중심 사실관계 조사 지원</p>
@@ -85,34 +82,41 @@
 <div class="container">
     <div class="service-grid">
         <div class="service-card"><h3>처분유보신청서</h3><p>행정처분 확정 전 정황 소명을 통해 처분 시기 및 내용을 재검토 요청하여 피해를 최소화합니다.</p></div>
-        <div class="service-card"><h3>영업정지 행정심판</h3><p>식당, 주점 등 부당하거나 가혹한 영업정지 처분에 대해 중앙 및 지방 위원회 구제 절차를 지원합니다.</p></div>
-        <div class="service-card"><h3>처분사전통지 의견서</h3><p>행정청의 처분 통지 단계에서 의뢰인의 정당한 의견과 소명 자료를 논리적으로 제출하여 대응합니다.</p></div>
-        <div class="service-card"><h3>보충서면 작성</h3><p>행정심판 진행 중 발생하는 추가 쟁점에 대해 사실관계와 법리적 논거를 전문적으로 보강합니다.</p></div>
+        <div class="service-card"><h3>영업정지 행정심판</h3><p>부당하거나 가혹한 영업정지 처분에 대해 중앙 및 지방 위원회 구제 절차를 지원합니다.</p></div>
+        <div class="service-card"><h3>처분사전통지 의견서</h3><p>행정청의 처분 통지 단계에서 의뢰인의 정당한 의견과 소명 자료를 논리적으로 제출합니다.</p></div>
+        <div class="service-card"><h3>보충서면 작성</h3><p>행정심판 진행 중 발생하는 추가 쟁점에 대해 사실관계와 법리적 논거를 보강합니다.</p></div>
         <div class="service-card"><h3>이의신청서 작성</h3><p>행정처분 결과에 불복하는 경우 공식적인 이의 제기를 통해 원처분의 취소 및 감경을 청구합니다.</p></div>
         <div class="service-card"><h3>내용증명 및 사실확인</h3><p>상가 임대차나 권리금 분쟁 등에서 당사자 간의 권리관계를 명확히 하여 법적 권익을 보호합니다.</p></div>
-        <div class="service-card"><h3>집행정지 신청</h3><p>심판 결과 확정 전까지 처분의 효력을 일시 정지시켜 영업 중단 등 회복 불가능한 손해를 막습니다.</p></div>
-        <div class="service-card"><h3>음주운전 면허구제</h3><p>음주운전으로 인한 면허 취소 및 정지 처분에 대해 생계형 운전자 등을 위한 구제 심판을 조력합니다.</p></div>
+        <div class="service-card"><h3>집행정지 신청</h3><p>심판 결과 확정 전까지 처분의 효력을 일시 정지시켜 영업 중단 등 손해를 예방합니다.</p></div>
+        <div class="service-card"><h3>음주운전 면허구제</h3><p>면허 취소 및 정지 처분에 대해 생계형 운전자 등을 위한 구제 심판을 적극 조력합니다.</p></div>
         <div class="service-card"><h3>진정서 및 탄원서</h3><p>선처가 필요한 상황에서 객관적 정황과 간절함을 담은 서면을 작성하여 행정 결정에 도움을 드립니다.</p></div>
         <div class="service-card"><h3>사실조사 확인서</h3><p>행정사법에 의거하여 현장 조사 및 사실관계를 확인하고 행정기관 제출용 공식 증명서를 발급합니다.</p></div>
-        <div class="service-card"><h3>권리관계 사실증명</h3><p>각종 분쟁 상황에서 정당한 권리가 존재함을 입증하는 법리적 확인 서면을 통해 의뢰인을 보호합니다.</p></div>
-        <div class="service-card"><h3>학교폭력 행정심판</h3><p>학교폭력대책심의위원회의 부당한 결정에 대해 재심 및 행정심판을 통해 학생의 권리를 구제합니다.</p></div>
+        <div class="service-card"><h3>권리관계 사실증명</h3><p>각종 분쟁 상황에서 정당한 권리가 존재함을 입증하는 법리적 확인 서면으로 의뢰인을 보호합니다.</p></div>
+        <div class="service-card"><h3>학교폭력 행정심판</h3><p>학교폭력대책심의위원회의 부당한 결정에 대해 재심 및 행정심판을 통해 학생 권리를 구제합니다.</p></div>
     </div>
 
     <div class="bottom-wrap">
         <div class="form-area">
-            <h4>✉️ 전문 상담 요청</h4>
+            <h4>✉️ 간단 상담 요청</h4>
+            <span class="form-error-notice">※ 메일 폼 오류 시 [3351ben@daum.net]으로 직접 내용을 보내주세요.</span>
             <form action="mailto:3351ben@daum.net" method="post" enctype="text/plain">
+                <select name="상담영역" required>
+                    <option value="">-- 상담 영역 선택 --</option>
+                    <option value="행정심판">⚖️ 행정심판 건</option>
+                    <option value="비자/출입국">✈️ 비자/출입국 건</option>
+                    <option value="탐정/사실조사">🔍 탐정/사실조사 건</option>
+                    <option value="기타">💬 기타 문의</option>
+                </select>
                 <input type="text" name="성함" placeholder="성함 또는 상호명" required>
                 <input type="text" name="연락처" placeholder="연락처 (핸드폰 번호)" required>
-                <textarea name="문의내용" rows="5" placeholder="궁금하신 내용을 상세히 적어주시면 보다 정확한 상담이 가능합니다."></textarea>
-                <button type="submit" class="btn-submit">상담 신청 메일 보내기</button>
+                <textarea name="문의내용" rows="4" placeholder="상담 내용을 적어주세요."></textarea>
+                <button type="submit" class="btn-submit">상담 메일 보내기</button>
             </form>
         </div>
         <div class="ad-box">
-            <h4>🎯 전문가 원스톱 협업 시스템</h4>
-            <p>공감탐정행정사는 전국 네트워크를 통해 각 지역의 복잡한 행정 문제를 전문가와 협업하여 가장 빠르고 정직하게 해결해 드립니다. <br><br>모든 상담과 서류 준비는 <b>의뢰인의 비밀 유지를 최우선 원칙</b>으로 진행됩니다.</p>
+            <h4>🎯 전문가 협업 시스템</h4>
+            <p>전국 네트워크를 통해 각 지역의 행정 문제를 전문가와 협업하여 신속하고 정직하게 해결해 드립니다. <br><br><b>의뢰인의 비밀 유지를 최우선 원칙</b>으로 합니다.</p>
             <h2 style="color:var(--deep-forest); margin:0;">📞 010-8128-1079</h2>
-            <p style="font-size:0.85rem; color:#888; margin-top:10px;">(부재 시 문자를 남겨주시면 확인 후 바로 연락드립니다.)</p>
         </div>
     </div>
 
@@ -140,21 +144,33 @@
         <div>
             <h4>🛡️ 정보보호 및 업무원칙</h4>
             <ul class="info-list">
-                <li>✓ <b>비밀 유지:</b> 상담 및 의뢰 내용의 엄격한 대외비 유지</li>
-                <li>✓ <b>개인정보 보호:</b> 관련 법령에 따른 안전한 정보 관리</li>
-                <li>✓ <b>전국 행정 지원:</b> 위치에 관계없는 신속한 원스톱 대응</li>
+                <li>✓ <b>비밀 유지:</b> 모든 상담 및 의뢰 내용의 철저한 대외비 유지</li>
+                <li>✓ <b>개인정보 보호:</b> 관련 법령에 따른 안전하고 엄격한 정보 관리</li>
+                <li>✓ <b>전국 행정 지원:</b> 위치에 관계없는 신속하고 정확한 원스톱 대응</li>
             </ul>
         </div>
     </div>
 </section>
 
 <footer>
-    <div>
-        <strong style="font-size: 1.2rem; color: #ccc;">공감탐정행정사사무소</strong> | 사업자: 821-46-01200<br>
-        대표번호: 010-8128-1079 | 서울 종로구 우정국로 39, 401호
+    <div style="text-align:center; margin-bottom: 20px;">
+        <strong style="font-size: 1.2rem; color: #ccc;">공감탐정행정사사무소</strong><br>
+        사업자등록번호: 821-46-01200 | 대표번호: 010-8128-1079
     </div>
-    <div class="bank-box">
-        🏦 <b>국민은행 006001-04-356388</b> (예금주: 000(공감탐정행정사사무소))
+
+    <div class="addr-grid">
+        <div class="addr-item"><b>[KR] 한국어</b> 서울특별시 종로구 우정국로 39, 401호 (견지동)</div>
+        <div class="addr-item"><b>[EN] English</b> #401, 39, Ujeongguk-ro, Jongno-gu, Seoul, Republic of Korea</div>
+        <div class="addr-item"><b>[CN] 中文</b> 首尔特别市 钟路区 牛亭局路 39, 401号</div>
+        <div class="addr-item"><b>[JP] 日本語</b> ソウル特別市 鐘路区 牛亭局路 39, 401号</div>
+        <div class="addr-item"><b>[VN] Tiếng Việt</b> Phòng 401, 39, Ujeongguk-ro, Jongno-gu, Seoul, Hàn Quốc</div>
+        <div class="addr-item"><b>[TH] ภาษาไทย</b> ห้อง 401, 39, Ujeongguk-ro, Jongno-gu, Seoul, เกาหลีใต้</div>
+    </div>
+
+    <div style="text-align:center;">
+        <div class="bank-box">
+            🏦 <b>국민은행 006001-04-356388</b> (예금주: 000(공감탐정행정사사무소))
+        </div>
     </div>
 </footer>
 
