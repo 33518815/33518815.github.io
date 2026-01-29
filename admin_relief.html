@@ -9,36 +9,48 @@
         :root { --fresh-green: #8eb35d; --deep-forest: #3e522d; --accent-gold: #d4af37; --emergency: #ff5252; }
         body { font-family: 'Noto Sans KR', sans-serif; margin: 0; padding: 0; background: #fff; color: #333; line-height: 1.6; word-break: keep-all; }
         
-        /* 상단바 */
+        /* 상단 네비게이션 */
         .top-nav { background: #1a1a1a; padding: 12px 25px; display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid var(--fresh-green); position: sticky; top: 0; z-index: 1000; }
         .nav-links a { color: #fff; margin: 0 15px; text-decoration: none; font-weight: 700; font-size: 0.95rem; }
         .emergency-btn { background: var(--emergency); color: #fff !important; padding: 8px 18px; border-radius: 5px; font-weight: 900; text-decoration: none; }
 
-        /* 헤더 & 수정된 심볼마크 (G + 수직 손잡이 = g 형상) */
+        /* [심볼마크 핵심 수정] G의 슬래시와 손잡이를 일직선으로 정렬 */
         header { background: linear-gradient(135deg, var(--deep-forest) 0%, var(--fresh-green) 100%); color: #fff; padding: 40px 20px; border-bottom: 5px solid var(--accent-gold); display: flex; align-items: center; justify-content: center; gap: 20px; }
         
-        .g-symbol { position: relative; width: 55px; height: 55px; border: 4px solid var(--accent-gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.15); box-sizing: border-box; }
-        /* 대문자 G */
-        .g-inner { font-size: 34px; font-weight: 900; color: var(--accent-gold); line-height: 1; transform: translateX(-1px); }
-        /* G의 끝부분(슬래시)에서 수직으로 내려오는 손잡이 */
-        .g-handle { position: absolute; bottom: -18px; right: 8px; width: 6px; height: 22px; background: var(--accent-gold); border-radius: 0 0 4px 4px; }
+        .g-symbol-container { position: relative; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; }
+        .g-circle { position: absolute; width: 52px; height: 52px; border: 4px solid var(--accent-gold); border-radius: 50%; background: rgba(0,0,0,0.1); box-sizing: border-box; }
+        
+        /* 대문자 G 배치 */
+        .g-letter { font-size: 34px; font-weight: 900; color: var(--accent-gold); line-height: 1; z-index: 2; position: relative; left: -1px; }
+        
+        /* G의 우측 슬래시 지점에서 수직으로 정렬된 손잡이 */
+        .g-handle-vertical { 
+            position: absolute; 
+            bottom: -15px; 
+            right: 11px; /* G의 가로 획 끝부분과 일치하도록 조정 */
+            width: 7px; 
+            height: 25px; 
+            background: var(--accent-gold); 
+            border-radius: 0 0 4px 4px; 
+            z-index: 1;
+        }
         
         header h1 { margin: 0; font-size: 2.2rem; letter-spacing: -1px; }
         header p { margin: 5px 0 0 0; font-size: 1rem; opacity: 0.9; }
 
         .container { max-width: 1100px; margin: auto; padding: 40px 20px; }
 
-        /* 서비스 카드 12종 */
+        /* 서비스 카드 그리드 */
         .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; margin-bottom: 50px; }
         .service-card { background: #fff; padding: 22px; border-radius: 12px; border: 1px solid #eee; border-left: 8px solid var(--fresh-green); transition: 0.3s; box-shadow: 0 4px 10px rgba(0,0,0,0.04); }
         .service-card h3 { color: var(--deep-forest); margin: 0 0 12px 0; font-size: 1.15rem; font-weight: 900; }
         .service-card p { font-size: 0.9rem; margin: 0; color: #555; line-height: 1.6; height: 3.2em; overflow: hidden; }
 
-        /* 간단상담요청 폼 */
+        /* 상담 폼 영역 */
         .bottom-wrap { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 30px; margin-bottom: 40px; }
         @media (max-width: 850px) { .bottom-wrap { grid-template-columns: 1fr; } }
         .form-area { background: #f9fbf2; padding: 30px; border-radius: 20px; border: 2px solid var(--fresh-green); }
-        .form-error-notice { display: block; background: #fff; border: 1px dashed var(--emergency); color: var(--emergency); padding: 10px; border-radius: 8px; font-size: 0.85rem; font-weight: 700; text-align: center; margin-bottom: 20px; }
+        .email-notice { display: block; background: #fff; border: 1px dashed var(--emergency); color: var(--emergency); padding: 10px; border-radius: 8px; font-size: 0.85rem; font-weight: 700; text-align: center; margin-bottom: 20px; }
         .form-area input, .form-area select, .form-area textarea { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; margin-bottom: 12px; font-size: 0.95rem; box-sizing: border-box; }
         .btn-submit { background: var(--fresh-green); color: #fff; width: 100%; padding: 16px; border: none; border-radius: 8px; font-weight: 900; cursor: pointer; font-size: 1.1rem; }
 
@@ -50,7 +62,7 @@
         .policy-text { font-size: 0.95rem; color: #444; line-height: 1.9; }
         .hl { color: var(--emergency); font-weight: 700; }
 
-        /* 최하단 정보 섹션 */
+        /* 하단 안내 섹션 */
         .bottom-info-bg { background: #1a2414; color: #eee; padding: 50px 20px; }
         .info-inner { max-width: 1100px; margin: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
         @media (max-width: 768px) { .info-inner { grid-template-columns: 1fr; } }
@@ -75,9 +87,10 @@
 </nav>
 
 <header>
-    <div class="g-symbol">
-        <span class="g-inner">G</span>
-        <div class="g-handle"></div>
+    <div class="g-symbol-container">
+        <div class="g-circle"></div>
+        <span class="g-letter">G</span>
+        <div class="g-handle-vertical"></div>
     </div>
     <div>
         <h1>공감탐정행정사사무소</h1>
@@ -104,7 +117,7 @@
     <div class="bottom-wrap">
         <div class="form-area">
             <h4>✉️ 간단 상담 요청</h4>
-            <span class="form-error-notice">※ 메일 폼 오류 시 [3351ben@daum.net]으로 직접 내용을 보내주세요.</span>
+            <span class="email-notice">※ 메일 폼 오류 시 [3351ben@daum.net]으로 직접 내용을 보내주세요.</span>
             <form action="mailto:3351ben@daum.net" method="post" enctype="text/plain">
                 <select name="상담영역" required>
                     <option value="">-- 상담 영역 선택 --</option>
@@ -168,7 +181,7 @@
         <div class="addr-item"><b>[KR] 한국어</b> 서울특별시 종로구 우정국로 39, 401호 (견지동)</div>
         <div class="addr-item"><b>[EN] English</b> #401, 39, Ujeongguk-ro, Jongno-gu, Seoul, Republic of Korea</div>
         <div class="addr-item"><b>[CN] 中文</b> 首尔特别市 钟路区 牛亭局路 39, 401号</div>
-        <div class="addr-item"><b>[JP] 일본어</b> ソウル特別市 鐘路区 牛亭局路 39, 401号</div>
+        <div class="addr-item"><b>[JP] 日本語</b> ソウル特別市 鐘路区 牛亭局路 39, 401号</div>
         <div class="addr-item"><b>[VN] Tiếng Việt</b> Phòng 401, 39, Ujeongguk-ro, Jongno-gu, Seoul, Hàn Quốc</div>
         <div class="addr-item"><b>[TH] ภาษาไทย</b> ห้อง 401, 39, Ujeongguk-ro, Jongno-gu, Seoul, เกาหลีใต้</div>
     </div>
