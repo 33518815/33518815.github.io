@@ -44,16 +44,22 @@
         /* 업무 안내 카드 */
         .work-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; margin-bottom: 40px; }
         @media (max-width: 768px) { .work-grid { grid-template-columns: 1fr; } }
-        .work-card { background: #fff; padding: 25px; border-radius: 15px; border: 1px solid #eee; box-shadow: 0 4px 10px rgba(0,0,0,0.02); }
+        .work-card { background: #fff; padding: 25px; border-radius: 15px; border: 1px solid #eee; box-shadow: 0 4px 10px rgba(0,0,0,0.02); display: flex; flex-direction: column; }
         .work-card h4 { margin: 0 0 15px; color: var(--royal-bg); border-bottom: 2px solid var(--accent-gold); padding-bottom: 8px; }
         .work-card ul { list-style: none; padding: 0; margin: 0; }
         .work-card li { padding: 5px 0 5px 20px; position: relative; font-size: 0.95rem; }
         .work-card li::before { content: '◈'; position: absolute; left: 0; color: var(--accent-gold); }
 
-        /* 간소화된 한 줄 안내 문구 (회색 고정) */
+        /* 회색 고정 문구 - 좌측 정렬 및 리스트와 위치 맞춤 */
         .short-note { 
-            margin-top: 15px; padding: 8px; background: var(--light-gray); border-radius: 5px;
-            font-size: 0.85rem; color: #666; text-align: center; font-weight: 500;
+            margin-top: 15px; 
+            padding: 8px 8px 8px 20px; /* 왼쪽 패딩을 20px로 주어 위 리스트 글자와 맞춤 */
+            background: var(--light-gray); 
+            border-radius: 5px;
+            font-size: 0.85rem; 
+            color: #666; 
+            text-align: left; /* 좌측 정렬 */
+            font-weight: 500;
         }
 
         /* 하단 레이아웃 */
@@ -64,7 +70,7 @@
         .f-btn { width: 100%; padding: 15px; background: var(--accent-gold); color: #fff; border: none; border-radius: 5px; font-weight: 900; cursor: pointer; }
         .preparation-side { background: #fdfaf5; border: 2px solid var(--accent-gold); padding: 30px; border-radius: 15px; }
 
-        /* 다국어 주소 영역 (하단 배치) */
+        /* 다국어 주소 영역 */
         .addr-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 40px 0; }
         @media (max-width: 768px) { .addr-grid { grid-template-columns: 1fr; } }
         .addr-card { padding: 12px; background: #f9f9f9; border: 1px solid #ddd; font-size: 0.82rem; border-radius: 8px; }
@@ -76,7 +82,7 @@
         .link-admin { background: var(--admin-green); }
         .link-visa { background: var(--accent-gold); color: #2d1b18 !important; }
 
-        /* 상세 사업자 정보 푸터 */
+        /* 사업자 정보 푸터 */
         .biz-footer { background: #111; color: #aaa; padding: 40px 20px; text-align: center; font-size: 0.85rem; line-height: 1.8; border-top: 1px solid #333; }
         .biz-footer b { color: #ddd; }
         .payment-info { color: var(--accent-gold); font-weight: 700; margin-top: 10px; }
@@ -186,7 +192,7 @@
         <div class="addr-card"><b>[CN] 中文</b> 首尔特别市 钟路구 牛亭局로 39, 401호</div>
         <div class="addr-card"><b>[VN] Tiếng Việt</b> Phòng 401, 39, Ujeongguk-ro, Seoul</div>
         <div class="addr-card"><b>[TH] ภาษาไทย</b> ห้อง 401, 39, Ujeongguk-ro, โซล</div>
-        <div class="addr-card"><b>[JP] 일본어</b> 서울特別市 鍾路区 郵政局로 39, 401호</div>
+        <div class="addr-card"><b>[JP] 일본어</b> 서울特別市 鍾路区 郵政局路 39, 401호</div>
         <div class="addr-card"><b>[EN] English</b> #401, 39, Ujeongguk-ro, Seoul</div>
     </div>
 </div>
