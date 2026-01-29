@@ -3,13 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>공감탐정행정사사무소 - 행정심판, 사실조사, 비자 대행 전문</title>
-    <meta name="description" content="전국 민원 행정 대행, 행정심판, 사실조사, 비자 출입국 전문 공감탐정행정사사무소입니다. 전국 24시 긴급상담 지원.">
-    <meta name="keywords" content="공감탐정행정사사무소, 행정사, 탐정사, 행정심판, 비자대행, 사실조사, 음주운전구제, 학교폭력상담">
-    <meta property="og:type" content="website">
+    <title>공감탐정행정사사무소 - 행정심판, 사실조사, 비자 전문</title>
+    <meta name="description" content="전국 민원 행정 대행, 행정심판, 사실조사, 비자 출입국 전문 공감탐정행정사사무소입니다.">
     <meta property="og:title" content="공감탐정행정사사무소">
-    <meta property="og:description" content="전국 민원 행정 대행 및 각 분야 전문가 협업 지원. 사실조사 및 권익 구제 전문.">
-    <meta property="og:url" content="https://33518815.github.io">
+    <meta property="og:description" content="전국 24시 긴급상담 지원. 사실조사 및 권익 구제 전문 행정사사무소.">
     
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
@@ -27,7 +24,7 @@
         .emergency-btn { background: var(--emergency-red); color: #fff !important; padding: 8px 16px; border-radius: 5px; font-weight: 900; text-decoration: none; animation: pulse 2s infinite; }
         @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.8; } 100% { opacity: 1; } }
 
-        /* 헤더 디자인 (좌측 심볼 배치) */
+        /* 헤더 (좌측 심볼 배치) */
         header { 
             background: linear-gradient(135deg, #1a2a3a 0%, var(--main-navy) 100%); 
             color: #fff; padding: 70px 20px; border-bottom: 5px solid var(--accent-gold);
@@ -37,23 +34,11 @@
             display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 20px; 
         }
         
-        /* 일직선 손잡이 돋보기 심볼 */
-        .symbol-magnifier {
-            position: relative; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;
-        }
-        .mag-circle {
-            width: 75px; height: 75px; 
-            border: 5px solid var(--accent-gold); 
-            border-radius: 50%; 
-            display: flex; justify-content: center; align-items: center;
-        }
+        /* 돋보기 심볼 */
+        .symbol-magnifier { position: relative; display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
+        .mag-circle { width: 75px; height: 75px; border: 5px solid var(--accent-gold); border-radius: 50%; display: flex; justify-content: center; align-items: center; }
         .mag-g { font-size: 3rem; font-weight: 900; color: var(--accent-gold); line-height: 1; }
-        .mag-handle {
-            width: 8px; height: 22px;
-            background: var(--accent-gold);
-            margin-top: -2px; 
-            border-radius: 0 0 2px 2px;
-        }
+        .mag-handle { width: 8px; height: 22px; background: var(--accent-gold); margin-top: -2px; border-radius: 0 0 2px 2px; }
         
         .header-text { text-align: left; }
         .header-text h1 { font-size: 3.2rem; font-weight: 900; margin: 0; letter-spacing: -1.5px; }
@@ -67,44 +52,27 @@
 
         .container { max-width: 1100px; margin: auto; padding: 50px 20px; }
 
-        /* 서비스 영역 (12개 카드 전체 유지) */
-        .service-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; }
+        /* 서비스 영역 (12개 카드 - 설명을 2줄로 최적화) */
+        .service-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
         @media (max-width: 768px) { .service-grid { grid-template-columns: 1fr; } }
         .service-card { 
-            background: var(--soft-white); padding: 35px; border-radius: 25px; 
-            border: 1px solid #ddd; border-left: 12px solid var(--main-navy); 
-            cursor: pointer; transition: 0.3s ease-in-out;
+            background: var(--soft-white); padding: 25px 30px; border-radius: 20px; 
+            border: 1px solid #ddd; border-left: 10px solid var(--main-navy); 
+            transition: 0.3s; height: 120px; display: flex; flex-direction: column; justify-content: center;
         }
-        .service-card:hover { 
-            border-left-color: var(--accent-gold); background: #fff;
-            transform: translateY(-5px); box-shadow: 0 12px 24px rgba(0,0,0,0.1); 
-        }
-        .service-card h3 { margin: 0 0 12px; color: var(--main-navy); font-size: 1.5rem; font-weight: 900; }
-        .service-card p { margin: 0; font-size: 1rem; color: #555; height: 3em; line-height: 1.5; }
+        .service-card:hover { border-left-color: var(--accent-gold); background: #fff; transform: translateY(-3px); box-shadow: 0 8px 16px rgba(0,0,0,0.1); }
+        .service-card h3 { margin: 0 0 8px; color: var(--main-navy); font-size: 1.4rem; font-weight: 900; }
+        .service-card p { margin: 0; font-size: 0.95rem; color: #555; line-height: 1.4; overflow: hidden; }
 
-        /* 하단 폼 & 서류 */
         .flex-bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 50px; }
         @media (max-width: 850px) { .flex-bottom { grid-template-columns: 1fr; } }
-        
         .form-box { background: #fdfdfd; padding: 30px; border-radius: 20px; border: 1px solid #e1e1e1; }
-        .form-box h4 { text-align: center; margin-top: 0; color: var(--main-navy); font-size: 1.4rem; }
-        .form-box input, .form-box select, .form-box textarea { width: 100%; padding: 12px; margin-bottom: 12px; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box; }
-        .send-btn { background: var(--main-navy); color: #fff; width: 100%; padding: 15px; border: none; border-radius: 8px; font-weight: 900; cursor: pointer; font-size: 1.1rem; }
-        
+        .send-btn { background: var(--main-navy); color: #fff; width: 100%; padding: 15px; border: none; border-radius: 8px; font-weight: 900; cursor: pointer; }
         .docs-box { background: #fffbe6; padding: 30px; border-radius: 20px; border: 2px solid #ffe58f; }
-        .docs-box h4 { margin-top: 0; color: #856404; font-size: 1.3rem; border-bottom: 2px solid #856404; padding-bottom: 10px; }
-        .docs-list { list-style: none; padding: 0; margin: 20px 0; }
-        .docs-list li { margin-bottom: 15px; font-weight: 700; color: #444; font-size: 1.1rem; }
 
-        .security-msg { text-align: center; color: #b22222; font-weight: 700; margin: 40px 0; padding: 25px; border: 2px dashed #b22222; border-radius: 15px; font-size: 1.1rem; background: #fffafa; }
-
-        /* 푸터 */
         footer { background: #111; color: #ccc; padding: 70px 20px; text-align: center; }
-        .footer-logo { font-size: 2.2rem; font-weight: 900; color: var(--accent-gold); display: block; margin-bottom: 20px; letter-spacing: -1px; }
-        .footer-info { font-size: 1rem; line-height: 1.8; margin-bottom: 35px; }
-        .footer-info a { color: var(--accent-gold); text-decoration: none; font-weight: 700; }
-        .bank-info { background: #222; padding: 25px; border-radius: 15px; border: 1px solid var(--accent-gold); display: inline-block; text-align: left; margin-bottom: 35px; }
-        
+        .footer-logo { font-size: 2.2rem; font-weight: 900; color: var(--accent-gold); display: block; margin-bottom: 20px; }
+        .bank-info { background: #222; padding: 25px; border-radius: 15px; border: 1px solid var(--accent-gold); display: inline-block; text-align: left; margin-bottom: 20px; }
         .addr-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; text-align: left; max-width: 1100px; margin: 30px auto 0; border-top: 1px solid #333; padding-top: 30px; font-size: 0.85rem; }
     </style>
 </head>
@@ -134,49 +102,38 @@
 
 <div class="container">
     <div class="service-grid">
-        <div class="service-card"><h3>탐정사영역</h3><p>가정사 고민 및 각종 정황에 대하여 전문가와 협업하여<br>합법적인 사실조사와 행정 소명 자료 준비를 돕습니다.</p></div>
-        <div class="service-card"><h3>도감청탐색</h3><p>정밀 장비를 통해 현장 내 불법 기기 설치 여부를<br>철저히 탐색하여 개인의 소중한 정보를 보호합니다.</p></div>
-        <div class="service-card"><h3>행정심판</h3><p>음주운전, 영업정지 등 처분에 대한 이의 제기와<br>권익 구제를 위한 최선의 행정 소명 서면 작성을 지원합니다.</p></div>
-        <div class="service-card"><h3>사실조사</h3><p>사건의 기초가 되는 사실관계를 확인하고 행정사법에 따른<br>공신력 있는 사실확인증명서 발급 업무를 수행합니다.</p></div>
-        <div class="service-card"><h3>비자·출입국</h3><p>외국인 체류, 영주권, 국적 취득 및 출입국 관련<br>행정 절차와 소명 자료 준비를 전문적으로 대행합니다.</p></div>
-        <div class="service-card"><h3>내용증명</h3><p>상가 권리금, 계약 분쟁 등에서 당사자의 의사를<br>명확히 기록하여 전달하는 논리적인 서면을 작성합니다.</p></div>
-        <div class="service-card"><h3>진정·탄원서</h3><p>억울한 사정을 진술하거나 선처를 구하는 내용을<br>의뢰인의 상황에 맞춰 진정성 있게 서술해 드립니다.</p></div>
-        <div class="service-card"><h3>학교폭력</h3><p>학폭위 절차 안내 및 관련 경위 소명 자료를 준비하여<br>학생의 권익 보호를 위해 정성을 다해 함께합니다.</p></div>
-        <div class="service-card"><h3>처문사전통지서</h3><p>행정처분 확정 전 의견 제출을 통해 불이익을 방지하고<br>충분한 정황 소명이 이루어지도록 조력합니다.</p></div>
-        <div class="service-card"><h3>의견서·보충서면</h3><p>진행 중인 행정 절차에서 추가적인 논리 보강과<br>상대 답변에 대한 대응 자료를 전문적으로 준비합니다.</p></div>
-        <div class="service-card"><h3>이의신청</h3><p>이미 결정된 행정 결과가 부당하다고 판단될 때<br>공식적인 절차를 통해 재검토를 요청합니다.</p></div>
-        <div class="service-card"><h3>민원행정대행</h3><p>복잡한 인허가 및 각종 행정 서류의 작성과 접수를<br>전국 어디서나 쉽고 빠르게 원스톱으로 처리합니다.</p></div>
+        <div class="service-card"><h3>탐정사영역</h3><p>합법적 사실조사와 행정 소명 자료 준비를 전문가와 협업하여 체계적으로 지원합니다.</p></div>
+        <div class="service-card"><h3>도감청탐색</h3><p>정밀 장비를 활용해 불법 기기 설치 여부를 철저히 탐색하여 소중한 정보를 보호합니다.</p></div>
+        <div class="service-card"><h3>행정심판</h3><p>음주운전, 영업정지 등 부당한 처분에 대한 권익 구제와 최선의 서면 작성을 돕습니다.</p></div>
+        <div class="service-card"><h3>사실조사</h3><p>사건의 기초가 되는 사실관계를 명확히 확인하고 공식적인 사실확인증명서를 발급합니다.</p></div>
+        <div class="service-card"><h3>비자·출입국</h3><p>외국인 체류, 영주권, 국적 취득 등 복잡한 출입국 행정 절차를 전문적으로 대행합니다.</p></div>
+        <div class="service-card"><h3>내용증명</h3><p>상가 권리금이나 계약 분쟁 등에서 당사자의 의사를 논리적으로 담은 서면을 작성합니다.</p></div>
+        <div class="service-card"><h3>진정·탄원서</h3><p>억울한 사정이나 선처가 필요한 상황을 의뢰인의 입장에서 진정성 있게 서술해 드립니다.</p></div>
+        <div class="service-card"><h3>학교폭력</h3><p>학폭위 절차 안내 및 경위서 준비를 통해 학생의 권익이 보호되도록 정성을 다합니다.</p></div>
+        <div class="service-card"><h3>처문사전통지서</h3><p>행정처분 확정 전 의견 제출을 통해 불이익을 방지하고 정당한 소명이 되도록 조력합니다.</p></div>
+        <div class="service-card"><h3>의견서·보충서면</h3><p>진행 중인 행정 절차에서 논리를 보강하고 상대의 답변에 대응하는 자료를 준비합니다.</p></div>
+        <div class="service-card"><h3>이의신청</h3><p>부당하다고 판단되는 행정 결과에 대해 공식적인 절차를 통해 재검토를 강력히 요청합니다.</p></div>
+        <div class="service-card"><h3>민원행정대행</h3><p>복잡한 인허가 및 각종 서류 작성과 접수를 전국 어디서나 원스톱으로 처리해 드립니다.</p></div>
     </div>
 
     <div class="flex-bottom">
         <div class="form-box">
             <h4>✉️ 실시간 이메일 문의</h4>
             <form action="mailto:3351ben@daum.net" method="post" enctype="text/plain">
-                <select name="상담분야">
-                    <option value="행정심판">행정심판 관련</option>
-                    <option value="탐정영역">탐정사영역 관련</option>
-                    <option value="비자">비자 관련</option>
-                    <option value="기타">기타 상담</option>
-                </select>
-                <input type="text" name="이름" placeholder="성함 또는 상호명" required>
-                <input type="text" name="연락처" placeholder="연락처" required>
-                <textarea name="내용" rows="3" placeholder="문의하실 내용을 간단히 적어주세요"></textarea>
+                <input type="text" name="이름" placeholder="성함 또는 상호명" required style="width:100%; padding:10px; margin-bottom:10px; border-radius:5px; border:1px solid #ddd;">
+                <input type="text" name="연락처" placeholder="연락처" required style="width:100%; padding:10px; margin-bottom:10px; border-radius:5px; border:1px solid #ddd;">
+                <textarea name="내용" rows="3" placeholder="문의하실 내용을 간단히 적어주세요" style="width:100%; padding:10px; margin-bottom:10px; border-radius:5px; border:1px solid #ddd;"></textarea>
                 <button type="submit" class="send-btn">상담 요청 메일 전송</button>
             </form>
         </div>
         <div class="docs-box">
-            <h4>📁 전국 민원 대행 시 구비서류</h4>
-            <ul class="docs-list">
-                <li>✅ <b>신분증:</b> 여권 또는 운전면허증 등</li>
-                <li>✅ <b>위임장</b></li>
-                <li>✅ <b>도장:</b> 본인 날인용 인장</li>
-                <li>✅ <b>입증자료:</b> 사건 소명에 필요한 서류</li>
+            <h4>📁 민원 대행 구비서류</h4>
+            <ul style="list-style:none; padding:0; line-height:2.2; font-weight:bold;">
+                <li>✅ 신분증 (여권 또는 운전면허증 등)</li>
+                <li>✅ 위임장 및 본인 날인용 도장</li>
+                <li>✅ 사건 소명에 필요한 각종 입증자료</li>
             </ul>
         </div>
-    </div>
-
-    <div class="security-msg">
-        🛡️ 의뢰인의 모든 상담 내용 및 개인정보, 비밀은 행정사법 및 관련 법령에 의거하여 철저히 보안 유지 및 보호됨을 약속드립니다.
     </div>
 </div>
 
@@ -187,8 +144,7 @@
         사업자번호: 821-46-01200 | 이메일: 3351ben@daum.net
     </div>
     <div class="bank-info" style="margin-top:20px;">
-        🏦 <b>입금 계좌:</b> 국민은행 006001-04-356388 (예금주: <b>000(공감탐정행정사사무소)</b>)<br>
-        💳 <b>신용카드 결제 가능</b> | 🤝 <b>업무 비용 협의 가능</b>
+        🏦 <b>입금 계좌:</b> 국민은행 006001-04-356388 (예금주: <b>000(공감탐정행정사사무소)</b>)
     </div>
     <div class="addr-grid">
         <div><b>[KR] 한국어</b> 서울 종로구 우정국로 39, 401호</div>
