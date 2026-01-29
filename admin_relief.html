@@ -8,21 +8,19 @@
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
         
         :root { 
-            --fresh-green: #8eb35d; /* 생생하고 화사한 연두색 */
-            --deep-forest: #3e522d; /* 중후한 가중치를 주는 딥 그린 */
-            --soft-cream: #fafdce; /* 연두색과 잘 어울리는 아주 옅은 크림색 */
+            --fresh-green: #8eb35d; 
+            --deep-forest: #3e522d; 
+            --soft-cream: #fafdce; 
             --accent-gold: #d4af37;
             --emergency: #ff5252;
         }
 
         body { font-family: 'Noto Sans KR', sans-serif; margin: 0; padding: 0; background: #fff; color: #333; line-height: 1.6; word-break: keep-all; }
         
-        /* 네비게이션 */
         .top-nav { background: #1a1a1a; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid var(--fresh-green); position: sticky; top: 0; z-index: 1000; }
         .nav-links a { color: #fff; margin: 0 15px; text-decoration: none; font-weight: 700; font-size: 0.95rem; }
         .emergency-btn { background: var(--emergency); color: #fff !important; padding: 8px 16px; border-radius: 5px; font-weight: 900; text-decoration: none; }
 
-        /* 헤더 (돋보기 g 심볼) */
         header { 
             background: linear-gradient(135deg, var(--deep-forest) 0%, var(--fresh-green) 100%); 
             color: #fff; padding: 60px 20px; border-bottom: 5px solid var(--accent-gold);
@@ -37,7 +35,6 @@
 
         .container { max-width: 1100px; margin: auto; padding: 50px 20px; }
 
-        /* 업무 영역 카드 (12개) */
         .service-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
         @media (max-width: 768px) { .service-grid { grid-template-columns: 1fr; } }
         .service-card { background: #f9fbf2; padding: 30px; border-radius: 15px; border: 1px solid #e1e8d5; border-left: 10px solid var(--fresh-green); transition: 0.3s ease; cursor: pointer; }
@@ -45,23 +42,21 @@
         .service-card h3 { margin: 0 0 12px; color: var(--deep-forest); font-size: 1.4rem; font-weight: 900; }
         .service-card p { margin: 0; font-size: 1rem; color: #555; }
 
-        /* 법적 환불 규정 (4줄 요약) */
         .policy-box { background: #fff; border: 1px solid #ddd; padding: 30px; border-radius: 20px; margin: 50px 0; border-top: 6px solid var(--fresh-green); }
         .policy-box h4 { margin-top: 0; color: #222; font-size: 1.5rem; border-bottom: 1px solid #eee; padding-bottom: 15px; }
         .policy-text { font-size: 1rem; color: #444; line-height: 1.9; }
         .hl { color: var(--emergency); font-weight: 700; }
 
-        /* 이메일 상담 폼 (영역 구분 강화) */
         .bottom-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 50px; }
         @media (max-width: 850px) { .bottom-wrap { grid-template-columns: 1fr; } }
+        
         .form-area { background: #fff; padding: 35px; border-radius: 20px; border: 1px solid #e0e0e0; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
-        .form-area h4 { text-align: center; margin-top: 0; color: var(--fresh-green); font-size: 1.6rem; margin-bottom: 25px; }
+        .form-area h4 { text-align: center; margin-top: 0; color: var(--fresh-green); font-size: 1.6rem; margin-bottom: 10px; }
+        .mail-notice { text-align: center; font-size: 0.85rem; color: var(--emergency); font-weight: 700; margin-bottom: 20px; background: #fff5f5; padding: 10px; border-radius: 8px; border: 1px solid #ffebeb; }
+        
         .input-group { margin-bottom: 20px; }
         .input-group label { display: block; font-weight: 700; margin-bottom: 8px; color: var(--deep-forest); font-size: 0.95rem; }
-        .form-area input, .form-area textarea { 
-            width: 100%; padding: 15px; border: 2px solid #eee; border-radius: 10px; box-sizing: border-box; font-size: 1rem; background: #fafafa;
-        }
-        .form-area input:focus, .form-area textarea:focus { border-color: var(--fresh-green); background: #fff; outline: none; }
+        .form-area input, .form-area textarea { width: 100%; padding: 15px; border: 2px solid #eee; border-radius: 10px; box-sizing: border-box; font-size: 1rem; background: #fafafa; }
         .btn-submit { background: var(--fresh-green); color: #fff; width: 100%; padding: 18px; border: none; border-radius: 10px; font-weight: 900; cursor: pointer; font-size: 1.2rem; }
         
         .docs-area { background: #fffdf5; padding: 35px; border-radius: 20px; border: 2px solid #f0e6c3; }
@@ -75,7 +70,9 @@
         .f-logo { font-size: 2.2rem; font-weight: 900; color: var(--fresh-green); margin-bottom: 20px; display: block; }
         .bank-tag { background: #222; padding: 25px; border-radius: 12px; border: 1px solid #333; display: inline-block; margin: 20px 0; text-align: left; }
         .card-ok { background: #388e3c; color: #fff; padding: 3px 10px; border-radius: 4px; font-size: 0.8rem; margin-left: 10px; }
-        .addr-box { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; text-align: left; max-width: 1000px; margin: 40px auto 0; border-top: 1px solid #222; padding-top: 40px; font-size: 0.85rem; }
+        
+        .addr-box { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; text-align: left; max-width: 1100px; margin: 40px auto 0; border-top: 1px solid #222; padding-top: 40px; font-size: 0.82rem; line-height: 1.8; }
+        .addr-item b { color: #ddd; margin-right: 5px; }
     </style>
 </head>
 <body>
@@ -113,58 +110,4 @@
         <div class="service-card"><h3>전국 행정심판위 대응</h3><p>중앙 및 전국 시·도 행정심판위원회의 절차에 맞춰 적절한 소명 자료의 접수 및 대응을 지원합니다.</p></div>
         <div class="service-card"><h3>진정서 및 탄원서</h3><p>객관적 정황을 바탕으로 행정기관에 제출할 진심 어린 서면을 준비하여 행정 결정에 도움을 드립니다.</p></div>
         <div class="service-card"><h3>사실조사 확인</h3><p>행정기관 제출용 증거 확보를 위해 사실관계를 조사하고 행정사법에 따른 확인증명서를 발급합니다.</p></div>
-        <div class="service-card"><h3>권리관계 사실증명</h3><p>분쟁 상황에서 <b>권리관계 및 사실관계가 존재함을 입증</b>하는 서류를 작성하여 소명을 돕습니다.</p></div>
-        <div class="service-card"><h3>도감청 및 보안탐색</h3><p>불법 기기 설치 여부를 확인하여 의뢰인의 개인정보와 프라이버시를 보호하는 조사를 지원합니다.</p></div>
-        <div class="service-card"><h3>민원행정 원스톱대행</h3><p>전국의 다양한 인허가 및 민원 업무 서류를 작성부터 접수까지 정확하게 처리해 드립니다.</p></div>
-    </div>
-
-    <section class="policy-box">
-        <h4>⚖️ 행정업무 수임계약 및 환불에 관한 법률 고지</h4>
-        <div class="policy-text">
-            1. 본 사무소는 <b>행정사법 제21조</b>에 의거한 성실 의무를 준수하며, 심층 상담 시 별도의 <span class="hl">전문 상담료</span>가 발생할 수 있습니다.<br>
-            2. 공식 수임 후에는 즉시 사건 분석 및 서면 작성이 시작되므로, 해당 시점부터는 <b>전문 행정 서비스가 제공된 것</b>으로 간주합니다.<br>
-            3. 의뢰인의 주관적 사정에 의한 중도 해지 시, <span class="hl">총 수임료의 30%를 실제 업무 착수 비용으로 공제</span> 후 정산합니다.<br>
-            4. 행정기관 서면 접수가 완료된 이후에는 환불이 불가하며, 모든 기준은 본 사무소의 <b>표준 수임 계약서</b>를 최종 근거로 합니다.
-        </div>
-    </section>
-
-    <div class="bottom-wrap">
-        <div class="form-area">
-            <h4>✉️ 실시간 법률상담 문의</h4>
-            <form action="mailto:3351ben@daum.net" method="post" enctype="text/plain">
-                <div class="input-group"><label>의뢰인 성함/상호</label><input type="text" name="성함" placeholder="성함을 입력해주세요" required></div>
-                <div class="input-group"><label>긴급 연락처</label><input type="text" name="연락처" placeholder="번호를 입력해주세요" required></div>
-                <div class="input-group"><label>상담 요청 및 정황 설명</label><textarea name="내용" rows="5" placeholder="억울한 사정이나 문의내용을 적어주세요."></textarea></div>
-                <button type="submit" class="btn-submit">상담 신청서 법정 전송</button>
-            </form>
-        </div>
-        <div class="docs-area">
-            <h4>📁 전국 행정 민원 대행 시 구비서류</h4>
-            <ul class="list-docs">
-                <li>✅ <b>신분증:</b> 주민증, 운전면허증, 여권 중 1종</li>
-                <li>✅ <b>위임장</b></li>
-                <li>✅ <b>도장</b></li>
-                <li>✅ <b>참고자료:</b> 행정처분 통지서 및 관련 증빙 서류</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="security-banner">🛡️ 본 사무소는 의뢰인의 모든 상담 비밀 및 개인정보를 행정사법 제20조에 의거하여 철저히 보안 유지합니다.</div>
-</div>
-
-<footer>
-    <span class="f-logo">공감탐정행정사사무소</span>
-    <div style="line-height:1.8; margin-bottom:20px;">
-        대표번호: <a href="tel:010-8128-1079" style="color:var(--fresh-green); text-decoration:none; font-weight:900;">010-8128-1079</a><br>
-        사업자번호: 821-46-01200 | 이메일: 3351ben@daum.net
-    </div>
-    <div class="bank-tag">🏦 <b>국민은행 006001-04-356388</b> (예금주: 000(공감탐정행정사사무소)) <span class="card-ok">신용카드 결제 가능</span></div>
-    <div class="addr-box">
-        <div><b>[KR] 한국어</b> 서울 종로구 우정국로 39, 401호</div>
-        <div><b>[EN] English</b> #401, 39, Ujeongguk-ro, Seoul</div>
-        <div><b>[CN] 中文</b> 首尔特别市 钟路区 牛亭局로 39</div>
-        <div><b>[VN] Tiếng Việt</b> 39, Ujeongguk-ro, Seoul</div>
-    </div>
-</footer>
-</body>
-</html>
+        <div class="service-card"><h3>권리관계 사실증명</h3><p>분쟁 상황에서 <b>권
