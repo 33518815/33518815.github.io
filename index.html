@@ -20,84 +20,85 @@
         .emergency-btn { background: var(--emergency-red); color: #fff !important; padding: 8px 16px; border-radius: 5px; font-weight: 900; text-decoration: none; animation: pulse 2s infinite; }
         @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.8; } 100% { opacity: 1; } }
 
-        /* 헤더 디자인: 심볼을 제목 좌측에 수평 배치 */
+        /* 헤더 디자인 (좌측 심볼 배치) */
         header { 
             background: linear-gradient(135deg, #1a2a3a 0%, var(--main-navy) 100%); 
-            color: #fff; padding: 80px 20px; border-bottom: 5px solid var(--accent-gold);
+            color: #fff; padding: 70px 20px; border-bottom: 5px solid var(--accent-gold);
         }
         .header-container { 
             max-width: 1100px; margin: auto; 
-            display: flex; align-items: center; justify-content: center; gap: 20px; /* 심볼과 텍스트 간격 */
+            display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 20px; 
         }
         
-        /* 돋보기 심볼 디자인 (G + 원형 + g꼬리 손잡이) */
+        /* 일직선 손잡이 돋보기 심볼 */
         .symbol-magnifier {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            flex-shrink: 0;
-            transform: translateY(10px); /* 텍스트 높이와 맞추기 위한 미세 조정 */
+            position: relative; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;
         }
         .mag-circle {
-            width: 70px; height: 70px; 
-            border: 6px solid var(--accent-gold); 
+            width: 75px; height: 75px; 
+            border: 5px solid var(--accent-gold); 
             border-radius: 50%; 
             display: flex; justify-content: center; align-items: center;
-            background: rgba(197, 160, 89, 0.1);
         }
-        .mag-g { font-size: 2.8rem; font-weight: 900; color: var(--accent-gold); line-height: 1; }
+        .mag-g { font-size: 3rem; font-weight: 900; color: var(--accent-gold); line-height: 1; }
         .mag-handle {
-            width: 10px; height: 22px;
+            width: 8px; height: 22px;
             background: var(--accent-gold);
-            margin-top: -2px; 
-            border-radius: 0 0 4px 4px;
-            position: relative;
+            margin-top: -2px; /* 원형과 밀착 */
+            border-radius: 0 0 2px 2px;
         }
-        /* g의 꼬리 곡선 처리 */
-        .mag-handle::after {
-            content: '';
-            position: absolute;
-            bottom: -6px; left: -10px;
-            width: 20px; height: 12px;
-            border-bottom: 6px solid var(--accent-gold);
-            border-left: 6px solid var(--accent-gold);
-            border-radius: 0 0 0 15px;
-        }
-
+        
         .header-text { text-align: left; }
-        .header-text h1 { font-size: 3.2rem; font-weight: 900; margin: 0; letter-spacing: -2px; }
-        .header-text p { color: var(--accent-gold); font-size: 1.3rem; font-weight: 700; margin: 5px 0 0; }
+        .header-text h1 { font-size: 3.2rem; font-weight: 900; margin: 0; letter-spacing: -1.5px; }
+        .header-text p { color: var(--accent-gold); font-size: 1.25rem; font-weight: 700; margin: 8px 0 0; }
 
-        /* 모바일 대응 */
         @media (max-width: 768px) {
             .header-container { flex-direction: column; text-align: center; }
             .header-text { text-align: center; }
             .header-text h1 { font-size: 2.2rem; }
-            .symbol-magnifier { transform: none; margin-bottom: 10px; }
         }
 
         .container { max-width: 1100px; margin: auto; padding: 50px 20px; }
+
+        /* 서비스 영역 (12개 카드 유지) */
         .service-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; }
         @media (max-width: 768px) { .service-grid { grid-template-columns: 1fr; } }
         .service-card { 
             background: var(--soft-white); padding: 35px; border-radius: 25px; 
             border: 1px solid #ddd; border-left: 12px solid var(--main-navy); 
-            cursor: pointer; transition: 0.3s;
+            cursor: pointer; transition: 0.3s ease-in-out;
         }
-        .service-card:hover { border-left-color: var(--accent-gold); background: #fff; transform: translateY(-5px); box-shadow: 0 12px 24px rgba(0,0,0,0.1); }
+        .service-card:hover { 
+            border-left-color: var(--accent-gold); background: #fff;
+            transform: translateY(-5px); box-shadow: 0 12px 24px rgba(0,0,0,0.1); 
+        }
         .service-card h3 { margin: 0 0 12px; color: var(--main-navy); font-size: 1.5rem; font-weight: 900; }
+        .service-card p { margin: 0; font-size: 1rem; color: #555; height: 3em; line-height: 1.5; }
 
+        /* 하단 폼 & 서류 */
         .flex-bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 50px; }
         @media (max-width: 850px) { .flex-bottom { grid-template-columns: 1fr; } }
+        
         .form-box { background: #fdfdfd; padding: 30px; border-radius: 20px; border: 1px solid #e1e1e1; }
-        .send-btn { background: var(--main-navy); color: #fff; width: 100%; padding: 15px; border: none; border-radius: 8px; font-weight: 900; cursor: pointer; }
+        .form-box h4 { text-align: center; margin-top: 0; color: var(--main-navy); font-size: 1.4rem; }
+        .form-box input, .form-box select, .form-box textarea { width: 100%; padding: 12px; margin-bottom: 12px; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box; }
+        .send-btn { background: var(--main-navy); color: #fff; width: 100%; padding: 15px; border: none; border-radius: 8px; font-weight: 900; cursor: pointer; font-size: 1.1rem; }
+        
         .docs-box { background: #fffbe6; padding: 30px; border-radius: 20px; border: 2px solid #ffe58f; }
+        .docs-box h4 { margin-top: 0; color: #856404; font-size: 1.3rem; border-bottom: 2px solid #856404; padding-bottom: 10px; }
+        .docs-list { list-style: none; padding: 0; margin: 20px 0; }
+        .docs-list li { margin-bottom: 15px; font-weight: 700; color: #444; font-size: 1.1rem; }
 
+        .security-msg { text-align: center; color: #b22222; font-weight: 700; margin: 40px 0; padding: 25px; border: 2px dashed #b22222; border-radius: 15px; font-size: 1.1rem; background: #fffafa; }
+
+        /* 푸터 */
         footer { background: #111; color: #ccc; padding: 70px 20px; text-align: center; }
-        .footer-logo { font-size: 2.2rem; font-weight: 900; color: var(--accent-gold); display: block; margin-bottom: 20px; }
-        .bank-info { background: #222; padding: 25px; border-radius: 15px; border: 1px solid var(--accent-gold); display: inline-block; text-align: left; }
-        .addr-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; text-align: left; max-width: 1100px; margin-top: 30px; border-top: 1px solid #333; padding-top: 30px; font-size: 0.85rem; }
+        .footer-logo { font-size: 2.2rem; font-weight: 900; color: var(--accent-gold); display: block; margin-bottom: 20px; letter-spacing: -1px; }
+        .footer-info { font-size: 1rem; line-height: 1.8; margin-bottom: 35px; }
+        .footer-info a { color: var(--accent-gold); text-decoration: none; font-weight: 700; }
+        .bank-info { background: #222; padding: 25px; border-radius: 15px; border: 1px solid var(--accent-gold); display: inline-block; text-align: left; margin-bottom: 35px; }
+        
+        .addr-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; text-align: left; max-width: 1100px; margin: 30px auto 0; border-top: 1px solid #333; padding-top: 30px; font-size: 0.85rem; }
     </style>
 </head>
 <body>
@@ -114,7 +115,9 @@
 <header>
     <div class="header-container">
         <div class="symbol-magnifier">
-            <div class="mag-circle"><div class="mag-g">G</div></div>
+            <div class="mag-circle">
+                <div class="mag-g">G</div>
+            </div>
             <div class="mag-handle"></div>
         </div>
         <div class="header-text">
@@ -126,47 +129,71 @@
 
 <div class="container">
     <div class="service-grid">
-        <div class="service-card"><h3>탐정사영역</h3><p>합법적인 사실조사와 행정 소명 자료 준비를 돕습니다.</p></div>
-        <div class="service-card"><h3>도감청탐색</h3><p>정밀 장비를 통해 불법 기기 설치 여부를 철저히 탐색합니다.</p></div>
-        <div class="service-card"><h3>행정심판</h3><p>음주운전, 영업정지 등 권익 구제를 위한 서면 작성을 지원합니다.</p></div>
-        <div class="service-card" onclick="location.href='visa.html'"><h3>비자·출입국</h3><p>외국인 체류, 영주권, 국적 취득 절차를 전문 대행합니다. (클릭 이동)</p></div>
+        <div class="service-card"><h3>탐정사영역</h3><p>가정사 고민 및 각종 정황에 대하여 전문가와 협업하여<br>합법적인 사실조사와 행정 소명 자료 준비를 돕습니다.</p></div>
+        <div class="service-card"><h3>도감청탐색</h3><p>정밀 장비를 통해 현장 내 불법 기기 설치 여부를<br>철저히 탐색하여 개인의 소중한 정보를 보호합니다.</p></div>
+        <div class="service-card"><h3>행정심판</h3><p>음주운전, 영업정지 등 처분에 대한 이의 제기와<br>권익 구제를 위한 최선의 행정 소명 서면 작성을 지원합니다.</p></div>
+        <div class="service-card"><h3>사실조사</h3><p>사건의 기초가 되는 사실관계를 확인하고 행정사법에 따른<br>공신력 있는 사실확인증명서 발급 업무를 수행합니다.</p></div>
+        <div class="service-card"><h3>비자·출입국</h3><p>외국인 체류, 영주권, 국적 취득 및 출입국 관련<br>행정 절차와 소명 자료 준비를 전문적으로 대행합니다.</p></div>
+        <div class="service-card"><h3>내용증명</h3><p>상가 권리금, 계약 분쟁 등에서 당사자의 의사를<br>명확히 기록하여 전달하는 논리적인 서면을 작성합니다.</p></div>
+        <div class="service-card"><h3>진정·탄원서</h3><p>억울한 사정을 진술하거나 선처를 구하는 내용을<br>의뢰인의 상황에 맞춰 진정성 있게 서술해 드립니다.</p></div>
+        <div class="service-card"><h3>학교폭력</h3><p>학폭위 절차 안내 및 관련 경위 소명 자료를 준비하여<br>학생의 권익 보호를 위해 정성을 다해 함께합니다.</p></div>
+        <div class="service-card"><h3>처문사전통지서</h3><p>행정처분 확정 전 의견 제출을 통해 불이익을 방지하고<br>충분한 정황 소명이 이루어지도록 조력합니다.</p></div>
+        <div class="service-card"><h3>의견서·보충서면</h3><p>진행 중인 행정 절차에서 추가적인 논리 보강과<br>상대 답변에 대한 대응 자료를 전문적으로 준비합니다.</p></div>
+        <div class="service-card"><h3>이의신청</h3><p>이미 결정된 행정 결과가 부당하다고 판단될 때<br>공식적인 절차를 통해 재검토를 요청합니다.</p></div>
+        <div class="service-card"><h3>민원행정대행</h3><p>복잡한 인허가 및 각종 행정 서류의 작성과 접수를<br>전국 어디서나 쉽고 빠르게 원스톱으로 처리합니다.</p></div>
     </div>
 
     <div class="flex-bottom">
         <div class="form-box">
             <h4>✉️ 실시간 이메일 문의</h4>
             <form action="mailto:3351ben@daum.net" method="post" enctype="text/plain">
-                <input type="text" name="이름" placeholder="성함 또는 상호명" required style="width:100%; padding:12px; margin-bottom:10px; border-radius:8px; border:1px solid #ccc;">
-                <input type="text" name="연락처" placeholder="연락처" required style="width:100%; padding:12px; margin-bottom:10px; border-radius:8px; border:1px solid #ccc;">
-                <textarea name="내용" rows="3" placeholder="문의하실 내용" style="width:100%; padding:12px; margin-bottom:10px; border-radius:8px; border:1px solid #ccc;"></textarea>
+                <select name="상담분야">
+                    <option value="행정심판">행정심판 관련</option>
+                    <option value="탐정영역">탐정사영역 관련</option>
+                    <option value="비자">비자 관련</option>
+                    <option value="기타">기타 상담</option>
+                </select>
+                <input type="text" name="이름" placeholder="성함 또는 상호명" required>
+                <input type="text" name="연락처" placeholder="연락처 (번호 클릭 시 전화연결)" required>
+                <textarea name="내용" rows="3" placeholder="문의하실 내용을 간단히 적어주세요"></textarea>
                 <button type="submit" class="send-btn">상담 요청 메일 전송</button>
             </form>
+            <p style="font-size:0.8rem; color:#888; text-align:center; margin-top:10px;">※ 폼 메일 전송이 안 될 경우 직접 <b>3351ben@daum.net</b>으로 문의 바랍니다.</p>
         </div>
         <div class="docs-box">
-            <h4>📁 민원 대행 구비서류</h4>
-            <ul style="list-style:none; padding:0; line-height:2.2;">
+            <h4>📁 전국 민원 대행 시 구비서류</h4>
+            <ul class="docs-list">
                 <li>✅ <b>신분증:</b> 여권 또는 운전면허증 등</li>
-                <li>✅ <b>위임장 / 도장:</b> 본인 날인용</li>
-                <li>✅ <b>입증자료:</b> 사건 소명용 서류</li>
+                <li>✅ <b>위임장</b></li>
+                <li>✅ <b>도장:</b> 본인 날인용 인장</li>
+                <li>✅ <b>입증자료:</b> 사건 소명에 필요한 서류</li>
             </ul>
         </div>
+    </div>
+
+    <div class="security-msg">
+        🛡️ 의뢰인의 모든 상담 내용 및 개인정보, 비밀은 행정사법 및 관련 법령에 의거하여 철저히 보안 유지 및 보호됨을 약속드립니다.
     </div>
 </div>
 
 <footer>
     <span class="footer-logo">공감탐정행정사사무소</span>
-    <div class="footer-info" style="margin-bottom:20px;">
-        대표전화: <a href="tel:010-8128-1079" style="color:var(--accent-gold); text-decoration:none;">010-8128-1079</a> | 팩스: 02-733-8816<br>
-        사업자번호: 821-46-01200 | 이메일: 3351ben@daum.net
+    <div class="footer-info">
+        대표전화: <a href="tel:010-8128-1079">010-8128-1079</a> (클릭 시 즉시 연결) | 팩스: 02-733-8816<br>
+        사업자번호: 821-46-01200 | 통신판매업 신고 완료 | 이메일: 3351ben@daum.net
     </div>
+    
     <div class="bank-info">
         🏦 <b>입금 계좌:</b> 국민은행 006001-04-356388 (예금주: <b>000(공감탐정행정사사무소)</b>)<br>
         💳 <b>신용카드 결제 가능</b> | 🤝 <b>업무 비용 협의 가능</b>
     </div>
+
     <div class="addr-grid">
         <div><b>[KR] 한국어</b> 서울 종로구 우정국로 39, 401호</div>
         <div><b>[EN] English</b> #401, 39, Ujeongguk-ro, Seoul</div>
-        <div><b>[CN] 中文</b> 서울특별시 종로구 우정국로 39</div>
+        <div><b>[CN] 中文</b> 首尔特别市 钟路区 牛亭局로 39</div>
+        <div><b>[VN] Tiếng Việt</b> 39, Ujeongguk-ro, Seoul</div>
+        <div><b>[JP] 日本語</b> 郵政局路 39, 401号</div>
     </div>
     <p style="margin-top:40px; opacity:0.4; font-size:0.8rem;">© 공감탐정행정사사무소. All Rights Reserved.</p>
 </footer>
