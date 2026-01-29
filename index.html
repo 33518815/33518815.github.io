@@ -3,62 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>행정심판·권리구제 지원센터</title>
+    <title>공감탐정행정사사무소 | 메인</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
-        :root { --admin-green: #2e4d3a; --point-green: #e8f5e9; --accent-gold: #c5a059; }
+        :root { --main-navy: #1a2a3a; --accent-gold: #c5a059; }
         body { font-family: 'Noto Sans KR', sans-serif; margin: 0; padding: 0; background: #fff; line-height: 1.6; }
-        header { background: var(--admin-green); color: #fff; padding: 50px 20px; text-align: center; border-bottom: 6px solid var(--accent-gold); }
-        .office-name { font-size: 2.4rem; font-weight: 900; margin: 0; }
-        .container { max-width: 1000px; margin: auto; padding: 40px 20px; }
-        .contract-notice { background: #f8f9fa; border: 1px solid #ddd; padding: 20px; border-radius: 10px; margin-bottom: 30px; font-size: 0.95rem; }
-        .work-list { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        @media (max-width: 768px) { .work-list { grid-template-columns: 1fr; } }
-        .work-item { padding: 20px; border-radius: 10px; border-left: 6px solid var(--admin-green); background: #fafafa; border: 1px solid #eee; }
-        .form-section { background: #fff; padding: 30px; border-radius: 15px; margin-top: 40px; border: 2px solid var(--admin-green); }
-        input, textarea, select { width: 100%; padding: 12px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ccc; box-sizing: border-box; }
-        .footer-nav { display: flex; justify-content: center; gap: 10px; padding: 30px; background: #111; position: sticky; bottom: 0; }
-        .footer-nav a { padding: 12px 20px; text-decoration: none; border-radius: 5px; font-weight: 700; color: #fff; font-size: 0.9rem; background: #333; }
-        .link-active { background: #2e7d32 !important; border: 1px solid var(--accent-gold); }
-        .call-fixed { position: fixed; bottom: 85px; right: 20px; background: #2e7d32; color: white; padding: 15px 25px; border-radius: 30px; text-decoration: none; font-weight: 900; z-index: 999; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+        /* 상단 바 */
+        .top-nav { background: #111; padding: 15px; text-align: center; border-bottom: 3px solid var(--accent-gold); position: sticky; top: 0; z-index: 1000; }
+        .top-nav a { color: #fff; margin: 0 15px; text-decoration: none; font-weight: 700; }
+        /* 헤더 */
+        header { background: linear-gradient(135deg, #0f1a26 0%, var(--main-navy) 100%); color: #fff; padding: 60px 20px; text-align: center; border-bottom: 6px solid var(--accent-gold); }
+        .symbol { width: 60px; height: 60px; border: 4px solid var(--accent-gold); border-radius: 50%; display: flex; justify-content: center; align-items: center; margin: 0 auto 15px; font-size: 2rem; font-weight: 900; color: var(--accent-gold); }
+        /* 버튼 디자인 */
+        .btn-zone { display: flex; justify-content: center; gap: 20px; padding: 50px 20px; flex-wrap: wrap; }
+        .box { width: 300px; padding: 40px 20px; border: 1px solid #ddd; border-radius: 15px; text-align: center; text-decoration: none; color: #333; transition: 0.3s; }
+        .box:hover { transform: translateY(-10px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); border-color: var(--accent-gold); }
+        .box h3 { font-size: 1.5rem; color: var(--main-navy); }
     </style>
 </head>
 <body>
-<header>
-    <h1 class="office-name">공감탐정행정사사무소</h1>
-    <div style="color:var(--accent-gold); font-size:1.5rem; font-weight:700;">⚖️ 행정심판·권리구제 지원센터</div>
-</header>
-<div class="container">
-    <div class="contract-notice">
-        <b>[계약 안내]</b> 업무 수행은 의뢰인과 체결하는 <b>실제 서면 계약서</b>를 최우선하며, 공정거래위원회 표준약관을 준수합니다.
+    <nav class="top-nav">
+        <a href="index.html" style="color:var(--accent-gold);">🏠 메인</a>
+        <a href="admin_relief.html">⚖️ 행정심판</a>
+        <a href="visa.html">✈️ 비자·출입국</a>
+    </nav>
+    <header>
+        <div class="symbol">G</div>
+        <h1 style="margin:0;">공감탐정행정사사무소</h1>
+        <p style="color:var(--accent-gold); font-weight:700;">진실을 찾는 탐정의 눈과 권익을 지키는 행정사의 마음</p>
+    </header>
+    <div class="btn-zone">
+        <a href="admin_relief.html" class="box">
+            <h3>⚖️ 행정심판·구제</h3>
+            <p>음주운전, 영업정지, 학교폭력 등<br>연두색 행정 전문 페이지로 이동</p>
+        </a>
+        <a href="visa.html" class="box">
+            <h3>✈️ 비자·아포스티유</h3>
+            <p>외국인 체류, 비자, 국제 서류<br>와인색 비자 전문 페이지로 이동</p>
+        </a>
     </div>
-    <div class="work-list">
-        <div class="work-item"><h4>01. 음주운전 면허구제</h4><p>면허취소·정지 처분 행정심판</p></div>
-        <div class="work-item"><h4>02. 영업정지·과징금</h4><p>부당한 행정처분 구제 및 의견서 작성</p></div>
-        <div class="work-item"><h4>03. 학교폭력 사실조사</h4><p>객관적 경위 파악 및 행정 지원</p></div>
-        <div class="work-item"><h4>04. 토지보상 및 수용</h4><p>보상금 증액을 위한 사실조사</p></div>
-        <div class="work-item"><h4>05. 이행강제금 구제</h4><p>가혹한 처분에 대한 불복 절차</p></div>
-        <div class="work-item"><h4>06. 국가유공자 등록</h4><p>유공자 신청 및 재심사 청구</p></div>
-        <div class="work-item"><h4>07. 소청심사 청구</h4><p>부당한 인사 처분 권리 구제</p></div>
-        <div class="work-item"><h4>08. 진정서·탄원서 작성</h4><p>민원 소명을 위한 법리적 서류</p></div>
-        <div class="work-item"><h4>09. 사실확인서 발급</h4><p>행정사법에 따른 증명서 발급</p></div>
-        <div class="work-item"><h4>10. 내용증명·의견제출</h4><p>분쟁 해결 기초 서류 작성</p></div>
-    </div>
-    <div class="form-section">
-        <h3 style="text-align:center;">✉️ 실시간 상담 신청</h3>
-        <form action="mailto:3351ben@daum.net" method="post" enctype="text/plain">
-            <input type="text" name="성함" placeholder="성함" required>
-            <input type="tel" name="연락처" placeholder="연락처" required>
-            <textarea name="내용" rows="4" placeholder="상담 내용을 적어주세요."></textarea>
-            <button type="submit" style="background:var(--admin-green); color:#fff; padding:15px; width:100%; border:none; border-radius:5px; font-weight:900; cursor:pointer;">상담 메일 보내기</button>
-        </form>
-    </div>
-</div>
-<div class="footer-nav">
-    <a href="https://33518815.github.io/main.html">🏠 사무소 홈</a>
-    <a href="https://33518815.github.io/empathy-office/" class="link-active">⚖️ 행정심판</a>
-    <a href="https://33518815.github.io/visa.html">✈️ 비자·서류</a>
-</div>
-<a href="tel:010-8128-1079" class="call-fixed">📞 전화상담 연결</a>
+    <footer style="text-align:center; padding:40px; background:#111; color:#888; font-size:0.9rem;">
+        <p>서울특별시 종로구 우정국로 39, 401호 | 010-8128-1079</p>
+    </footer>
 </body>
 </html>
