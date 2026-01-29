@@ -7,156 +7,180 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
         :root { 
-            --sage-green: #6b8e23; 
-            --soft-bg: #f8f9f5;
+            --light-sage: #8da36d; /* 더 옅고 부드러운 연두색 */
+            --soft-bg: #f9fbf7;
             --white: #ffffff;
-            --accent-gold: #c5a059;
-            --emergency-red: #d32f2f;
+            --accent-gold: #d4b37d;
+            --emergency-red: #e57373;
         }
-        body { font-family: 'Noto Sans KR', sans-serif; margin: 0; padding: 0; background: var(--white); color: #333; line-height: 1.6; word-break: keep-all; }
+        body { font-family: 'Noto Sans KR', sans-serif; margin: 0; padding: 0; background: var(--white); color: #444; line-height: 1.6; word-break: keep-all; }
         
-        .top-nav { background: #111; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid var(--sage-green); position: sticky; top: 0; z-index: 1000; }
-        .nav-links a { color: #fff; margin: 0 15px; text-decoration: none; font-weight: 700; font-size: 0.95rem; }
-        .emergency-btn { background: var(--emergency-red); color: #fff !important; padding: 8px 16px; border-radius: 5px; font-weight: 900; text-decoration: none; }
+        .top-nav { background: #222; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--light-sage); position: sticky; top: 0; z-index: 1000; }
+        .nav-links a { color: #eee; margin: 0 12px; text-decoration: none; font-weight: 700; font-size: 0.9rem; }
+        .emergency-btn { background: var(--emergency-red); color: #fff !important; padding: 6px 14px; border-radius: 4px; font-weight: 900; text-decoration: none; font-size: 0.85rem; }
 
+        /* 돋보기 심볼 헤더 */
         header { 
-            background: linear-gradient(135deg, #4f6b1a 0%, var(--sage-green) 100%); 
-            color: #fff; padding: 50px 20px; border-bottom: 5px solid var(--accent-gold);
+            background: linear-gradient(135deg, #7a8e5a 0%, var(--light-sage) 100%); 
+            color: #fff; padding: 45px 20px; border-bottom: 4px solid var(--accent-gold);
         }
-        .header-container { max-width: 1100px; margin: auto; display: flex; align-items: center; justify-content: center; gap: 30px; }
-        .symbol-wrap { width: 70px; height: 70px; border: 3px solid #fff; border-radius: 50%; display: flex; justify-content: center; align-items: center; flex-shrink: 0; }
-        .symbol-g { font-size: 2.8rem; font-weight: 900; color: #fff; }
+        .header-container { max-width: 1100px; margin: auto; display: flex; align-items: center; justify-content: center; gap: 20px; }
+        
+        /* 돋보기 심볼 (손잡이가 달려 g처럼 보임) */
+        .magnifier-symbol { position: relative; width: 60px; height: 60px; flex-shrink: 0; }
+        .lens { 
+            width: 50px; height: 50px; border: 4px solid #fff; border-radius: 50%; 
+            display: flex; justify-content: center; align-items: center; background: rgba(255,255,255,0.1);
+        }
+        .symbol-g { font-size: 2.2rem; font-weight: 900; color: #fff; line-height: 1; }
+        .handle { 
+            position: absolute; width: 6px; height: 25px; background: #fff; 
+            bottom: -15px; right: 8px; border-radius: 0 0 5px 5px; 
+        }
+
         .header-text { text-align: left; }
-        .header-text h1 { font-size: 2.6rem; font-weight: 900; margin: 0; }
-        .header-text p { color: #dcedc8; font-size: 1.2rem; font-weight: 700; margin-top: 5px; }
+        .header-text h1 { font-size: 2.3rem; font-weight: 900; margin: 0; letter-spacing: -1px; }
+        .header-text p { color: #e8f5e9; font-size: 1.1rem; font-weight: 700; margin-top: 5px; opacity: 0.9; }
 
         .container { max-width: 1100px; margin: auto; padding: 40px 20px; }
 
-        .service-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        /* 카드 인터랙티브 디자인 */
+        .service-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
         @media (max-width: 768px) { .service-grid { grid-template-columns: 1fr; } }
-        .service-card { background: var(--soft-bg); padding: 25px; border-radius: 15px; border-left: 10px solid var(--sage-green); border: 1px solid #e0e0e0; border-left-width: 10px; border-left-color: var(--sage-green); }
-        .service-card h3 { margin: 0 0 10px; color: var(--sage-green); font-size: 1.35rem; font-weight: 900; }
-        .service-card p { margin: 0; font-size: 1rem; color: #555; }
+        .service-card { 
+            background: var(--soft-bg); padding: 22px; border-radius: 12px; 
+            border: 1px solid #eef2e8; border-left: 8px solid var(--light-sage); 
+            transition: all 0.3s ease; cursor: pointer;
+        }
+        .service-card:hover { 
+            transform: translateY(-5px); 
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            background: #fff;
+            border-left-color: var(--accent-gold);
+        }
+        .service-card h3 { margin: 0 0 8px; color: #5a6d41; font-size: 1.25rem; font-weight: 900; }
+        .service-card p { margin: 0; font-size: 0.95rem; color: #666; }
 
-        .policy-section { background: #fff; border: 1px solid #ddd; padding: 30px; border-radius: 20px; margin: 40px 0; border-top: 5px solid var(--sage-green); }
-        .policy-section h4 { margin-top: 0; color: #222; font-size: 1.4rem; border-bottom: 1px solid #eee; padding-bottom: 15px; }
-        .policy-text { font-size: 1.05rem; color: #444; line-height: 1.9; }
-        .highlight { color: var(--emergency-red); font-weight: 700; }
+        .policy-section { background: #fff; border: 1px solid #e0e0e0; padding: 25px; border-radius: 15px; margin: 40px 0; border-top: 4px solid var(--light-sage); }
+        .policy-section h4 { margin-top: 0; color: #333; font-size: 1.3rem; border-bottom: 1px solid #eee; padding-bottom: 12px; }
+        .policy-text { font-size: 0.95rem; color: #666; line-height: 1.8; }
+        .highlight { color: #c62828; font-weight: 700; }
 
-        .bottom-flex { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 50px; }
+        .bottom-flex { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-top: 40px; }
         @media (max-width: 850px) { .bottom-flex { grid-template-columns: 1fr; } }
         
-        .form-box { background: #fdfdfd; padding: 30px; border-radius: 20px; border: 1px solid #e1e1e1; }
-        .form-box h4 { text-align: center; margin-top: 0; color: var(--sage-green); font-size: 1.5rem; }
-        .form-box input, .form-box textarea { width: 100%; padding: 12px; margin-bottom: 12px; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box; }
-        .send-btn { background: var(--sage-green); color: #fff; width: 100%; padding: 15px; border: none; border-radius: 8px; font-weight: 900; cursor: pointer; font-size: 1.1rem; }
+        .form-box { background: #fff; padding: 25px; border-radius: 15px; border: 1px solid #eee; }
+        .form-box h4 { text-align: center; margin-top: 0; color: var(--light-sage); font-size: 1.4rem; }
+        .form-box input, .form-box textarea { width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; font-size: 0.9rem; }
+        .send-btn { background: var(--light-sage); color: #fff; width: 100%; padding: 12px; border: none; border-radius: 6px; font-weight: 900; cursor: pointer; font-size: 1rem; }
         
-        .docs-box { background: #fffbe6; padding: 30px; border-radius: 20px; border: 2px solid #ffe58f; }
-        .docs-box h4 { margin-top: 0; color: #856404; font-size: 1.3rem; border-bottom: 2px solid #856404; padding-bottom: 10px; }
-        .docs-list { list-style: none; padding: 0; margin: 20px 0; }
-        .docs-list li { margin-bottom: 12px; font-weight: 700; color: #444; font-size: 1.1rem; }
+        .docs-box { background: #fffdf2; padding: 25px; border-radius: 15px; border: 1px solid #ffeeba; }
+        .docs-box h4 { margin-top: 0; color: #856404; font-size: 1.2rem; border-bottom: 1px solid #ffeeba; padding-bottom: 10px; }
+        .docs-list { list-style: none; padding: 0; margin: 15px 0; }
+        .docs-list li { margin-bottom: 10px; font-weight: 700; color: #555; font-size: 1rem; }
 
-        .security-banner { text-align: center; color: #b22222; font-weight: 700; margin: 40px 0; padding: 25px; border: 2px dashed #b22222; border-radius: 15px; background: #fffafa; }
+        .security-banner { text-align: center; color: #b22222; font-weight: 700; margin: 30px 0; padding: 20px; border: 2px dashed #e57373; border-radius: 12px; background: #fffafa; font-size: 0.9rem; }
 
-        footer { background: #111; color: #bbb; padding: 50px 20px; text-align: center; }
-        .footer-logo { font-size: 2rem; font-weight: 900; color: var(--sage-green); margin-bottom: 15px; display: block; }
-        .bank-info { background: #222; padding: 20px; border-radius: 10px; border: 1px solid var(--sage-green); display: inline-block; margin: 20px 0; text-align: left; }
-        .addr-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; text-align: left; max-width: 1000px; margin: 30px auto 0; border-top: 1px solid #333; padding-top: 30px; font-size: 0.85rem; }
+        footer { background: #1a1a1a; color: #aaa; padding: 40px 20px; text-align: center; }
+        .footer-logo { font-size: 1.8rem; font-weight: 900; color: var(--light-sage); margin-bottom: 10px; display: block; }
+        .bank-info { background: #252525; padding: 15px; border-radius: 8px; border: 1px solid #444; display: inline-block; margin: 15px 0; text-align: left; }
+        .card-tag { display: inline-block; background: #388e3c; color: #fff; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; margin-left: 10px; font-weight: 900; }
+        .addr-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; text-align: left; max-width: 1000px; margin: 25px auto 0; border-top: 1px solid #333; padding-top: 25px; font-size: 0.8rem; }
     </style>
 </head>
 <body>
 
 <nav class="top-nav">
     <div class="nav-links">
-        <a href="index.html">🏠 메인홈</a>
-        <a href="admin_relief.html" style="color:var(--sage-green);">⚖️ 행정심판·사실조사</a>
-        <a href="visa.html">✈️ 비자·출입국</a>
+        <a href="index.html">🏠 홈</a>
+        <a href="admin_relief.html" style="color:var(--light-sage);">⚖️ 행정심판</a>
+        <a href="visa.html">✈️ 비자</a>
     </div>
-    <a href="tel:010-8128-1079" class="emergency-btn">📞 24시 긴급상담연결</a>
+    <a href="tel:010-8128-1079" class="emergency-btn">📞 긴급 상담: 010-8128-1079</a>
 </nav>
 
 <header>
     <div class="header-container">
-        <div class="symbol-wrap"><div class="symbol-g">G</div></div>
+        <div class="magnifier-symbol">
+            <div class="lens"><span class="symbol-g">G</span></div>
+            <div class="handle"></div>
+        </div>
         <div class="header-text">
             <h1>공감탐정행정사사무소</h1>
-            <p>전국 행정심판 대응 및 민원 행정 대행 지원 센터</p>
+            <p>전국 행정심판 및 민원 대행 전문 지원 센터</p>
         </div>
     </div>
 </header>
 
 <div class="container">
     <div class="service-grid">
-        <div class="service-card"><h3>처분유보신청서</h3><p>행정처분 확정 전, 정황 소명을 통해 처분 시기에 대한 재검토를 요청하는 전문 행정 서면 작성을 지원합니다.</p></div>
-        <div class="service-card"><h3>처분사전통지서 및 의견서</h3><p>행정청의 사전 통지에 대해 의뢰인의 정당한 사유를 담은 의견서를 작성하여 불이익을 최소화하도록 조력합니다.</p></div>
-        <div class="service-card"><h3>보충서면 작성</h3><p>행정심판 진행 중 추가적인 사실관계 확인이나 논리 보완이 필요한 경우 전문적인 보충 서면을 작성합니다.</p></div>
-        <div class="service-card"><h3>이의신청서</h3><p>부당하거나 과도한 행정처분에 대하여 공식적인 이의를 제기하고 원처분의 취소 및 감경을 이끌어냅니다.</p></div>
-        <div class="service-card"><h3>내용증명(상가·권리금)</h3><p>임대차 분쟁 및 권리금 관련 사실관계를 법리적으로 명시하여 당사자의 소중한 권리를 보호합니다.</p></div>
-        <div class="service-card"><h3>집행정지 신청</h3><p>행정심판 결과 확정 전까지 처분의 집행을 정지시켜, 의뢰인의 회복하기 어려운 손해를 긴급히 예방합니다.</p></div>
-        <div class="service-card"><h3>전국 행정심판위 대응</h3><p>중앙 및 전국 각 시·도 행정심판위원회의 절차에 최적화된 소명 자료 접수와 사후 대응을 지원합니다.</p></div>
-        <div class="service-card"><h3>진정서 및 탄원서</h3><p>억울한 사정이나 선처가 필요한 객관적 정황을 바탕으로 행정 결정에 도움을 주는 진심 어린 서면을 준비합니다.</p></div>
-        <div class="service-card"><h3>사실조사 확인</h3><p>행정기관 제출용 증거 확보를 위해 사실관계를 철저히 조사하고 행정사법에 따른 확인증명서를 발급합니다.</p></div>
-        <div class="service-card"><h3>권리관계 사실증명</h3><p>분쟁 상황에서 <b>권리관계 및 사실관계가 존재함을 입증</b>하는 전문 서류를 작성하여 행정적 소명을 돕습니다.</p></div>
-        <div class="service-card"><h3>도감청 및 보안탐색</h3><p>불법 기기 설치 여부를 정밀 확인하여 의뢰인의 개인정보와 프라이버시를 보호하는 현장 조사를 수행합니다.</p></div>
-        <div class="service-card"><h3>민원행정 원스톱대행</h3><p>전국의 다양한 인허가 및 민원 업무 서류의 작성부터 접수까지 원스톱으로 신속하고 정확하게 처리합니다.</p></div>
+        <div class="service-card" onclick="location.href='#contact'"><h3>처분유보신청서</h3><p>행정처분 확정 전, 정황 소명을 통해 처분 시기에 대한 재검토를 요청하는 전문 행정 서면을 작성합니다.</p></div>
+        <div class="service-card" onclick="location.href='#contact'"><h3>처분사전통지 및 의견서</h3><p>행정청의 사전 통지에 대해 의뢰인의 정당한 사유를 담은 의견서를 작성하여 불이익을 최소화합니다.</p></div>
+        <div class="service-card" onclick="location.href='#contact'"><h3>보충서면 작성</h3><p>행정심판 진행 중 사실관계의 논리 보완이 필요한 경우 전문적인 보충 서면을 통해 대응력을 높입니다.</p></div>
+        <div class="service-card" onclick="location.href='#contact'"><h3>이의신청서</h3><p>부당한 행정처분에 대해 공식적인 이의를 제기하고 원처분의 취소 및 감경을 이끌어내는 업무를 수행합니다.</p></div>
+        <div class="service-card" onclick="location.href='#contact'"><h3>내용증명(상가·권리금)</h3><p>임대차 분쟁 및 권리금 관련 사실관계를 법리적으로 명시하여 당사자의 소중한 권리를 확고히 보호합니다.</p></div>
+        <div class="service-card" onclick="location.href='#contact'"><h3>집행정지 신청</h3><p>행정심판 결과 확정 전까지 처분의 집행을 정지시켜, 회복하기 어려운 실질적 손해를 긴급히 예방합니다.</p></div>
+        <div class="service-card" onclick="location.href='#contact'"><h3>전국 행정심판위 대응</h3><p>중앙 및 전국 각 시·도 행정심판위원회의 절차에 최적화된 소명 자료 접수와 사후 밀착 대응을 지원합니다.</p></div>
+        <div class="service-card" onclick="location.href='#contact'"><h3>진정서 및 탄원서</h3><p>억울한 사정이나 선처가 필요한 객관적 정황을 바탕으로 행정 결정에 도움을 주는 진심 어린 서면을 준비합니다.</p></div>
+        <div class="service-card" onclick="location.href='#contact'"><h3>사실조사 확인</h3><p>행정기관 제출용 증거 확보를 위해 사실관계를 철저히 조사하고 법령에 따른 확인증명서를 발급합니다.</p></div>
+        <div class="service-card" onclick="location.href='#contact'"><h3>권리관계 사실증명</h3><p>분쟁 상황에서 <b>권리관계 및 사실관계가 존재함을 입증</b>하는 서류를 작성하여 행정적 소명을 돕습니다.</p></div>
+        <div class="service-card" onclick="location.href='#contact'"><h3>도감청 및 보안탐색</h3><p>불법 기기 설치 여부를 정밀 확인하여 의뢰인의 개인정보와 프라이버시를 완벽히 보호하는 조사를 수행합니다.</p></div>
+        <div class="service-card" onclick="location.href='#contact'"><h3>민원행정 원스톱대행</h3><p>다양한 인허가 및 민원 업무 서류의 작성부터 최종 접수까지 원스톱으로 신속하고 정확하게 처리합니다.</p></div>
     </div>
 
     <section class="policy-section">
-        <h4>⚖️ 전국 행정심판 대행 이용약관 및 환불 규정</h4>
+        <h4>⚖️ 이용약관 및 환불 규정</h4>
         <div class="policy-text">
-            1. 본 사무소는 <b>공정거래위원회 표준약관 및 행정사법</b>을 준수하며, 전문가 협업을 통한 합법적 업무만을 수행합니다.<br>
-            2. 업무의 구체적 범위는 상담 후 작성하는 <b>실제 서면 계약서의 약정 내용</b>이 홈페이지 안내보다 우선하여 적용됩니다.<br>
-            3. 계약 체결 및 착수 후 의뢰인의 단순 변심으로 인한 해지 시, <span class="highlight">총 수임료의 30%를 기본 착수 비용으로 공제</span>합니다.<br>
-            4. 사건의 진행 단계나 난이도에 따른 세부 환불 기준은 계약서에 명시된 법적 기준을 따르며 성실한 수행을 약속드립니다.
+            1. 본 사무소는 <b>공정거래위원회 표준약관</b>을 준수하며, 전문가 협업을 통한 합법적 업무만을 수행합니다.<br>
+            2. 상세 업무 범위는 상담 후 작성하는 <b>실제 서면 계약서의 약정 내용</b>이 최우선으로 적용됩니다.<br>
+            3. 계약 및 착수 후 의뢰인의 단순 변심으로 인한 해지 시, <span class="highlight">총 수임료의 30%를 기본 공제</span>합니다.<br>
+            4. 사건 단계 및 난이도에 따른 세부 환불 기준은 계약서의 법적 기준을 따르며 성실한 수행을 약속드립니다.
         </div>
     </section>
 
-    <div class="bottom-flex">
+    <div class="bottom-flex" id="contact">
         <div class="form-box">
-            <h4>✉️ 실시간 상담 문의</h4>
-            <p style="font-size:0.85rem; color:#888; text-align:center; margin-bottom:15px;">
-                ※ 시스템 오류 시 아래 폼 양식에 맞춰<br><b>3351ben@daum.net</b>으로 메일 송부 요청드립니다.
-            </p>
+            <h4>✉️ 상담 문의 전송</h4>
+            <p style="font-size:0.8rem; color:#999; text-align:center; margin-bottom:12px;">오류 시 <b>3351ben@daum.net</b>으로 직접 메일 바랍니다.</p>
             <form action="mailto:3351ben@daum.net" method="post" enctype="text/plain">
                 <input type="text" name="성함" placeholder="성함 또는 상호명" required>
-                <input type="text" name="연락처" placeholder="연락처 (번호 클릭 시 전화연결)" required>
-                <textarea name="문의내용" rows="3" placeholder="상담하실 내용을 간단히 적어주세요."></textarea>
-                <button type="submit" class="send-btn">상담 요청 메일 전송</button>
+                <input type="text" name="연락처" placeholder="연락처" required>
+                <textarea name="문의내용" rows="3" placeholder="상담 내용을 적어주세요."></textarea>
+                <button type="submit" class="send-btn">상담 요청 메일 보내기</button>
             </form>
         </div>
         <div class="docs-box">
-            <h4>📁 전국 행정 민원 대행 시 구비서류</h4>
+            <h4>📁 전국 민원 대행 구비서류</h4>
             <ul class="docs-list">
-                <li>✅ <b>신분증:</b> 주민증, 운전면허증 또는 여권 중 1종</li>
+                <li>✅ <b>신분증:</b> 주민증, 운전면허증, 여권 중 1종</li>
                 <li>✅ <b>위임장</b></li>
-                <li>✅ <b>도장:</b> 본인 확인 및 수임 처리를 위한 인장</li>
-                <li>✅ <b>참고자료:</b> 행정처분 통지서 및 관련 증빙 서류</li>
+                <li>✅ <b>도장:</b> 본인 확인 및 수임용 인장</li>
+                <li>✅ <b>기타자료:</b> 행정처분 통지서 등 관련 서류</li>
             </ul>
         </div>
     </div>
 
     <div class="security-banner">
-        🛡️ 본 사무소는 전문가와 협업하여 업무를 수행하며, 의뢰인의 모든 상담 비밀 및 개인정보는 행정사법 제20조에 의거하여 철저히 보안 유지됨을 확약합니다.
+        🛡️ 의뢰인의 모든 상담 비밀 및 개인정보는 행정사법 제20조에 의거하여 철저히 보안 유지됩니다.
     </div>
 </div>
 
 <footer>
     <span class="footer-logo">공감탐정행정사사무소</span>
-    <div style="line-height:1.8; margin-bottom:20px;">
-        대표번호: <a href="tel:010-8128-1079" style="color:var(--sage-green); text-decoration:none; font-weight:900;">010-8128-1079</a> | 팩스: 02-733-8816<br>
+    <div style="font-size:0.85rem; margin-bottom:15px;">
+        대표번호: <a href="tel:010-8128-1079" style="color:var(--light-sage); text-decoration:none; font-weight:900;">010-8128-1079</a> | 팩스: 02-733-8816<br>
         사업자번호: 821-46-01200 | 이메일: 3351ben@daum.net
     </div>
     <div class="bank-info">
-        🏦 <b>입금 계좌:</b> 국민은행 006001-04-356388 (예금주: <b>000(공감탐정행정사사무소)</b>)
+        🏦 <b>국민은행 006001-04-356388</b> (예금주: 000(공감탐정행정사사무소)) <span class="card-tag">신용카드 결제 가능</span>
     </div>
     <div class="addr-grid">
         <div><b>[KR] 한국어</b> 서울 종로구 우정국로 39, 401호</div>
         <div><b>[EN] English</b> #401, 39, Ujeongguk-ro, Seoul</div>
         <div><b>[CN] 中文</b> 首尔特别市 钟路区 牛亭局로 39</div>
         <div><b>[VN] Tiếng Việt</b> 39, Ujeongguk-ro, Seoul</div>
-        <div><b>[JP] 일본어</b> 郵政局路 39, 401号</div>
     </div>
-    <p style="margin-top:30px; opacity:0.4; font-size:0.8rem;">© 공감탐정행정사사무소. All Rights Reserved.</p>
+    <p style="margin-top:25px; opacity:0.4; font-size:0.7rem;">© 공감탐정행정사사무소. All Rights Reserved.</p>
 </footer>
 
 </body>
