@@ -7,7 +7,7 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
         :root { --royal-bg: #2d1b18; --accent-gold: #c5a059; }
-        body { font-family: 'Noto Sans KR', sans-serif; margin: 0; padding: 0; background: #fff; color: #333; line-height: 1.6; }
+        body { font-family: 'Noto Sans KR', sans-serif; margin: 0; padding: 0; background: #fff; color: #333; line-height: 1.6; word-break: keep-all; }
         .top-nav { background: #111; padding: 15px; text-align: center; border-bottom: 3px solid var(--accent-gold); position: sticky; top: 0; z-index: 1000; }
         .top-nav a { color: #fff; margin: 0 15px; text-decoration: none; font-weight: 700; font-size: 0.95rem; }
         .nav-active { color: var(--accent-gold) !important; }
@@ -16,6 +16,7 @@
         .info-table { width: 100%; border-collapse: collapse; margin-bottom: 30px; border: 1px solid #ddd; }
         .info-table th { background: #f8f5f2; padding: 15px; border-bottom: 2px solid var(--accent-gold); }
         .info-table td { padding: 15px; border-bottom: 1px solid #eee; text-align: center; }
+        .price-red { color: #b22222; font-weight: 800; }
         footer { background: #111; color: #888; padding: 30px; text-align: center; }
     </style>
 </head>
@@ -26,15 +27,15 @@
     <a href="visa.html" class="nav-active">✈️ 비자·출입국</a>
 </nav>
 <header>
-    <h1 style="font-size: 2.6rem; font-weight: 900;">공감탐정행정사사무소</h1>
-    <div style="font-size: 1.7rem; color: var(--accent-gold); font-weight: 700;">비자·아포스티유 지원센터</div>
+    <h1 style="font-size: 2.5rem; font-weight: 900;">공감탐정행정사사무소</h1>
+    <div style="font-size: 1.6rem; color: var(--accent-gold); font-weight: 700;">비자·아포스티유 지원센터</div>
 </header>
 <div class="container">
     <table class="info-table">
-        <thead><tr><th>업무 구분</th><th>표준 기간</th><th>수수료</th></tr></thead>
+        <thead><tr><th>업무 구분</th><th>표준 기간</th><th>수수료(기본)</th></tr></thead>
         <tbody>
-            <tr><td><b>비자 연장/변경</b></td><td>2주 ~ 8주</td><td style="color:#b22222; font-weight:800;">300,000원 ~</td></tr>
-            <tr><td><b>출입국 사범심사</b></td><td>4주 ~ 12주</td><td style="color:#b22222; font-weight:800;">800,000원 ~</td></tr>
+            <tr><td><b>비자 연장/변경</b></td><td>2주 ~ 8주</td><td class="price-red">300,000원 ~</td></tr>
+            <tr><td><b>출입국 사범심사</b></td><td>4주 ~ 12주</td><td class="price-red">800,000원 ~</td></tr>
         </tbody>
     </table>
 </div>
