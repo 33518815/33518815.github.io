@@ -3,50 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>행정심판 전문센터 | 공감탐정행정사사무소</title>
+    <title>행정심판·사실확인 | 공감</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
         :root { --admin-green: #1e5128; --point-green: #e9f7ef; --accent-gold: #c5a059; }
-        body { font-family: 'Noto Sans KR', sans-serif; margin: 0; padding: 0; background: #fff; line-height: 1.6; color: #333; word-break: keep-all; }
+        body { font-family: 'Noto Sans KR', sans-serif; margin: 0; padding: 0; background: #fff; line-height: 1.6; color: #333; }
+        
+        /* 통합 상단바 */
         .global-nav { background: #111; padding: 15px; text-align: center; border-bottom: 3px solid var(--accent-gold); position: sticky; top: 0; z-index: 1000; }
-        .global-nav a { color: #fff; margin: 0 15px; text-decoration: none; font-weight: 700; }
+        .global-nav a { color: #fff; margin: 0 15px; text-decoration: none; font-weight: 700; font-size: 0.95rem; }
+        .nav-active { color: var(--accent-gold) !important; border-bottom: 2px solid var(--accent-gold); padding-bottom: 5px; }
+
         header { background: linear-gradient(135deg, #1e5128, #4e944f); color: #fff; padding: 50px 20px; text-align: center; border-bottom: 6px solid var(--accent-gold); }
-        .symbol-mark { width: 55px; height: 55px; margin: 0 auto 15px; border: 4px solid var(--accent-gold); border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 1.8rem; font-weight: 900; color: var(--accent-gold); }
         .container { max-width: 1100px; margin: auto; padding: 40px 20px; }
-        .work-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
-        @media (max-width: 768px) { .work-grid { grid-template-columns: 1fr; } }
-        .work-box { padding: 25px; border: 1px solid #e0eee4; border-radius: 12px; background: #fafdfb; border-left: 6px solid var(--admin-green); }
-        .work-box h4 { color: var(--admin-green); font-size: 1.2rem; margin-top: 0; }
-        .info-area { background: var(--point-green); padding: 30px; border-radius: 15px; margin-top: 30px; border: 1px solid #d4e9d7; }
+        .work-box { padding: 25px; border: 1px solid #e0eee4; border-radius: 12px; background: #fafdfb; border-left: 6px solid var(--admin-green); margin-bottom: 20px; }
+        .work-box h4 { margin: 0; color: var(--admin-green); font-size: 1.3rem; }
+        
         footer { background: #111; color: #888; padding: 40px 20px; text-align: center; }
-        .call-fixed { position: fixed; bottom: 30px; right: 30px; background: #e67e22; color: white; padding: 15px 25px; border-radius: 50px; text-decoration: none; font-weight: 900; z-index: 1001; }
     </style>
 </head>
 <body>
-<nav class="global-nav">
-    <a href="index.html">🏠 메인</a>
-    <a href="admin_relief.html" style="color:var(--accent-gold);">⚖️ 행정심판·사실확인</a>
-    <a href="visa.html">✈️ 비자·출입국</a>
-</nav>
-<header>
-    <div class="symbol-mark">G</div>
-    <h1 style="margin:0;">행정심판·사실확인 전문센터</h1>
-    <p style="color:var(--accent-gold); font-weight:bold;">공감탐정행정사사무소</p>
-</header>
-<div class="container">
-    <div class="work-grid">
-        <div class="work-box"><h4>행정심판 및 구제</h4><p>음주운전, 영업정지 등 부당한 처분에 대한 소명 자료 작성을 지원합니다.</p></div>
-        <div class="work-box"><h4>사실확인증명 발급</h4><p>전문 자격사가 확인하는 공식 사실확인증명서를 발급합니다.</p></div>
+    <nav class="global-nav">
+        <a href="index.html">🏠 메인</a>
+        <a href="admin_relief.html" class="nav-active">⚖️ 행정심판 전문</a>
+        <a href="visa.html">✈️ 비자·아포스티유</a>
+    </nav>
+    <header>
+        <h1 style="margin:0;">행정심판·사실확인 전문 지원센터</h1>
+        <p style="color:var(--accent-gold); font-weight:bold;">공감 탐정·행정사 사무소</p>
+    </header>
+    <div class="container">
+        <div class="work-box"><h4>⚖️ 음주운전/영업정지 구제</h4><p>행정기관의 부당한 처분에 대한 행정심판 및 집행정지 신청을 전문 지원합니다.</p></div>
+        <div class="work-box"><h4>🏫 학교폭력/소청심사</h4><p>학폭 사실조사 및 공무원 징계 소청심사 등 권익 구제 서류를 대행합니다.</p></div>
+        <div class="work-box"><h4>📝 내용증명/탄원서 작성</h4><p>전문적인 법률 행정 지식을 바탕으로 설득력 있는 서면을 작성해 드립니다.</p></div>
+        <div class="work-box"><h4>🔍 사실확인조사/증명발급</h4><p>민·형사 증거 수집 및 행정사법에 근거한 사실확인증명서를 발급합니다.</p></div>
     </div>
-    <div class="info-area">
-        <h3 style="color:var(--admin-green); margin-top:0;">💳 결제 및 환불 안내</h3>
-        <p>국민은행 006001-04-356388 (공감탐정행정사사무소)</p>
-        <p style="font-size:0.9rem;">※ 업무 착수 후 단계별 업무 비율에 따라 최대 30% 이내 환불 규정을 준수합니다.</p>
-    </div>
-</div>
-<footer>
-    <p>서울특별시 종로구 우정국로 39, 401호 | 010-8128-1079</p>
-</footer>
-<a href="tel:010-8128-1079" class="call-fixed">📞 상담: 010-8128-1079</a>
+    <footer>
+        <p>서울특별시 종로구 우정국로 39, 401호 | 010-8128-1079</p>
+    </footer>
 </body>
 </html>
