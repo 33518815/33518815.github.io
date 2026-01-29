@@ -1,155 +1,59 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>행정심판·사실조사 | 공감탐정행정사사무소</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
-        :root { 
-            --main-green: #2e7d32; 
-            --point-lime: #8bc34a;
-            --accent-gold: #c5a059; 
-            --soft-bg: #f9fbf9;
-            --emergency-red: #d32f2f;
-        }
-        body { font-family: 'Noto Sans KR', sans-serif; margin: 0; padding: 0; background: #fff; line-height: 1.6; color: #333; word-break: keep-all; }
-        
-        /* 네비게이션 */
-        .top-nav { background: #111; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid var(--point-lime); position: sticky; top: 0; z-index: 1000; }
-        .nav-links a { color: #fff; margin: 0 15px; text-decoration: none; font-weight: 700; font-size: 0.95rem; }
-        .emergency-btn { background: var(--emergency-red); color: #fff !important; padding: 8px 16px; border-radius: 5px; font-weight: 900; text-decoration: none; }
-
-        /* 헤더 (연두색 테마) */
-        header { 
-            background: linear-gradient(135deg, #1b5e20 0%, var(--main-green) 100%); 
-            color: #fff; padding: 70px 20px; border-bottom: 5px solid var(--point-lime);
-            text-align: center;
-        }
-        .header-container { max-width: 1100px; margin: auto; display: flex; flex-direction: column; align-items: center; gap: 15px; }
-        .symbol-wrap { position: relative; width: 80px; height: 80px; border: 4px solid var(--point-lime); border-radius: 50%; display: flex; justify-content: center; align-items: center; }
-        .symbol-g { font-size: 3.2rem; font-weight: 900; color: var(--point-lime); line-height: 1; }
-        
-        .header-text h1 { font-size: 2.8rem; font-weight: 900; margin: 10px 0 0; letter-spacing: -1.5px; }
-        .header-text p { color: var(--point-lime); font-size: 1.2rem; font-weight: 700; margin: 8px 0 0; }
-
-        .container { max-width: 1100px; margin: auto; padding: 50px 20px; }
-
-        /* 12개 전문 영역 배치 */
-        .service-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; }
-        @media (max-width: 768px) { .service-grid { grid-template-columns: 1fr; } }
-        .service-card { 
-            background: var(--soft-bg); padding: 30px; border-radius: 20px; 
-            border: 1px solid #e0e0e0; border-left: 12px solid var(--main-green); 
-            transition: 0.3s;
-        }
-        .service-card:hover { border-left-color: var(--point-lime); transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
-        .service-card h3 { margin: 0 0 10px; color: var(--main-green); font-size: 1.4rem; font-weight: 900; }
-        .service-card p { margin: 0; font-size: 0.95rem; color: #555; line-height: 1.6; }
-
-        /* 규정 및 비밀보호 */
-        .info-box { background: #fff; border: 1px solid #ddd; padding: 25px; border-radius: 15px; margin: 30px 0; }
-        .info-box h4 { margin-top: 0; color: #333; border-bottom: 2px solid var(--main-green); padding-bottom: 8px; }
-        .highlight { color: #d32f2f; font-weight: 700; }
-
-        /* 상담 및 서류 */
-        .flex-bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 40px; }
-        @media (max-width: 850px) { .flex-bottom { grid-template-columns: 1fr; } }
-        .form-box { background: #fdfdfd; padding: 25px; border-radius: 20px; border: 1px solid #e1e1e1; }
-        .docs-box { background: #fffbe6; padding: 25px; border-radius: 20px; border: 2px solid #ffe58f; }
-        .docs-list { list-style: none; padding: 0; }
-        .docs-list li { margin-bottom: 10px; font-weight: 700; font-size: 1.05rem; }
-
-        .security-msg { text-align: center; color: #b22222; font-weight: 700; margin: 40px 0; padding: 25px; border: 2px dashed #b22222; border-radius: 15px; background: #fffafa; }
-
-        /* 푸터 */
-        footer { background: #111; color: #ccc; padding: 60px 20px; text-align: center; }
-        .footer-logo { font-size: 2rem; font-weight: 900; color: var(--point-lime); margin-bottom: 15px; display: block; }
-        .bank-info { background: #222; padding: 20px; border-radius: 10px; border: 1px solid var(--point-lime); display: inline-block; margin-top: 20px; text-align: left; }
-        .addr-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px; text-align: left; max-width: 1000px; margin: 30px auto; border-top: 1px solid #333; padding-top: 20px; font-size: 0.8rem; }
-    </style>
-</head>
-<body>
-
-<nav class="top-nav">
-    <div class="nav-links">
-        <a href="index.html">🏠 메인홈</a>
-        <a href="admin_relief.html" style="color:var(--point-lime);">⚖️ 행정심판·사실조사</a>
-        <a href="visa.html">✈️ 비자·출입국</a>
-    </div>
-    <a href="tel:010-8128-1079" class="emergency-btn">📞 24시 긴급전화상담</a>
-</nav>
-
-<header>
-    <div class="header-container">
-        <div class="symbol-wrap"><div class="symbol-g">G</div></div>
-        <div class="header-text">
-            <h1>전국 행정심판 및 사실조사 대응</h1>
-            <p>행정사법에 의거한 정당한 소명 지원 및 행정 대행 업무를 수행합니다</p>
-        </div>
-    </div>
-</header>
-
-<div class="container">
-    <div class="service-grid">
-        <div class="service-card"><h3>처분유보신청서</h3><p>행정처분 확정 전, 정황 소명을 통해 처분 시기에 대한 재검토를 요청하는 행정 서면 작성을 지원합니다.</p></div>
-        <div class="service-card"><h3>처분사전통지서 대응</h3><p>행정청의 사전 통지에 대해 의뢰인의 정황을 정리한 의견서를 제출하여 불이익을 최소화하도록 돕습니다.</p></div>
-        <div class="service-card"><h3>보충서면 작성</h3><p>행정심판 절차 중 추가적인 사실관계 확인이나 소명 자료가 필요한 경우 이를 보강하는 서면을 작성합니다.</p></div>
-        <div class="service-card"><h3>이의신청서</h3><p>부당한 행정처분에 대하여 정해진 절차에 따라 공식적인 이의를 제기하고 원처분의 재검토를 청구합니다.</p></div>
-        <div class="service-card"><h3>내용증명(상가·권리금)</h3><p>상가 임대차 및 권리금 분쟁 등에서 당사자 간의 권리관계와 사실관계를 명확히 기록하여 전달합니다.</p></div>
-        <div class="service-card"><h3>집행정지 신청</h3><p>행정처분으로 인해 회복하기 어려운 손해가 발생할 우려가 있는 경우, 결과 확정 전까지 처분을 일시 정지시키기 위한 절차를 돕습니다.</p></div>
-        <div class="service-card"><h3>전국 행정심판위 대응</h3><p>전국 각 시·도 및 중앙행정심판위원회의 민원 행정 절차에 맞춰 적절한 소명 자료의 접수를 대행합니다.</p></div>
-        <div class="service-card"><h3>진정서 및 탄원서</h3><p>억울한 사정이나 선처가 필요한 객관적 정황을 바탕으로 행정기관에 제출할 진심 어린 서면을 준비해 드립니다.</p></div>
-        <div class="service-card"><h3>사실조사 확인</h3><p>행정기관에 제출할 증거 자료 확보를 위해 사실관계를 조사하고 행정사법에 따른 사실확인증명서를 발급합니다.</p></div>
-        <div class="service-card"><h3>권리관계 사실증명</h3><p>분쟁 상황에서 권리관계의 존재 여부와 사실관계를 증명하는 서류를 작성하여 행정적 입증을 지원합니다.</p></div>
-        <div class="service-card"><h3>도감청 및 보안탐색</h3><p>불법 기기 설치 여부를 확인하여 개인정보와 프라이버시를 보호하기 위한 현장 조사를 지원합니다.</p></div>
-        <div class="service-card"><h3>민원행정 원스톱대행</h3><p>전국의 다양한 인허가 및 행정기관 민원 업무 서류의 작성부터 접수까지 원스톱으로 처리합니다.</p></div>
+<div class="service-card"><h3>전국 행정심판위 대응</h3><p>중앙 및 시·도 행정심판위원회의 절차에 맞춰 적절한 소명 자료의 접수 및 대응을 지원합니다.</p></div>
+        <div class="service-card"><h3>진정서 및 탄원서</h3><p>객관적 정황을 바탕으로 행정기관에 제출할 진심 어린 서면을 준비하여 행정 결정에 도움을 드립니다.</p></div>
+        <div class="service-card"><h3>사실조사 확인</h3><p>행정기관 제출용 증거 확보를 위해 사실관계를 조사하고 행정사법에 따른 확인증명서를 발급합니다.</p></div>
+        <div class="service-card"><h3>권리관계 사실증명</h3><p>분쟁 상황에서 권리관계의 존재 여부를 입증하는 서류를 작성하여 법적·행정적 소명을 돕습니다.</p></div>
+        <div class="service-card"><h3>도감청 및 보안탐색</h3><p>불법 기기 설치 여부를 확인하여 의뢰인의 소중한 정보와 프라이버시를 보호하는 조사를 지원합니다.</p></div>
+        <div class="service-card"><h3>민원행정 원스톱대행</h3><p>전국의 다양한 인허가 및 민원 업무 서류를 작성부터 접수까지 빠르고 정확하게 처리해 드립니다.</p></div>
     </div>
 
-    <section class="info-box">
-        <h4>⚖️ 서비스 이용 약관 및 환불 규정</h4>
-        <div style="font-size:0.95rem; color:#666; line-height:1.8;">
-            1. 본 사무소는 <b>공정거래위원회 표준약관</b>을 준수하며, 전문가 협업을 통한 합법적인 업무만을 수행합니다.<br>
-            2. 모든 업무 수행 조건은 상담 후 체결되는 <b>실제 서면 계약서의 내용</b>을 최우선으로 적용합니다.<br>
-            3. 업무 착수 이후 의뢰인의 단순 변심으로 인한 중도 해지 시, <span class="highlight">총 계약 금액의 30%를 업무 공제금으로 적용</span>합니다.
+    <section class="policy-box">
+        <h4>⚖️ 전국 행정심판 대행 이용약관 및 환불 규정</h4>
+        <div class="policy-text">
+            1. 본 사무소는 <b>공정거래위원회 표준약관 및 행정사법</b>을 준수하며, 전문가 협업을 통한 합법적 업무만을 수행합니다.<br>
+            2. 업무의 구체적 범위는 상담 후 작성하는 <b>실제 서면 계약서의 약정 내용</b>이 홈페이지 안내보다 우선하여 적용됩니다.<br>
+            3. 계약 체결 및 착수 후 의뢰인의 단순 변심으로 인한 해지 시, <span class="highlight">총 수임료의 30%를 기본 착수 비용으로 공제</span>합니다.<br>
+            4. 사건의 진행 단계나 난이도에 따른 세부 환불 기준은 계약서에 명시된 법적 기준을 따르며 성실한 수행을 약속드립니다.
         </div>
     </section>
 
     <div class="flex-bottom">
         <div class="form-box">
-            <h4>✉️ 실시간 상담 문의</h4>
+            <h4 style="margin-bottom:5px;">✉️ 공감탐정행정사사무소 실시간 상담</h4>
+            <p style="font-size:0.85rem; color:#666; text-align:center; margin-bottom:15px;">
+                ※ 시스템 오류로 전송이 안 될 경우, 아래 폼 양식에 맞춰<br> 
+                <b>3351ben@daum.net</b>으로 직접 송부 요청드립니다.
+            </p>
             <form action="mailto:3351ben@daum.net" method="post" enctype="text/plain">
-                <input type="text" name="성함" placeholder="성함 또는 업체명" required style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ddd; border-radius:5px;">
-                <input type="text" name="연락처" placeholder="연락처 (번호 클릭 시 전화연결)" required style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ddd; border-radius:5px;">
-                <textarea name="내용" rows="3" placeholder="문의 사항을 적어주세요" style="width:100%; padding:10px; border:1px solid #ddd; border-radius:5px;"></textarea>
-                <button type="submit" style="width:100%; padding:15px; background:var(--main-green); color:#fff; border:none; border-radius:5px; font-weight:900; cursor:pointer; margin-top:10px;">상담 요청 메일 전송</button>
+                <input type="text" name="성함" placeholder="성함 또는 업체명" required>
+                <input type="text" name="연락처" placeholder="연락처 (번호 클릭 시 전화연결)" required>
+                <textarea name="내용" rows="3" placeholder="상담받으실 내용을 간단히 적어주세요."></textarea>
+                <button type="submit" class="send-btn">상담 요청 메일 전송 (양식 확인)</button>
             </form>
         </div>
         <div class="docs-box">
-            <h4>📁 민원 대행 시 구비서류</h4>
+            <h4>📁 전국 행정 민원 대행 시 구비서류</h4>
             <ul class="docs-list">
-                <li>✅ <b>신분증:</b> 주민증, 운전면허증 또는 여권</li>
-                <li>✅ <b>위임장</b> (사무소 양식)</li>
-                <li>✅ <b>도장:</b> 본인 날인용 인장</li>
-                <li>✅ <b>증빙서류:</b> 행정처분 통지서 등</li>
+                <li>✅ <b>신분증:</b> 주민등록증, 운전면허증 또는 여권 중 1종</li>
+                <li>✅ <b>위임장:</b> 사무소 제공 법정 양식 (본인 인장 날인)</li>
+                <li>✅ <b>도장:</b> 본인 확인 및 위임 처리를 위한 인장</li>
+                <li>✅ <b>기초자료:</b> 행정처분 통지서 및 관련 증빙 서류</li>
             </ul>
         </div>
     </div>
 
     <div class="security-msg">
-        🛡️ 본 사무소는 전문가와 협업하여 업무를 수행하며, 의뢰인의 비밀 및 개인정보는 관련 법령에 의거하여 철저히 보안 유지됨을 약속드립니다.
+        🛡️ 본 사무소는 전문가와 협업하여 업무를 수행하며, 의뢰인의 비밀 및 개인정보는 행정사법 제20조에 의거하여 철저히 보안 유지됨을 확약합니다.
     </div>
 </div>
 
 <footer>
     <span class="footer-logo">공감탐정행정사사무소</span>
-    <div style="line-height:1.8; margin-bottom:20px;">
-        대표전화: <a href="tel:010-8128-1079" style="color:var(--point-lime); font-weight:900; text-decoration:none;">010-8128-1079</a> | 팩스: 02-733-8816<br>
-        사업자번호: 821-46-01200 | 이메일: 3351ben@daum.net
+    <div style="line-height:1.6; margin-bottom:15px;">
+        대표번호: <a href="tel:010-8128-1079" style="color:var(--soft-green); font-weight:900; text-decoration:none;">010-8128-1079</a> | 팩스: 02-733-8816<br>
+        사업자번호: 821-46-01200 | 이메일: 3351ben@daum.net | 통신판매신고완료
     </div>
     <div class="bank-info">
-        🏦 <b>입금 계좌:</b> 국민은행 000-0000-0000 (예금주: <b>000(공감탐정행정사사무소)</b>)<br>
-        💳 <b>신용카드 결제 가능</b> | 🤝 <b>업무 비용 협의 가능</b>
+        🏦 <b>입금 계좌:</b> 국민은행 000-0000-0000 (예금주: <b>000(공감탐정행정사사무소)</b>)
     </div>
     <div class="addr-grid">
         <div><b>[KR] 한국어</b> 서울 종로구 우정국로 39, 401호</div>
@@ -158,6 +62,7 @@
         <div><b>[VN] Tiếng Việt</b> 39, Ujeongguk-ro, Seoul</div>
         <div><b>[JP] 日本語</b> 郵政局路 39, 401号</div>
     </div>
+    <p style="margin-top:20px; opacity:0.5; font-size:0.7rem;">© 공감탐정행정사사무소. All Rights Reserved.</p>
 </footer>
 
 </body>
