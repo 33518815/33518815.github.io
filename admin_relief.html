@@ -17,6 +17,7 @@
         .header-title { margin: 0; font-size: 1.8rem; font-weight: 900; letter-spacing: -1px; }
         .container { max-width: 1100px; margin: auto; padding: 40px 20px; }
         .work-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-bottom: 40px; }
+        @media (max-width: 768px) { .work-grid { grid-template-columns: 1fr; } }
         .work-box { padding: 20px; border: 1px solid #e0eee4; border-radius: 12px; background: #fafdfb; border-left: 6px solid var(--admin-green); }
         .work-box h4 { margin: 0 0 10px 0; color: var(--admin-green); font-size: 1.2rem; font-weight: 900; }
         footer { background: #111; color: #ccc; padding: 50px 20px; text-align: center; }
@@ -30,16 +31,13 @@
     <a href="visa.html">✈️ 비자·출입국</a>
 </nav>
 <header>
-    <div class="header-flex">
-        <div class="symbol-mark">G</div>
-        <div class="header-text"><h1 class="header-title">공감탐정행정사사무소</h1><div style="color:var(--accent-gold); font-weight:700;">행정심판 및 사실조사 전문</div></div>
-    </div>
+    <div class="header-flex"><div class="symbol-mark">G</div><div class="header-text"><h1 class="header-title">공감탐정행정사사무소</h1><div style="color:var(--accent-gold); font-weight:700;">정성을 다하는 행정 서류 서비스</div></div></div>
 </header>
 <div class="container">
     <div class="work-grid">
         <div class="work-box"><h4>집행정지 서류 지원</h4><p>행정처분의 효력 정지를 위한 신청 서류 작성을 돕습니다.</p></div>
-        <div class="work-box"><h4>행정심판 보충서면</h4><p>필요한 사실관계를 보완하고 보충 소명 자료 작성을 수행합니다.</p></div>
-        <div class="work-box"><h4>진정서 및 탄원서</h4><p>의뢰인의 상황에 맞춰 선처를 구하는 서류를 성실하게 작성해 드립니다.</p></div>
+        <div class="work-box"><h4>행정심판 보충서면</h4><p>사실관계를 보완하고 보충 소명 자료 작성을 수행합니다.</p></div>
+        <div class="work-box"><h4>진정서 및 탄원서</h4><p>의뢰인의 상황에 맞춰 선처를 구하는 서류를 작성합니다.</p></div>
         <div class="work-box"><h4>사실확인 증명</h4><p>전문 자격사가 확인하는 사실확인증명서를 발급합니다.</p></div>
     </div>
 </div>
