@@ -13,10 +13,11 @@
         .nav-active { color: var(--accent-gold) !important; }
         header { background: linear-gradient(135deg, #1a0f0d, var(--royal-bg)); color: #fff; padding: 50px 20px; text-align: center; border-bottom: 6px solid var(--accent-gold); }
         .container { max-width: 1100px; margin: auto; padding: 40px 20px; }
-        .info-table { width: 100%; border-collapse: collapse; border: 1px solid #ddd; }
-        .info-table th { background: #f8f5f2; padding: 15px; border-bottom: 2px solid var(--accent-gold); }
+        .info-table { width: 100%; border-collapse: collapse; margin-bottom: 30px; border: 1px solid #ddd; }
+        .info-table th { background: #f8f5f2; padding: 15px; border-bottom: 2px solid var(--accent-gold); text-align: center; }
         .info-table td { padding: 15px; border-bottom: 1px solid #eee; text-align: center; }
-        footer { background: #111; color: #888; padding: 30px; text-align: center; }
+        .prep-box { background: #fdfaf7; border: 1px solid #e9e0d5; padding: 25px; border-radius: 12px; }
+        footer { background: #111; color: #888; padding: 40px 20px; text-align: center; }
     </style>
 </head>
 <body>
@@ -27,17 +28,26 @@
 </nav>
 <header>
     <h1 style="font-size: 2.5rem; margin:0;">공감탐정행정사사무소</h1>
-    <div style="font-size: 1.6rem; color: var(--accent-gold); font-weight: 700;">비자·아포스티유 지원센터</div>
+    <div style="font-size: 1.6rem; color: var(--accent-gold); font-weight: 700; border-top: 1px solid rgba(197,160,89,0.3); display:inline-block; margin-top:10px; padding-top:10px;">비자·아포스티유 지원센터</div>
 </header>
 <div class="container">
+    <h3>✈️ 비자 업무 안내</h3>
     <table class="info-table">
         <thead><tr><th>업무 구분</th><th>표준 기간</th><th>수수료(기본)</th></tr></thead>
         <tbody>
             <tr><td><b>비자 연장/변경</b></td><td>2주 ~ 8주</td><td style="color:#b22222; font-weight:800;">300,000원 ~</td></tr>
             <tr><td><b>출입국 사범심사</b></td><td>4주 ~ 12주</td><td style="color:#b22222; font-weight:800;">800,000원 ~</td></tr>
+            <tr><td><b>영주권(F-5)/국적취득</b></td><td>6개월 ~ 12개월</td><td style="color:#b22222; font-weight:800;">별도 문의</td></tr>
         </tbody>
     </table>
+    <div class="prep-box">
+        <h4>📋 의뢰 시 준비사항</h4>
+        <p>1. 신분증 원본 (여권, 외국인등록증 등)<br>2. 위임장 (사무소 비치 표준 서식)<br>3. 의뢰인 본인 도장<br>4. 기타 가족관계증명 등 개별 안내 서류</p>
+    </div>
 </div>
-<footer><p>대표 행정사 직통: 010-8128-1079</p></footer>
+<footer>
+    <p><b>대표 행정사 직통: 010-8128-1079</b></p>
+    <p>서울 종로구 우정국로 39, 401호 | FAX: 02-733-8816</p>
+</footer>
 </body>
 </html>
