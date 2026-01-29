@@ -12,6 +12,7 @@
             --main-navy: #1a2a3a;
             --admin-green: #2e4d3a;
             --light-gray: #f4f4f4;
+            --trust-blue: #1a3a5a;
         }
         body { font-family: 'Noto Sans KR', sans-serif; margin: 0; padding: 0; background: #fff; color: #333; line-height: 1.6; word-break: keep-all; }
         
@@ -26,6 +27,28 @@
 
         .container { max-width: 1100px; margin: auto; padding: 40px 20px; }
         .section-title { font-size: 1.6rem; font-weight: 900; color: var(--royal-bg); border-left: 8px solid var(--accent-gold); padding-left: 15px; margin: 40px 0 20px; }
+
+        /* [추가] 1인 행정사 전문성 강조 섹션 */
+        .trust-banner {
+            background: #f9f5ef;
+            border: 1px solid var(--accent-gold);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .trust-banner h3 { color: var(--royal-bg); margin-top: 0; font-size: 1.25rem; }
+        .trust-banner p { font-size: 0.95rem; color: #444; margin: 5px 0; }
+        .card-notice { 
+            display: inline-block; 
+            margin-top: 10px; 
+            padding: 5px 15px; 
+            background: var(--main-navy); 
+            color: white; 
+            border-radius: 20px; 
+            font-size: 0.85rem; 
+            font-weight: 700;
+        }
 
         /* 수수료 표 */
         .info-table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.08); margin-bottom: 30px; border: 1px solid #ddd; }
@@ -42,7 +65,7 @@
         .work-card li { padding: 5px 0 5px 20px; position: relative; }
         .work-card li::before { content: '◈'; position: absolute; left: 0; color: var(--accent-gold); }
 
-        /* 요청하신 추가 안내 문구 (회색 박스) */
+        /* 업무별 화색 고정 문구 */
         .specific-note { 
             margin-top: 15px; 
             padding: 10px; 
@@ -55,7 +78,7 @@
             border: 1px solid #e0e0e0;
         }
 
-        /* 하단 2단 레이아웃 */
+        /* 하단 레이아웃 */
         .bottom-flex-zone { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 50px 0; }
         @media (max-width: 850px) { .bottom-flex-zone { grid-template-columns: 1fr; } }
         .contact-form-side { background: var(--royal-bg); color: #fff; padding: 30px; border-radius: 15px; }
@@ -66,11 +89,11 @@
         .prep-item { margin-bottom: 12px; font-size: 0.95rem; }
         .prep-item b { color: #8b4513; display: block; font-size: 1.05rem; }
 
-        /* 6개국 주소 그리드 */
+        /* 6개국 주소 */
         .addr-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 40px 0; }
         .addr-card { padding: 12px; background: #f9f9f9; border: 1px solid #ddd; font-size: 0.82rem; border-radius: 8px; }
 
-        /* 하단 내비게이션 연결 */
+        /* 하단 연결 내비게이션 */
         .footer-nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; padding: 40px 20px; background: #111; }
         .footer-nav a { padding: 12px 20px; text-decoration: none; border-radius: 6px; font-weight: 700; color: #fff; font-size: 0.9rem; transition: 0.3s; }
         .link-main { background: var(--main-navy); }
@@ -93,6 +116,13 @@
 </header>
 
 <div class="container">
+    <div class="trust-banner">
+        <h3>🛡️ 1인 행정사의 책임 처리 및 정보 보호</h3>
+        <p>다수의 서류를 기계적으로 대행하지 않고, <b>단 한 건의 의뢰라도 행정사가 직접 전담</b>하여 집중 처리합니다.</p>
+        <p>의뢰인의 소중한 개인정보 및 민감정보는 <b>철저히 보호</b>되며, 최상의 맞춤 서비스를 위해 비용이 다소 발생할 수 있으나 결과로 보답합니다.</p>
+        <div class="card-notice">💳 모든 업무 카드 결제 가능</div>
+    </div>
+
     <div class="section-title">비자 업무 수수료 및 기간</div>
     <table class="info-table">
         <thead>
