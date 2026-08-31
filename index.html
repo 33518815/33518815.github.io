@@ -61,6 +61,17 @@
         .footer-info a { color: var(--accent-gold) !important; text-decoration: none; font-weight: 700; }
         .bank-info { background: #222; padding: 25px; border-radius: 15px; border: 1px solid var(--accent-gold); display: inline-block; text-align: left; margin: 25px 0; }
         .addr-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; text-align: left; max-width: 1100px; margin: 30px auto 0; border-top: 1px solid #333; padding-top: 30px; font-size: 0.85rem; }
+
+        .detective-section { background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%); padding: 60px 20px; border-bottom: 5px solid var(--accent-gold); }
+        .detective-title { color: var(--accent-gold); text-align: center; font-size: 2.2rem; font-weight: 900; margin: 0 0 10px; }
+        .detective-sub { color: #ccc; text-align: center; margin: 0 0 35px; font-size: 1.05rem; }
+        .detective-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1100px; margin: auto; }
+        @media (max-width: 850px) { .detective-grid { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 600px) { .detective-grid { grid-template-columns: 1fr; } }
+        .detective-card { background: #1b263b; border: 1px solid #2c3e50; border-left: 6px solid var(--accent-gold); border-radius: 15px; padding: 25px; transition: 0.3s; }
+        .detective-card:hover { background: #223349; transform: translateY(-3px); }
+        .detective-card h3 { color: var(--accent-gold); margin: 0 0 8px; font-size: 1.15rem; font-weight: 900; }
+        .detective-card p { color: #ccc; margin: 0; font-size: 0.9rem; line-height: 1.5; }
     </style>
 </head>
 <body>
@@ -68,6 +79,7 @@
 <nav class="top-nav">
     <div class="nav-links">
         <a href="index.html" style="color:var(--accent-gold);">🏠 메인홈</a>
+        <a href="#detective">🕵️ 탐정 서비스</a>
         <a href="admin_relief.html">⚖️ 행정심판·사실조사</a>
         <a href="visa.html">✈️ 비자·출입국</a>
     </div>
@@ -86,6 +98,19 @@
         </div>
     </div>
 </header>
+
+<section class="detective-section" id="detective">
+    <h2 class="detective-title">🕵️ 탐정 전문 서비스</h2>
+    <p class="detective-sub">합법적인 사실조사와 정보보호 전문 서비스를 제공합니다.</p>
+    <div class="detective-grid">
+        <div class="detective-card"><h3>🕵️‍♂️ 탐정업무 및 사실조사</h3><p>합법적인 사실조사와 증거자료 수집을 통해 의뢰인의 권익을 보호합니다.</p></div>
+        <div class="detective-card"><h3>🔍 채무자 주소·소재지 확인</h3><p>합법적인 절차 내에서 채무자의 주소 및 소재지 확인 업무를 지원합니다.</p></div>
+        <div class="detective-card"><h3>💻 디지털 보안·도감청 탐색</h3><p>정밀 장비를 활용해 불법 기기 설치 여부를 탐색하고 정보를 보호합니다.</p></div>
+        <div class="detective-card"><h3>🤝 상가 권리금 계약 사실확인</h3><p>상가 권리금 및 계약 관련 분쟁에서 사실관계를 확인해 드립니다.</p></div>
+        <div class="detective-card"><h3>🏗️ 토지보상·수용 사실조사</h3><p>토지보상 및 수용 절차에 필요한 사실조사를 전문적으로 수행합니다.</p></div>
+        <div class="detective-card"><h3>🏫 학교폭력 사안 사실조사</h3><p>학폭위 절차에 필요한 사안 조사와 경위 확인을 지원합니다.</p></div>
+    </div>
+</section>
 
 <div class="container">
     <div class="service-grid">
@@ -106,7 +131,8 @@
     <div class="flex-bottom">
         <div class="form-box">
             <h4>✉️ 실시간 이메일 문의</h4>
-            <form action="mailto:3351ben@daum.net" method="post" enctype="text/plain">
+            <form action="https://formspree.io/f/mbgjddqw" method="POST">
+                <input type="hidden" name="_subject" value="[메인홈] 새 상담 문의">
                 <select name="상담분야" required>
                     <option value="">상담 분야를 선택하세요</option>
                     <option value="탐정/사실조사">탐정사 영역 / 사실조사</option>
@@ -147,11 +173,11 @@
         💳 <b>신용카드 결제 지원</b> | 🤝 <b>업무 비용 협의 가능</b>
     </div>
     <div class="addr-grid">
-        <div><b>[KR] 한국어</b> 서울 종로구 우정국로 39, 401호</div>
-        <div><b>[EN] English</b> #401, 39, Ujeongguk-ro, Seoul</div>
-        <div><b>[CN] 中文</b> 首尔特别市 钟路区 牛亭局로 39</div>
-        <div><b>[VN] Tiếng Việt</b> 39, Ujeongguk-ro, Seoul</div>
-        <div><b>[JP] 일본어</b> 郵政局路 39, 401号</div>
+        <div><b>[KR] 한국어</b> 서울 종로구 종로3길 34, 삼송빌딩 302호</div>
+        <div><b>[EN] English</b> #302, Samsong Bldg., 34, Jongno 3-gil, Seoul</div>
+        <div><b>[CN] 中文</b> 首尔特别市 钟路区 钟路3街 34, 三松大厦 302号</div>
+        <div><b>[VN] Tiếng Việt</b> 34, Jongno 3-gil, Samsong Bldg. 302, Seoul</div>
+        <div><b>[JP] 일본어</b> 鍾路3キル 34, サムソンビル 302号</div>
     </div>
     <p style="margin-top:40px; opacity:0.4; font-size:0.8rem;">© 공감탐정행정사사무소. All Rights Reserved.</p>
 </footer>
